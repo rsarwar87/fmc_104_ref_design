@@ -1,0 +1,54 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 4 -x 1300 -y 1010 -defaultsOSRD
+preplace port DDR3 -pg 1 -lvl 4 -x 1300 -y 200 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 4 -x 1300 -y 1040 -defaultsOSRD
+preplace port IIC_0 -pg 1 -lvl 4 -x 1300 -y 1070 -defaultsOSRD
+preplace port SYS_CLK -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port gpio -pg 1 -lvl 4 -x 1300 -y 440 -defaultsOSRD
+preplace port FCLK_CLK1 -pg 1 -lvl 4 -x 1300 -y 1280 -defaultsOSRD
+preplace port RESET_N -pg 1 -lvl 4 -x 1300 -y 1310 -defaultsOSRD
+preplace port SDIO0_CDN -pg 1 -lvl 0 -x 0 -y 880 -defaultsOSRD
+preplace port SDIO0_WP -pg 1 -lvl 0 -x 0 -y 910 -defaultsOSRD
+preplace portBus IRQ0 -pg 1 -lvl 0 -x 0 -y 800 -defaultsOSRD
+preplace portBus IRQ1 -pg 1 -lvl 0 -x 0 -y 830 -defaultsOSRD
+preplace inst SDRAM -pg 1 -lvl 3 -x 1000 -y 240 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1000 -y 440 -defaultsOSRD
+preplace inst proc_sys_reset -pg 1 -lvl 1 -x 220 -y 470 -defaultsOSRD
+preplace inst processing_system7_1 -pg 1 -lvl 3 -x 1000 -y 1150 -defaultsOSRD
+preplace inst processing_system7_1_axi_periph -pg 1 -lvl 2 -x 600 -y 560 -defaultsOSRD
+preplace inst rst_mig_7series_0_100M -pg 1 -lvl 1 -x 220 -y 110 -defaultsOSRD
+preplace inst xadc_wiz_0 -pg 1 -lvl 3 -x 1000 -y 690 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 600 -y 810 -defaultsOSRD
+preplace netloc In0_1 1 0 2 NJ 800 NJ
+preplace netloc In1_1 1 0 2 30J 820 NJ
+preplace netloc SDIO0_CDN_1 1 0 4 NJ 880 NJ 880 NJ 880 1220
+preplace netloc SDIO0_WP_1 1 0 4 NJ 910 NJ 910 NJ 910 1210
+preplace netloc mig_7series_0_mmcm_locked 1 0 4 30 210 450J 130 NJ 130 1220
+preplace netloc mig_7series_0_ui_clk 1 0 4 20 230 400 340 NJ 340 1210
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 0 4 30 10 NJ 10 NJ 10 1230
+preplace netloc proc_sys_reset_interconnect_aresetn 1 1 1 420 480n
+preplace netloc proc_sys_reset_peripheral_aresetn 1 1 2 440 380 770
+preplace netloc processing_system7_1_fclk_clk0 1 0 4 30 370 430 370 780 940 1230
+preplace netloc processing_system7_1_fclk_clk1 1 3 1 NJ 1280
+preplace netloc processing_system7_1_fclk_reset0_n 1 0 4 20 360 NJ 360 780 360 1270
+preplace netloc rst_mig_7series_0_100M_peripheral_aresetn 1 1 2 410 280 NJ
+preplace netloc xadc_wiz_0_temp_out 1 2 2 780 140 1240
+preplace netloc xlconcat_0_dout 1 2 1 760 810n
+preplace netloc SYS_CLK_1 1 0 3 NJ 220 NJ 220 NJ
+preplace netloc axi_gpio_1_gpio 1 3 1 NJ 440
+preplace netloc mig_7series_0_DDR3 1 3 1 NJ 200
+preplace netloc processing_system7_1_M_AXI_GP0 1 1 3 450 350 NJ 350 1250
+preplace netloc processing_system7_1_axi_periph_M00_AXI 1 2 1 760 420n
+preplace netloc processing_system7_1_axi_periph_M01_AXI 1 2 1 760 550n
+preplace netloc processing_system7_1_axi_periph_M03_AXI 1 2 1 750 200n
+preplace netloc processing_system7_1_ddr 1 3 1 1280J 1010n
+preplace netloc processing_system7_1_fixed_io 1 3 1 NJ 1040
+preplace netloc processing_system7_1_iic_0 1 3 1 1260J 1060n
+levelinfo -pg 1 0 220 600 1000 1300
+pagesize -pg 1 -db -bbox -sgen -130 0 1430 1360
+"
+}
+

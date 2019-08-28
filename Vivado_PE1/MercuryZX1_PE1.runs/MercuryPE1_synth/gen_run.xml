@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="MercuryPE1_synth" LaunchPart="xc7z030fbg676-2" LaunchTime="1566506339">
+  <File Type="RDS-UTIL-PB" Name="system_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="system_top_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="system_top.vds"/>
+  <File Type="RDS-DCP" Name="system_top.dcp"/>
+  <File Type="PA-TCL" Name="system_top.tcl"/>
+  <File Type="REPORTS-TCL" Name="system_top_reports.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/MercuryZX1/MercuryZX1.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/system_top_PE1.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/MercuryZX1/ip/MercuryZX1_SDRAM_0/mig_a.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="MercuryZX1_SDRAM_0"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="system_top"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/MercuryPE1">
+    <File Path="$PPRDIR/../src/MercuryZX1_PE1.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_rst_mig_7series_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_processing_system7_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_xadc_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_SDRAM_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_auto_cc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_proc_sys_reset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_auto_pc_2"/>
+</GenRun>

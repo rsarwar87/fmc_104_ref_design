@@ -1,0 +1,717 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:47:09 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 86203
+License: Customer
+
+Current time: 	Thu Aug 22 21:12:50 BST 2019
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: NAME="KDE neon"
+OS Version: 4.18.0-25-generic
+OS Architecture: amd64
+Available processors (cores): 32
+
+Display: :50
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 96 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/opt/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4
+Java executable location: 	/opt/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	rsarwar
+User home directory: /home/rsarwar
+User working directory: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2019.1
+RDI_DATADIR: /opt/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: /home/rsarwar/.Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: /home/rsarwar/.Xilinx/Vivado/2019.1/
+Vivado layouts directory: /home/rsarwar/.Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	/opt/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	
+Vivado journal file location: 	
+Engine tmp dir: 	./.Xil/Vivado-86203-ukaea-fpga
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /opt/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINXD_LICENSE_FILE: 2100@ccfe-license-1.ccfe.ac.uk
+XILINX_DSP: /opt/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2019.1
+XILINX_SDK: /opt/Xilinx/SDK/2019.1
+XILINX_VIVADO: /opt/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	205 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,020 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Message: xterm: cannot load font "-Misc-Fixed-bold-R-*-*-13-120-75-75-C-120-ISO10646-1" 
+// HMemoryUtils.trashcanNow. Engine heap size: 974 MB. GUI used memory: 46 MB. Current time: 8/22/19, 9:12:52 PM BST
+// Tcl Command: 'rdi::info_commands {sour*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source scripts/create_project.tcl", true); // aC (Z, cl)
+// Tcl Command: 'source scripts/create_project.tcl'
+// Tcl Command: 'source scripts/create_project.tcl'
+// by (cl):  Tcl Command Line : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: source scripts/create_project.tcl 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 64 MB (+64551kb) [00:01:17]
+// [Engine Memory]: 1,051 MB (+951097kb) [00:01:17]
+// [GUI Memory]: 83 MB (+17067kb) [00:01:17]
+// [GUI Memory]: 103 MB (+16571kb) [00:01:18]
+// [Engine Memory]: 1,118 MB (+15087kb) [00:01:19]
+// WARNING: HEventQueue.dispatchEvent() is taking  2478 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: RUN_MODIFY
+// HMemoryUtils.trashcanNow. Engine heap size: 1,177 MB. GUI used memory: 53 MB. Current time: 8/22/19, 9:14:03 PM BST
+// TclEventType: RUN_MODIFY
+// [Engine Memory]: 1,177 MB (+3088kb) [00:01:20]
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PART_MODIFIED
+// Tcl Message: create_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:06 . Memory (MB): peak = 6774.273 ; gain = 184.281 ; free physical = 3870 ; free virtual = 131236 
+// TclEventType: PART_MODIFIED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message:  
+// Tcl Message: INFO: [BD_TCL-3] Currently there is no design <MercuryZX1> in project, so creating one... 
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_OPEN_DIAGRAM
+// [GUI Memory]: 111 MB (+2190kb) [00:01:23]
+// WARNING: HEventQueue.dispatchEvent() is taking  1267 ms.
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: Wrote  : </media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd>  
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: INFO: [BD_TCL-4] Making design <MercuryZX1> as current_bd_design. 
+// Tcl Message: ## common::send_msg_id "BD_TCL-005" "INFO" "Currently the variable <design_name> is equal to \"$design_name\"." 
+// Tcl Message: INFO: [BD_TCL-5] Currently the variable <design_name> is equal to "MercuryZX1". 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// [Engine Memory]: 1,293 MB (+59392kb) [00:01:32]
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z030fbg676-2 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// [Engine Memory]: 1,508 MB (+157385kb) [00:01:38]
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: RUN_DELETE
+// Tcl Message: Wrote  : </media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd>  Wrote  : </media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ui/bd_601ac5c0.ui>  Run is defaulting to srcset: sources_1 Run is defaulting to parent run srcset: sources_1 
+// Tcl Message: INFO: [Vivado 12-3261] Dependent run, 'impl_1', will be deleted with parent run, 'synth_1'. 
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,519 MB. GUI used memory: 55 MB. Current time: 8/22/19, 9:14:22 PM BST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: Project created:MercuryZX1_PE1 
+// Elapsed time: 18 seconds
+dismissDialog("Tcl Command Line"); // by (cl)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 17 seconds
+selectButton(PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, "System_regenerate_rsb_layout"); // B (f, cl)
+// Run Command: PAResourceCommand.PACommandNames_REGENERATE_LAYOUT
+// Tcl Command: 'regenerate_bd_layout'
+// TclEventType: RSB_LAYOUT_STATE
+// TclEventType: RSB_REGENERATE_LAYOUT
+// Tcl Message: regenerate_bd_layout 
+// Elapsed time: 28 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aK (aH, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, system_top(rtl) (system_top_PE1.vhd)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, system_top(rtl) (system_top_PE1.vhd)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,610 MB. GUI used memory: 59 MB. Current time: 8/22/19, 9:15:12 PM BST
+selectCodeEditor("system_top_PE1.vhd", 103, 309); // cl (w, cl)
+// Elapsed time: 18 seconds
+selectCodeEditor("system_top_PE1.vhd", 138, 369); // cl (w, cl)
+selectCodeEditor("system_top_PE1.vhd", 138, 369, false, false, false, false, true); // cl (w, cl) - Double Click
+// [Engine Memory]: 1,611 MB (+29455kb) [00:02:58]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+// [GUI Memory]: 118 MB (+2117kb) [00:02:59]
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0, false, true); // k (j, cl) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // R (aH, cl)
+// Elapsed time: 160 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0, false, true); // k (j, cl) - Double Click
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // R (aH, cl)
+// Elapsed time: 29 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, system_top(rtl) (system_top_PE1.vhd)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, system_top(rtl) (system_top_PE1.vhd)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+selectCodeEditor("system_top_PE1.vhd", 365, 282); // cl (w, cl)
+selectCodeEditor("system_top_PE1.vhd", 61, 255); // cl (w, cl)
+selectCodeEditor("system_top_PE1.vhd", 645, 404); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+// Elapsed time: 778 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, system_top(rtl) (system_top_PE1.vhd)]", 1); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, system_top(rtl) (system_top_PE1.vhd), i_system : MercuryZX1 (MercuryZX1.bd)]", 2, true, false, false, false, true, false); // B (F, cl) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, "Generate Output Products..."); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE
+// aI (cl): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// by (cl):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// Tcl Message: generate_target all [get_files  /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd] 
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// HMemoryUtils.trashcanNow. Engine heap size: 1,638 MB. GUI used memory: 64 MB. Current time: 8/22/19, 9:32:23 PM BST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,860 MB. GUI used memory: 64 MB. Current time: 8/22/19, 9:32:37 PM BST
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block SDRAM . INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset . 
+// [Engine Memory]: 1,936 MB (+256198kb) [00:20:04]
+// Elapsed time: 32 seconds
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a (by)
+// 'bo' command handler elapsed time: 33 seconds
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1 . INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/xbar . INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M . 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block xadc_wiz_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/m00_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/m01_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/m03_couplers/auto_cc . 
+// Tcl Message: Exporting to file /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/hw_handoff/MercuryZX1.hwh Generated Block Design Tcl file /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/hw_handoff/MercuryZX1_bd.tcl Generated Hardware Definition File /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:49 ; elapsed = 00:00:45 . Memory (MB): peak = 7553.289 ; gain = 313.039 ; free physical = 427 ; free virtual = 130317 
+// Tcl Message: export_ip_user_files -of_objects [get_files /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,974 MB. GUI used memory: 65 MB. Current time: 8/22/19, 9:33:08 PM BST
+// a (cl): Critical Messages: addNotify
+// Elapsed time: 23 seconds
+dismissDialog("Managing Output Products"); // by (cl)
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 125 MB (+547kb) [00:20:34]
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.032 . PS DDR interfaces might fail when entering negative DQS skew values.", 0); // b (F, a)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+// Elapsed time: 214 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, system_top(rtl) (system_top_PE1.vhd), i_system : MercuryZX1 (MercuryZX1.bd)]", 2, true, false, false, false, true, false); // B (F, cl) - Popup Trigger - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, system_top(rtl) (system_top_PE1.vhd), i_system : MercuryZX1 (MercuryZX1.bd)]", 2, true, false, false, false, true, false); // B (F, cl) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, "Generate Output Products..."); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE
+// aI (cl): Generate Output Products: addNotify
+selectRadioButton(PAResourceQtoS.SimpleOutputProductDialog_SYNTHESIZE_ALL_IP_INCLUDING_IP_CONTAINED, "Out of context per IP"); // a (Q, aI)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// by (cl):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: set_property synth_checkpoint_mode Hierarchical [get_files  /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd] 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: generate_target all [get_files  /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd] 
+// Tcl Message: INFO: [BD 41-1662] The design 'MercuryZX1.bd' is already validated. Therefore parameter propagation will not be re-run. 
+// Tcl Message: Wrote  : </media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ui/bd_601ac5c0.ui>  VHDL Output written to : /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd 
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,001 MB. GUI used memory: 65 MB. Current time: 8/22/19, 9:37:13 PM BST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: VHDL Output written to : /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/sim/MercuryZX1.vhd VHDL Output written to : /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/hdl/MercuryZX1_wrapper.vhd 
+// [Engine Memory]: 2,102 MB (+72362kb) [00:24:36]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,295 MB. GUI used memory: 66 MB. Current time: 8/22/19, 9:37:33 PM BST
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block SDRAM . INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset . 
+// [Engine Memory]: 2,337 MB (+136400kb) [00:24:58]
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 40 seconds
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a (by)
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1 . INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/xbar . INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M . 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block xadc_wiz_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/s00_couplers/auto_pc . INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/m00_couplers/auto_pc . INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/m01_couplers/auto_pc . INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_1_axi_periph/m03_couplers/auto_cc . 
+// Tcl Message: Exporting to file /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/hw_handoff/MercuryZX1.hwh Generated Block Design Tcl file /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/hw_handoff/MercuryZX1_bd.tcl Generated Hardware Definition File /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:44 ; elapsed = 00:00:42 . Memory (MB): peak = 7949.926 ; gain = 219.168 ; free physical = 466 ; free virtual = 130019 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_SDRAM_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_axi_gpio_0_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_proc_sys_reset_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_processing_system7_1_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_xbar_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_rst_mig_7series_0_100M_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_xadc_wiz_0_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_auto_pc_2] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_auto_pc_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_auto_pc_1] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all MercuryZX1_auto_cc_0] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd] 
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a (by)
+// 'bo' command handler elapsed time: 47 seconds
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_runs -jobs 20 {MercuryZX1_SDRAM_0_synth_1 MercuryZX1_axi_gpio_0_0_synth_1 MercuryZX1_proc_sys_reset_0_synth_1 MercuryZX1_processing_system7_1_0_synth_1 MercuryZX1_xbar_0_synth_1 MercuryZX1_rst_mig_7series_0_100M_0_synth_1 MercuryZX1_xadc_wiz_0_0_synth_1 MercuryZX1_auto_pc_2_synth_1 MercuryZX1_auto_pc_0_synth_1 MercuryZX1_auto_pc_1_synth_1 MercuryZX1_auto_cc_0_synth_1} 
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "Out-of-Context Module Runs ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // ay (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,401 MB. GUI used memory: 68 MB. Current time: 8/22/19, 9:37:58 PM BST
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1 ;  ; Running Submodule Runs ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:37:57 BST 2019 ;  ;  ;  ;  ;  ; ", 3); // ay (O, cl)
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// [Engine Memory]: 2,537 MB (+87319kb) [00:25:19]
+maximizeFrame(PAResourceOtoP.PAViews_DESIGN_RUNS, "Design Runs"); // az (aK, cl)
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_1_synth_1 ; MercuryZX1_auto_pc_1 ; Queued... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 00:00:00 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ;  ; Vivado Synthesis Defaults", 13, "MercuryZX1_auto_pc_1_synth_1", 0, false); // ay (O, cl)
+// PAPropertyPanels.initPanels (MercuryZX1_auto_pc_1_synth_1) elapsed time: 0.7s
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 435ms to process. Increasing delay to 3000 ms.
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_1_synth_1 ; MercuryZX1_auto_pc_1 ; Queued... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 00:00:00 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ;  ; Vivado Synthesis Defaults", 13, "MercuryZX1_auto_pc_1_synth_1", 0, false); // ay (O, cl)
+selectTreeTableHeader(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "Name", 0); // ay (O, cl)
+dismissDialog("Managing Output Products"); // by (cl)
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectTreeTableHeader(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "Constraints", 1); // ay (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,569 MB. GUI used memory: 71 MB. Current time: 8/22/19, 9:38:18 PM BST
+// Elapsed time: 15 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_cc_0_synth_1 ; MercuryZX1_auto_cc_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:37:58 BST 2019 ; 00:00:33 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 14, "MercuryZX1_auto_cc_0_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_0_synth_1 ; MercuryZX1_auto_pc_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:37:58 BST 2019 ; 00:00:32 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 12, "MercuryZX1_auto_pc_0_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_2_synth_1 ; MercuryZX1_auto_pc_2 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:37:58 BST 2019 ; 00:00:31 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 11, "MercuryZX1_auto_pc_2_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_xadc_wiz_0_0_synth_1 ; MercuryZX1_xadc_wiz_0_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:37:58 BST 2019 ; 00:00:39 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 10, "MercuryZX1_xadc_wiz_0_0_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_xbar_0_synth_1 ; MercuryZX1_xbar_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:37:57 BST 2019 ; 00:00:33 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 8, "MercuryZX1_xbar_0_synth_1", 0, false); // ay (O, cl)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_proc_sys_reset_0_synth_1 ; MercuryZX1_proc_sys_reset_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:37:57 BST 2019 ; 00:00:44 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 6, "MercuryZX1_proc_sys_reset_0_synth_1", 0, false); // ay (O, cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:37:58 BST 2019 ; 00:00:42 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "MercuryZX1_SDRAM_0_synth_1", 0, false); // ay (O, cl)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 132 MB (+769kb) [00:26:07]
+// [GUI Memory]: 139 MB (+779kb) [00:26:07]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// by (cl):  Resetting Runs : addNotify
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// by (cl):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs MercuryPE1_impl -to_step write_bitstream -jobs 20 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// [GUI Memory]: 154 MB (+7872kb) [00:26:13]
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// [GUI Memory]: 165 MB (+3978kb) [00:26:13]
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Thu Aug 22 21:38:59 2019] Launched MercuryPE1_impl... Run output will be captured here: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_impl/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:02:55 ; elapsed = 00:00:07 . Memory (MB): peak = 8294.465 ; gain = 0.000 ; free physical = 8412 ; free virtual = 130346 
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 52 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:39:00 BST 2019 ; 00:00:50 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "MercuryZX1_SDRAM_0_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_1_synth_1 ; MercuryZX1_auto_pc_1 ; Queued... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 00:00:00 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ;  ; Vivado Synthesis Defaults", 13, "MercuryZX1_auto_pc_1_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:39:00 BST 2019 ; 00:00:58 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "MercuryZX1_SDRAM_0_synth_1", 0, false, false, false, false, true, false); // ay (O, cl) - Popup Trigger
+// TclEventType: FILE_SET_CHANGE
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:39:00 BST 2019 ; 00:00:59 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "MercuryZX1_SDRAM_0_synth_1", 0, false, false, false, false, true, false); // ay (O, cl) - Popup Trigger
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_0_synth_1 ; MercuryZX1_auto_pc_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:39:00 BST 2019 ; 00:00:29 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 12, "MercuryZX1_auto_pc_0_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_1_synth_1 ; MercuryZX1_auto_pc_1 ; Queued... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 00:00:00 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ;  ; Vivado Synthesis Defaults", 13, "MercuryZX1_auto_pc_1_synth_1", 0, false, false, false, false, true, false); // ay (O, cl) - Popup Trigger
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_cc_0_synth_1 ; MercuryZX1_auto_cc_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:39:00 BST 2019 ; 00:01:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 14, "MercuryZX1_auto_cc_0_synth_1", 0, false, false, false, false, true, false); // ay (O, cl) - Popup Trigger
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_cc_0_synth_1 ; MercuryZX1_auto_cc_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:39:00 BST 2019 ; 00:01:04 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 14, "MercuryZX1_auto_cc_0_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_1_synth_1 ; MercuryZX1_auto_pc_1 ; Queued... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 00:00:00 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ;  ; Vivado Synthesis Defaults", 13, "MercuryZX1_auto_pc_1_synth_1", 0, false); // ay (O, cl)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 19 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_cc_0_synth_1 ; MercuryZX1_auto_cc_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 365 ; 977 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:01:11 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 14, "synth_design Complete!", 2, false); // ay (O, cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_cc_0_synth_1 ; MercuryZX1_auto_cc_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 365 ; 977 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:01:11 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 14, "MercuryZX1_auto_cc_0_synth_1", 0, false); // ay (O, cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 12 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:39:00 BST 2019 ; 00:01:28 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "MercuryZX1_SDRAM_0_synth_1", 0, false); // ay (O, cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 17 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_1_synth_1 ; MercuryZX1_auto_pc_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu Aug 22 21:40:31 BST 2019 ; 00:00:12 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 13, "MercuryZX1_auto_pc_1_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_0_synth_1 ; MercuryZX1_auto_pc_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 451 ; 584 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:01:31 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 12, "MercuryZX1_auto_pc_0_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_auto_pc_2_synth_1 ; MercuryZX1_auto_pc_2 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 0 ; 0 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:01:25 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 11, "MercuryZX1_auto_pc_2_synth_1", 0, false); // ay (O, cl)
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_rst_mig_7series_0_100M_0_synth_1 ; MercuryZX1_rst_mig_7series_0_100M_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 19 ; 40 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:37:57 BST 2019 ; 00:00:46 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 9, "MercuryZX1_rst_mig_7series_0_100M_0_synth_1", 0, false); // ay (O, cl)
+// Elapsed time: 10 seconds
+unMaximizeFrame(PAResourceOtoP.PAViews_DESIGN_RUNS, "Design Runs"); // az (aK, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // k (j, cl)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1, false, true); // k (j, cl) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // R (aH, cl)
+selectTreeTable(PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, "SDRAM ; S_AXI ; memaddr ; 0x5000_0000 ; 256M ; 0x5FFF_FFFF", 3, "SDRAM", 0, false); // g (O, cl)
+selectTreeTable(PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, "SDRAM ; S_AXI ; memaddr ; 0x5000_0000 ; 256M ; 0x5FFF_FFFF", 3, "256M", 4, false); // g (O, cl)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0, false, true); // k (j, cl) - Double Click
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // R (aH, cl)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 164 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 6510 ; 5812 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:03:30 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "synth_design Complete!", 2, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 6510 ; 5812 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:03:30 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "MercuryZX1_SDRAM_0_synth_1", 0, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 6510 ; 5812 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:03:30 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, (String) null, 10, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 6510 ; 5812 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:03:30 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, (String) null, 9, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 6510 ; 5812 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:03:30 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, (String) null, 6, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 6510 ; 5812 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:03:30 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "synth_design Complete!", 2, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 6510 ; 5812 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:03:30 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "MercuryZX1_SDRAM_0", 1, false); // ay (O, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "MercuryZX1_SDRAM_0_synth_1 ; MercuryZX1_SDRAM_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 6510 ; 5812 ; 0.0 ; 0 ; 0 ; Thu Aug 22 21:39:00 BST 2019 ; 00:03:30 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z030fbg676-2 ; ukaea-fpga ; Vivado Synthesis Defaults", 4, "MercuryZX1_SDRAM_0_synth_1", 0, false); // ay (O, cl)
+// [GUI Memory]: 174 MB (+633kb) [00:32:00]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_PROJECT_MANAGER
+// PAPropertyPanels.initPanels (MercuryZX1_SDRAM_0_synth_1) elapsed time: 0.2s
+selectTab(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED, PAResourceOtoP.ProjectSummaryUtilizationPanel_TABLE, "Table", 1); // f (E, cl)
+selectTable(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_TABLE, "LUT ; 8523 ; 78600 ; 10.843512", 0, "78600", 2); // A (Q, cl)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ah (cl): Bitstream Generation Completed: addNotify
+// Elapsed time: 73 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// by (cl):  Open Implemented Design : addNotify
+// Tcl Message: open_run MercuryPE1_impl 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a (by)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,678 MB. GUI used memory: 110 MB. Current time: 8/22/19, 9:46:13 PM BST
+closeMainWindow("MercuryZX1_PE1 - [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.xpr] - Vivado 2019.1"); // cl
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit Vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'
+selectButton("OptionPane.button", "Wait"); // JButton (A, G)
+// [Engine Memory]: 2,721 MB (+59565kb) [00:33:34]

@@ -1,0 +1,149 @@
+13:27:25 **** Incremental Build of configuration Release for project FSLB ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/AtmelAtsha204a.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/AtmelAtsha204a.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/AtmelAtsha204a.d" -MT"src/AtmelAtsha204a.o" -o "src/AtmelAtsha204a.o" "../src/AtmelAtsha204a.c"
+In file included from ../src/AtmelAtsha204a.c:18:
+../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
+ static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/AtmelAtsha204a.c
+ 
+Building file: ../src/I2cInterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/I2cInterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/I2cInterface.d" -MT"src/I2cInterface.o" -o "src/I2cInterface.o" "../src/I2cInterface.c"
+In file included from ../src/I2cInterface.c:14:
+../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
+ static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/I2cInterface.c
+ 
+Building file: ../src/InterruptController.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/InterruptController.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/InterruptController.d" -MT"src/InterruptController.o" -o "src/InterruptController.o" "../src/InterruptController.c"
+Finished building: ../src/InterruptController.c
+ 
+Building file: ../src/ModuleConfigConstants.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/ModuleConfigConstants.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ModuleConfigConstants.d" -MT"src/ModuleConfigConstants.o" -o "src/ModuleConfigConstants.o" "../src/ModuleConfigConstants.c"
+Finished building: ../src/ModuleConfigConstants.c
+ 
+Building file: ../src/ModuleConfigValueKeys.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/ModuleConfigValueKeys.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ModuleConfigValueKeys.d" -MT"src/ModuleConfigValueKeys.o" -o "src/ModuleConfigValueKeys.o" "../src/ModuleConfigValueKeys.c"
+Finished building: ../src/ModuleConfigValueKeys.c
+ 
+Building file: ../src/ModuleEeprom.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/ModuleEeprom.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ModuleEeprom.d" -MT"src/ModuleEeprom.o" -o "src/ModuleEeprom.o" "../src/ModuleEeprom.c"
+In file included from ../src/ModuleEeprom.c:15:
+../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
+ static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/ModuleEeprom.c
+ 
+Building file: ../src/RealtimeClock.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/RealtimeClock.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/RealtimeClock.d" -MT"src/RealtimeClock.o" -o "src/RealtimeClock.o" "../src/RealtimeClock.c"
+Finished building: ../src/RealtimeClock.c
+ 
+Building file: ../src/SystemController.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/SystemController.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/SystemController.d" -MT"src/SystemController.o" -o "src/SystemController.o" "../src/SystemController.c"
+../src/SystemController.c: In function 'SystemController_SetVmonSel':
+../src/SystemController.c:75:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+In file included from ../src/SystemController.c:13:
+At top level:
+../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
+ static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/SystemController.c
+ 
+Building file: ../src/TimerInterface.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/TimerInterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/TimerInterface.d" -MT"src/TimerInterface.o" -o "src/TimerInterface.o" "../src/TimerInterface.c"
+Finished building: ../src/TimerInterface.c
+ 
+Building file: ../src/fsbl_handoff.S
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/fsbl_handoff.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_handoff.d" -MT"src/fsbl_handoff.o" -o "src/fsbl_handoff.o" "../src/fsbl_handoff.S"
+Finished building: ../src/fsbl_handoff.S
+ 
+Building file: ../src/fsbl_hooks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/fsbl_hooks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_hooks.d" -MT"src/fsbl_hooks.o" -o "src/fsbl_hooks.o" "../src/fsbl_hooks.c"
+Finished building: ../src/fsbl_hooks.c
+ 
+Building file: ../src/image_mover.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/image_mover.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/image_mover.d" -MT"src/image_mover.o" -o "src/image_mover.o" "../src/image_mover.c"
+Finished building: ../src/image_mover.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:137:
+../../FSLB_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Finished building: ../src/main.c
+ 
+Building file: ../src/md5.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/md5.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/md5.d" -MT"src/md5.o" -o "src/md5.o" "../src/md5.c"
+Finished building: ../src/md5.c
+ 
+Building file: ../src/nand.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/nand.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nand.d" -MT"src/nand.o" -o "src/nand.o" "../src/nand.c"
+Finished building: ../src/nand.c
+ 
+Building file: ../src/nor.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/nor.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nor.d" -MT"src/nor.o" -o "src/nor.o" "../src/nor.c"
+Finished building: ../src/nor.c
+ 
+Building file: ../src/pcap.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/pcap.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pcap.d" -MT"src/pcap.o" -o "src/pcap.o" "../src/pcap.c"
+In file included from ../src/pcap.c:100:
+../../FSLB_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+Finished building: ../src/pcap.c
+ 
+Building file: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0/ps7_init.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/ps7_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ps7_init.d" -MT"src/ps7_init.o" -o "src/ps7_init.o" "/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0/ps7_init.c"
+Finished building: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0/ps7_init.c
+ 
+Building file: ../src/qspi.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/qspi.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/qspi.d" -MT"src/qspi.o" -o "src/qspi.o" "../src/qspi.c"
+Finished building: ../src/qspi.c
+ 
+Building file: ../src/rsa.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/rsa.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rsa.d" -MT"src/rsa.o" -o "src/rsa.o" "../src/rsa.c"
+Finished building: ../src/rsa.c
+ 
+Building file: ../src/sd.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O2 -I"/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0" -c -fmessage-length=0 -MT"src/sd.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSLB_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.o" -o "src/sd.o" "../src/sd.c"
+Finished building: ../src/sd.c
+ 
+Building target: FSLB.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../FSLB_bsp/ps7_cortexa9_0/lib -o "FSLB.elf"  ./src/AtmelAtsha204a.o ./src/I2cInterface.o ./src/InterruptController.o ./src/ModuleConfigConstants.o ./src/ModuleConfigValueKeys.o ./src/ModuleEeprom.o ./src/RealtimeClock.o ./src/SystemController.o ./src/TimerInterface.o ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lrsa,-lxil,-lgcc,-lc,--end-group
+Finished building target: FSLB.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size FSLB.elf  |tee "FSLB.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107936	  13600	  75544	 197080	  301d8	FSLB.elf
+Finished building: FSLB.elf.size
+ 
