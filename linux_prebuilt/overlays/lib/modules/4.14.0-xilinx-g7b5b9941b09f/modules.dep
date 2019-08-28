@@ -1,0 +1,32 @@
+kernel/crypto/crypto_engine.ko:
+kernel/crypto/echainiv.ko:
+kernel/crypto/hmac.ko:
+kernel/crypto/sha256_generic.ko:
+kernel/crypto/authenc.ko:
+kernel/crypto/authencesn.ko: kernel/crypto/authenc.ko
+kernel/crypto/drbg.ko:
+kernel/crypto/jitterentropy_rng.ko:
+kernel/drivers/mtd/tests/mtd_oobtest.ko:
+kernel/drivers/mtd/tests/mtd_pagetest.ko:
+kernel/drivers/mtd/tests/mtd_readtest.ko:
+kernel/drivers/mtd/tests/mtd_speedtest.ko:
+kernel/drivers/mtd/tests/mtd_stresstest.ko:
+kernel/drivers/mtd/tests/mtd_subpagetest.ko:
+kernel/drivers/mtd/tests/mtd_torturetest.ko:
+kernel/drivers/mtd/tests/mtd_nandecctest.ko:
+kernel/drivers/mtd/tests/mtd_nandbiterrs.ko:
+kernel/drivers/usb/gadget/function/usb_f_ss_lb.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/usb/gadget/function/usb_f_mass_storage.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/usb/gadget/legacy/g_zero.ko: kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/usb/gadget/libcomposite.ko:
+kernel/drivers/crypto/virtio/virtio_crypto.ko: kernel/crypto/crypto_engine.ko
+kernel/drivers/remoteproc/zynq_remoteproc.ko:
+kernel/drivers/rpmsg/rpmsg_core.ko:
+kernel/drivers/rpmsg/virtio_rpmsg_bus.ko: kernel/drivers/rpmsg/rpmsg_core.ko
+kernel/net/802/p8022.ko: kernel/net/llc/llc.ko
+kernel/net/802/psnap.ko: kernel/net/llc/llc.ko
+kernel/net/802/stp.ko: kernel/net/llc/llc.ko
+kernel/net/ipv4/ipip.ko:
+kernel/net/8021q/8021q.ko:
+kernel/net/llc/llc.ko:
+kernel/net/bridge/bridge.ko: kernel/net/802/stp.ko kernel/net/llc/llc.ko
