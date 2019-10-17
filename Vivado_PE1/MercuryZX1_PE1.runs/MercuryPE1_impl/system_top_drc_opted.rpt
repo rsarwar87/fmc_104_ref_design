@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Thu Oct 17 08:39:11 2019
+| Date         : Thu Oct 17 12:56:46 2019
 | Host         : ukaea-fpga running 64-bit KDE neon User Edition 5.16
 | Command      : report_drc -file system_top_drc_opted.rpt -pb system_top_drc_opted.pb -rpx system_top_drc_opted.rpx
 | Design       : system_top

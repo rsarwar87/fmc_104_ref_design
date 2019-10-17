@@ -317,7 +317,228 @@ proc create_root_design { parentCell } {
   # Set parent object as current
   current_bd_instance $parentObj
 
+proc create_hier_cell_freq_counter { parentCell nameHier } {
 
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_freq_counter() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I -from 0 -to 0 FCLK_CLK1
+  create_bd_pin -dir I -from 0 -to 0 In1
+  create_bd_pin -dir I -from 0 -to 0 In4
+  create_bd_pin -dir O -from 0 -to 0 VCO_PWR_EN
+  create_bd_pin -dir I -from 4 -to 0 adc_clock
+  create_bd_pin -dir I -from 11 -to 0 probe_in9
+  create_bd_pin -dir I -type clk refclk
+
+  # Create instance: labtools_fmeter_0, and set properties
+  set labtools_fmeter_0 [ create_bd_cell -type ip -vlnv trenz.biz:user:labtools_fmeter:1.0 labtools_fmeter_0 ]
+  set_property -dict [ list \
+   CONFIG.C_CHANNELS {9} \
+ ] $labtools_fmeter_0
+
+  # Create instance: vio_0, and set properties
+  set vio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 vio_0 ]
+  set_property -dict [ list \
+   CONFIG.C_NUM_PROBE_IN {10} \
+   CONFIG.C_PROBE_OUT0_INIT_VAL {0001} \
+ ] $vio_0
+
+  # Create instance: xlconcat_1, and set properties
+  set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
+  set_property -dict [ list \
+   CONFIG.IN0_WIDTH {5} \
+   CONFIG.NUM_PORTS {5} \
+ ] $xlconcat_1
+
+  # Create port connections
+  connect_bd_net -net In4_1 [get_bd_pins In4] [get_bd_pins xlconcat_1/In4]
+  connect_bd_net -net adc_clock_1 [get_bd_pins adc_clock] [get_bd_pins xlconcat_1/In0]
+  connect_bd_net -net labtools_fmeter_0_F0 [get_bd_pins labtools_fmeter_0/F0] [get_bd_pins vio_0/probe_in0]
+  connect_bd_net -net labtools_fmeter_0_F1 [get_bd_pins labtools_fmeter_0/F1] [get_bd_pins vio_0/probe_in1]
+  connect_bd_net -net labtools_fmeter_0_F2 [get_bd_pins labtools_fmeter_0/F2] [get_bd_pins vio_0/probe_in2]
+  connect_bd_net -net labtools_fmeter_0_F3 [get_bd_pins labtools_fmeter_0/F3] [get_bd_pins vio_0/probe_in3]
+  connect_bd_net -net labtools_fmeter_0_F4 [get_bd_pins labtools_fmeter_0/F4] [get_bd_pins vio_0/probe_in4]
+  connect_bd_net -net labtools_fmeter_0_F5 [get_bd_pins labtools_fmeter_0/F5] [get_bd_pins vio_0/probe_in5]
+  connect_bd_net -net labtools_fmeter_0_F6 [get_bd_pins labtools_fmeter_0/F6] [get_bd_pins vio_0/probe_in6]
+  connect_bd_net -net labtools_fmeter_0_F7 [get_bd_pins labtools_fmeter_0/F7] [get_bd_pins vio_0/probe_in7]
+  connect_bd_net -net labtools_fmeter_0_F8 [get_bd_pins labtools_fmeter_0/F8] [get_bd_pins vio_0/probe_in8]
+  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins In1] [get_bd_pins xlconcat_1/In1]
+  connect_bd_net -net probe_in9_1 [get_bd_pins probe_in9] [get_bd_pins vio_0/probe_in9]
+  connect_bd_net -net processing_system7_1_fclk_clk0 [get_bd_pins refclk] [get_bd_pins labtools_fmeter_0/refclk] [get_bd_pins vio_0/clk] [get_bd_pins xlconcat_1/In2]
+  connect_bd_net -net processing_system7_1_fclk_clk1 [get_bd_pins FCLK_CLK1] [get_bd_pins xlconcat_1/In3]
+  connect_bd_net -net vio_0_probe_out0 [get_bd_pins VCO_PWR_EN] [get_bd_pins vio_0/probe_out0]
+  connect_bd_net -net xlconcat_1_dout [get_bd_pins labtools_fmeter_0/fin] [get_bd_pins xlconcat_1/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+# Hierarchical cell: adc_ila
+proc create_hier_cell_adc_ila { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_adc_ila() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I -from 4 -to 0 adc_clock
+  create_bd_pin -dir I -from 13 -to 0 adc_data_in_a
+  create_bd_pin -dir I -from 13 -to 0 adc_data_in_b
+  create_bd_pin -dir I -from 13 -to 0 adc_data_in_c
+  create_bd_pin -dir I -from 13 -to 0 adc_data_in_d
+  create_bd_pin -dir I -type clk clk
+
+  # Create instance: system_ila_1, and set properties
+  set system_ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_1 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_1
+
+  # Create instance: system_ila_2, and set properties
+  set system_ila_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_2 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_2
+
+  # Create instance: system_ila_3, and set properties
+  set system_ila_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_3 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_3
+
+  # Create instance: system_ila_4, and set properties
+  set system_ila_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_4 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_4
+
+  # Create instance: system_ila_5, and set properties
+  set system_ila_5 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_5 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_5
+
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {0} \
+   CONFIG.DIN_TO {0} \
+   CONFIG.DIN_WIDTH {5} \
+ ] $xlslice_0
+
+  # Create instance: xlslice_1, and set properties
+  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {1} \
+   CONFIG.DIN_TO {1} \
+   CONFIG.DIN_WIDTH {5} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_1
+
+  # Create instance: xlslice_2, and set properties
+  set xlslice_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_2 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {2} \
+   CONFIG.DIN_TO {2} \
+   CONFIG.DIN_WIDTH {5} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_2
+
+  # Create instance: xlslice_3, and set properties
+  set xlslice_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_3 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {3} \
+   CONFIG.DIN_TO {3} \
+   CONFIG.DIN_WIDTH {5} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_3
+
+  # Create port connections
+  connect_bd_net -net adc_clock_1 [get_bd_pins adc_clock] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din] [get_bd_pins xlslice_3/Din]
+  connect_bd_net -net adc_data_in_a_1 [get_bd_pins adc_data_in_a] [get_bd_pins system_ila_2/probe0]
+  connect_bd_net -net adc_data_in_b_1 [get_bd_pins adc_data_in_b] [get_bd_pins system_ila_3/probe0]
+  connect_bd_net -net adc_data_in_c_1 [get_bd_pins adc_data_in_c] [get_bd_pins system_ila_4/probe0]
+  connect_bd_net -net adc_data_in_d_1 [get_bd_pins adc_data_in_d] [get_bd_pins system_ila_1/probe0] [get_bd_pins system_ila_5/probe0]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_d_1]
+  connect_bd_net -net clk_1 [get_bd_pins clk] [get_bd_pins system_ila_5/clk]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins system_ila_1/clk] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_1_Dout [get_bd_pins system_ila_2/clk] [get_bd_pins xlslice_1/Dout]
+  connect_bd_net -net xlslice_2_Dout [get_bd_pins system_ila_3/clk] [get_bd_pins xlslice_2/Dout]
+  connect_bd_net -net xlslice_3_Dout [get_bd_pins system_ila_4/clk] [get_bd_pins xlslice_3/Dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+ 
   # Create interface ports
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
   set DDR3 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR3 ]
@@ -326,7 +547,7 @@ proc create_root_design { parentCell } {
   set SYS_CLK [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 SYS_CLK ]
   set gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio ]
 
-  set adc_clock [ create_bd_port -dir I -from 4 -to 0 adc_clock ]
+  set VCO_PWR_EN [ create_bd_port -dir O -from 0 -to 0 VCO_PWR_EN ]
   set spi_sck_i [ create_bd_port -dir I spi_sck_i ]
   set spi_sck_o [ create_bd_port -dir O spi_sck_o ]
   set spi_sdi_i [ create_bd_port -dir I spi_sdi_i ]
@@ -334,7 +555,17 @@ proc create_root_design { parentCell } {
   set spi_sdo_o [ create_bd_port -dir O spi_sdo_o ]
   set spi_ss_i [ create_bd_port -dir I -from 7 -to 0 spi_ss_i ]
   set spi_ss_o [ create_bd_port -dir O -from 7 -to 0 spi_ss_o ]
-  set spi_status [ create_bd_port -dir I spi_status ]
+  set Clk200 [ create_bd_port -dir O -type clk Clk200 ]
+  set adc_clear_error [ create_bd_port -dir O -from 3 -to 0 adc_clear_error ]
+  set adc_clock [ create_bd_port -dir I -from 4 -to 0 adc_clock ]
+  set adc_data_in_a [ create_bd_port -dir I -from 13 -to 0 adc_data_in_a ]
+  set adc_data_in_b [ create_bd_port -dir I -from 13 -to 0 adc_data_in_b ]
+  set adc_data_in_c [ create_bd_port -dir I -from 13 -to 0 adc_data_in_c ]
+  set adc_data_in_d [ create_bd_port -dir I -from 13 -to 0 adc_data_in_d ]
+  set adc_delay_dec [ create_bd_port -dir O -from 3 -to 0 adc_delay_dec ]
+  set adc_delay_inc [ create_bd_port -dir O -from 3 -to 0 adc_delay_inc ]
+  set adc_error [ create_bd_port -dir I -from 3 -to 0 adc_error ]
+  set adc_valid [ create_bd_port -dir I -from 3 -to 0 adc_valid ]
   
   # Create ports
   set FCLK_CLK1 [ create_bd_port -dir O -type clk FCLK_CLK1 ]
@@ -360,25 +591,32 @@ proc create_root_design { parentCell } {
    CONFIG.C_USE_STARTUP {0} \
    CONFIG.C_USE_STARTUP_INT {0} \
  ] $axi_quad_spi_1
+  # Create instance: clk_wiz, and set properties
+  set clk_wiz [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz ]
+  set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {114.829} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {200} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {5.000} \
+ ] $clk_wiz
  
-connect_bd_net -net spi_sck_i_1 [get_bd_ports spi_sck_i] [get_bd_pins axi_quad_spi_1/sck_i]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sck_i_1]
-connect_bd_net -net spi_sdi_i_1 [get_bd_ports spi_sdi_i] [get_bd_pins axi_quad_spi_1/io1_i]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdi_i_1]
-connect_bd_net -net spi_sdo_i_1 [get_bd_ports spi_sdo_i] [get_bd_pins axi_quad_spi_1/io0_i]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdo_i_1]
-connect_bd_net -net spi_sdo_iss_i_1 [get_bd_ports spi_ss_i] [get_bd_pins axi_quad_spi_1/ss_i] 
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdo_iss_i_1]
-connect_bd_net -net axi_quad_spi_1_io0_o [get_bd_ports spi_sdo_o] [get_bd_pins axi_quad_spi_1/io0_o] 
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_io0_o]
-  connect_bd_net -net axi_quad_spi_1_ip2intc_irpt [get_bd_pins axi_quad_spi_1/ip2intc_irpt]
-  connect_bd_net -net axi_quad_spi_1_sck_o [get_bd_ports spi_sck_o] [get_bd_pins axi_quad_spi_1/sck_o] 
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_sck_o]
-  connect_bd_net -net axi_quad_spi_1_ss_o [get_bd_ports spi_ss_o] [get_bd_pins axi_quad_spi_1/ss_o] 
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_ss_o]
-connect_bd_net [get_bd_pins axi_quad_spi_1/ext_spi_clk] [get_bd_pins processing_system7_1/FCLK_CLK0]
 
+  create_hier_cell_adc_ila [current_bd_instance .] adc_ila
+  create_hier_cell_freq_counter [current_bd_instance .] freq_counter
 
+  # Create instance: system_ila_0, and set properties
+  set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {7} \
+   CONFIG.C_PROBE0_TYPE {0} \
+   CONFIG.C_PROBE1_TYPE {0} \
+   CONFIG.C_PROBE2_TYPE {0} \
+   CONFIG.C_PROBE3_TYPE {0} \
+   CONFIG.C_PROBE4_TYPE {0} \
+   CONFIG.C_PROBE5_TYPE {0} \
+   CONFIG.C_PROBE6_TYPE {0} \
+ ] $system_ila_0
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
 
   set_property -dict [ list \
 CONFIG.BOARD_MIG_PARAM {Custom} \
@@ -797,9 +1035,16 @@ CONFIG.ENABLE_TEMP_BUS {true} \
 CONFIG.INTERFACE_SELECTION {Enable_AXI} \
 CONFIG.TEMPERATURE_ALARM_OT_TRIGGER {85} \
  ] $xadc_wiz_0
+# Create instance: vio_0, and set properties
+  set vio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 vio_0 ]
+  set_property -dict [ list \
+   CONFIG.C_NUM_PROBE_IN {6} \
+   CONFIG.C_NUM_PROBE_OUT {3} \
+   CONFIG.C_PROBE_OUT0_WIDTH {4} \
+   CONFIG.C_PROBE_OUT1_WIDTH {4} \
+   CONFIG.C_PROBE_OUT2_WIDTH {4} \
+ ] $vio_0
 
-  # Create instance: xlconcat_0, and set properties
-  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat xlconcat_0 ]
 
   # Create interface connections
   connect_bd_intf_net -intf_net SYS_CLK_1 [get_bd_intf_ports SYS_CLK] [get_bd_intf_pins SDRAM/SYS_CLK]
@@ -808,34 +1053,81 @@ CONFIG.TEMPERATURE_ALARM_OT_TRIGGER {85} \
   connect_bd_intf_net -intf_net processing_system7_1_M_AXI_GP0 [get_bd_intf_pins processing_system7_1/M_AXI_GP0] [get_bd_intf_pins processing_system7_1_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net processing_system7_1_axi_periph_M00_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins processing_system7_1_axi_periph/M00_AXI]
   connect_bd_intf_net -intf_net processing_system7_1_axi_periph_M01_AXI [get_bd_intf_pins processing_system7_1_axi_periph/M01_AXI] [get_bd_intf_pins xadc_wiz_0/s_axi_lite]
+  connect_bd_intf_net -intf_net processing_system7_1_axi_periph_M02_AXI [get_bd_intf_pins axi_quad_spi_1/AXI_LITE] [get_bd_intf_pins processing_system7_1_axi_periph/M02_AXI]
   connect_bd_intf_net -intf_net processing_system7_1_axi_periph_M03_AXI [get_bd_intf_pins SDRAM/S_AXI] [get_bd_intf_pins processing_system7_1_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net processing_system7_1_ddr [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_1/DDR]
   connect_bd_intf_net -intf_net processing_system7_1_fixed_io [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_1/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_1_iic_0 [get_bd_intf_ports IIC_0] [get_bd_intf_pins processing_system7_1/IIC_0]
+#connect_bd_net -net spi_sck_i_1 [get_bd_ports spi_sck_i] [get_bd_pins axi_quad_spi_1/sck_i]
+#set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sck_i_1]
+#connect_bd_net -net spi_sdi_i_1 [get_bd_ports spi_sdi_i] [get_bd_pins axi_quad_spi_1/io1_i]
+#set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdi_i_1]
+#connect_bd_net -net spi_sdo_i_1 [get_bd_ports spi_sdo_i] [get_bd_pins axi_quad_spi_1/io0_i]
+#set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdo_i_1]
+#connect_bd_net -net spi_sdo_iss_i_1 [get_bd_ports spi_ss_i] [get_bd_pins axi_quad_spi_1/ss_i] 
+#set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdo_iss_i_1]
+#connect_bd_net -net axi_quad_spi_1_io0_o [get_bd_ports spi_sdo_o] [get_bd_pins axi_quad_spi_1/io0_o] 
+#  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_io0_o]
+#  connect_bd_net -net axi_quad_spi_1_ip2intc_irpt [get_bd_pins axi_quad_spi_1/ip2intc_irpt]
+#  connect_bd_net -net axi_quad_spi_1_sck_o [get_bd_ports spi_sck_o] [get_bd_pins axi_quad_spi_1/sck_o] 
+#  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_sck_o]
+#  connect_bd_net -net axi_quad_spi_1_ss_o [get_bd_ports spi_ss_o] [get_bd_pins axi_quad_spi_1/ss_o] 
+ # set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_ss_o]
+#connect_bd_net [get_bd_pins axi_quad_spi_1/ext_spi_clk] [get_bd_pins processing_system7_1/FCLK_CLK0]
 
   # Create port connections
   connect_bd_net -net In0_1 [get_bd_ports IRQ0] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net In1_1 [get_bd_ports IRQ1] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net SDIO0_CDN_1 [get_bd_ports SDIO0_CDN] [get_bd_pins processing_system7_1/SDIO0_CDN]
   connect_bd_net -net SDIO0_WP_1 [get_bd_ports SDIO0_WP] [get_bd_pins processing_system7_1/SDIO0_WP]
+  connect_bd_net -net adc_clock_1 [get_bd_ports adc_clock] [get_bd_pins adc_ila/adc_clock] [get_bd_pins freq_counter/adc_clock]
+  connect_bd_net -net adc_data_in_a_1 [get_bd_ports adc_data_in_a] [get_bd_pins adc_ila/adc_data_in_a] [get_bd_pins vio_0/probe_in0]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_a_1]
+  connect_bd_net -net adc_data_in_b_1 [get_bd_ports adc_data_in_b] [get_bd_pins adc_ila/adc_data_in_b] [get_bd_pins vio_0/probe_in1]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_b_1]
+  connect_bd_net -net adc_data_in_c_1 [get_bd_ports adc_data_in_c] [get_bd_pins adc_ila/adc_data_in_c] [get_bd_pins vio_0/probe_in2]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_c_1]
+  connect_bd_net -net adc_data_in_d_1 [get_bd_ports adc_data_in_d] [get_bd_pins adc_ila/adc_data_in_d] [get_bd_pins vio_0/probe_in3]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_d_1]
+  connect_bd_net -net adc_error_1 [get_bd_ports adc_error] [get_bd_pins vio_0/probe_in5]
+  connect_bd_net -net adc_valid_1 [get_bd_ports adc_valid] [get_bd_pins vio_0/probe_in4]
+  connect_bd_net -net axi_quad_spi_1_io0_o [get_bd_ports spi_sdo_o] [get_bd_pins axi_quad_spi_1/io0_o] [get_bd_pins system_ila_0/probe4]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_io0_o]
+  connect_bd_net -net axi_quad_spi_1_sck_o [get_bd_ports spi_sck_o] [get_bd_pins axi_quad_spi_1/sck_o] [get_bd_pins system_ila_0/probe5]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_sck_o]
+  connect_bd_net -net axi_quad_spi_1_ss_o [get_bd_ports spi_ss_o] [get_bd_pins axi_quad_spi_1/ss_o] [get_bd_pins system_ila_0/probe6]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_ss_o]
+  connect_bd_net -net clk_wiz_clk_out1 [get_bd_ports Clk200] [get_bd_pins adc_ila/clk] [get_bd_pins clk_wiz/clk_out1] [get_bd_pins freq_counter/In4] [get_bd_pins vio_0/clk]
+  connect_bd_net -net freq_counter_VCO_PWR_EN [get_bd_ports VCO_PWR_EN] [get_bd_pins freq_counter/VCO_PWR_EN]
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_pins SDRAM/mmcm_locked] [get_bd_pins rst_mig_7series_0_100M/dcm_locked]
-  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins SDRAM/ui_clk] [get_bd_pins processing_system7_1_axi_periph/M03_ACLK] [get_bd_pins rst_mig_7series_0_100M/slowest_sync_clk]
+  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins SDRAM/ui_clk] [get_bd_pins freq_counter/In1] [get_bd_pins processing_system7_1_axi_periph/M03_ACLK] [get_bd_pins rst_mig_7series_0_100M/slowest_sync_clk]
   connect_bd_net -net mig_7series_0_ui_clk_sync_rst [get_bd_pins SDRAM/ui_clk_sync_rst] [get_bd_pins rst_mig_7series_0_100M/ext_reset_in]
   connect_bd_net -net proc_sys_reset_interconnect_aresetn [get_bd_pins proc_sys_reset/interconnect_aresetn] [get_bd_pins processing_system7_1_axi_periph/ARESETN]
-  connect_bd_net -net proc_sys_reset_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins proc_sys_reset/peripheral_aresetn] [get_bd_pins processing_system7_1_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_1_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_1_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_1_axi_periph/S00_ARESETN] [get_bd_pins xadc_wiz_0/s_axi_aresetn]
-  connect_bd_net -net processing_system7_1_fclk_clk0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins proc_sys_reset/slowest_sync_clk] [get_bd_pins processing_system7_1/FCLK_CLK0] [get_bd_pins processing_system7_1/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_1_axi_periph/ACLK] [get_bd_pins processing_system7_1_axi_periph/M00_ACLK] [get_bd_pins processing_system7_1_axi_periph/M01_ACLK] [get_bd_pins processing_system7_1_axi_periph/M02_ACLK] [get_bd_pins processing_system7_1_axi_periph/S00_ACLK] [get_bd_pins xadc_wiz_0/s_axi_aclk]
-  connect_bd_net -net processing_system7_1_fclk_clk1 [get_bd_ports FCLK_CLK1] [get_bd_pins processing_system7_1/FCLK_CLK1]
+  connect_bd_net -net proc_sys_reset_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_quad_spi_1/s_axi_aresetn] [get_bd_pins proc_sys_reset/peripheral_aresetn] [get_bd_pins processing_system7_1_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_1_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_1_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_1_axi_periph/S00_ARESETN] [get_bd_pins xadc_wiz_0/s_axi_aresetn]
+  connect_bd_net -net proc_sys_reset_peripheral_reset [get_bd_pins clk_wiz/reset] [get_bd_pins proc_sys_reset/peripheral_reset]
+  connect_bd_net -net processing_system7_1_fclk_clk0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_quad_spi_1/ext_spi_clk] [get_bd_pins axi_quad_spi_1/s_axi_aclk] [get_bd_pins clk_wiz/clk_in1] [get_bd_pins freq_counter/refclk] [get_bd_pins proc_sys_reset/slowest_sync_clk] [get_bd_pins processing_system7_1/FCLK_CLK0] [get_bd_pins processing_system7_1/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_1_axi_periph/ACLK] [get_bd_pins processing_system7_1_axi_periph/M00_ACLK] [get_bd_pins processing_system7_1_axi_periph/M01_ACLK] [get_bd_pins processing_system7_1_axi_periph/M02_ACLK] [get_bd_pins processing_system7_1_axi_periph/S00_ACLK] [get_bd_pins system_ila_0/clk] [get_bd_pins xadc_wiz_0/s_axi_aclk]
+  connect_bd_net -net processing_system7_1_fclk_clk1 [get_bd_ports FCLK_CLK1] [get_bd_pins freq_counter/FCLK_CLK1] [get_bd_pins processing_system7_1/FCLK_CLK1]
   connect_bd_net -net processing_system7_1_fclk_reset0_n [get_bd_ports RESET_N] [get_bd_pins SDRAM/sys_rst] [get_bd_pins proc_sys_reset/ext_reset_in] [get_bd_pins processing_system7_1/FCLK_RESET0_N]
   connect_bd_net -net rst_mig_7series_0_100M_peripheral_aresetn [get_bd_pins SDRAM/aresetn] [get_bd_pins processing_system7_1_axi_periph/M03_ARESETN] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn]
-  connect_bd_net -net xadc_wiz_0_temp_out [get_bd_pins SDRAM/device_temp_i] [get_bd_pins xadc_wiz_0/temp_out]
+  connect_bd_net -net spi_sck_i_1 [get_bd_ports spi_sck_i] [get_bd_pins axi_quad_spi_1/sck_i] [get_bd_pins system_ila_0/probe0]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sck_i_1]
+  connect_bd_net -net spi_sdi_i_1 [get_bd_ports spi_sdi_i] [get_bd_pins axi_quad_spi_1/io1_i] [get_bd_pins system_ila_0/probe1]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdi_i_1]
+  connect_bd_net -net spi_sdo_i_1 [get_bd_ports spi_sdo_i] [get_bd_pins axi_quad_spi_1/io0_i] [get_bd_pins system_ila_0/probe2]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdo_i_1]
+  connect_bd_net -net spi_sdo_iss_i_1 [get_bd_ports spi_ss_i] [get_bd_pins axi_quad_spi_1/ss_i] [get_bd_pins system_ila_0/probe3]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdo_iss_i_1]
+  connect_bd_net -net vio_0_probe_out0 [get_bd_ports adc_delay_inc] [get_bd_pins vio_0/probe_out0]
+  connect_bd_net -net vio_0_probe_out1 [get_bd_ports adc_delay_dec] [get_bd_pins vio_0/probe_out1]
+  connect_bd_net -net vio_0_probe_out2 [get_bd_ports adc_clear_error] [get_bd_pins vio_0/probe_out2]
+  connect_bd_net -net xadc_wiz_0_temp_out [get_bd_pins SDRAM/device_temp_i] [get_bd_pins freq_counter/probe_in9] [get_bd_pins xadc_wiz_0/temp_out]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_1/IRQ_F2P] [get_bd_pins xlconcat_0/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_1_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41E00000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs axi_quad_spi_1/AXI_LITE/Reg] SEG_axi_quad_spi_1_Reg
   create_bd_addr_seg -range 0x10000000 -offset 0x50000000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs SDRAM/memmap/memaddr] SEG_mig_7series_0_memaddr
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs xadc_wiz_0/s_axi_lite/Reg] SEG_xadc_wiz_0_Reg
-
-
   # Restore current instance
   current_bd_instance $oldCurInst
 

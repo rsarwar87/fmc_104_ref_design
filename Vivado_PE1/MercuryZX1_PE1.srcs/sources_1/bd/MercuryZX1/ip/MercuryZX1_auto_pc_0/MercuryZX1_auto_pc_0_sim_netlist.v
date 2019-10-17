@@ -1,18 +1,18 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Wed Oct 16 17:13:46 2019
+// Date        : Thu Oct 17 12:30:42 2019
 // Host        : ukaea-fpga running 64-bit KDE neon User Edition 5.16
 // Command     : write_verilog -force -mode funcsim -rename_top MercuryZX1_auto_pc_0 -prefix
-//               MercuryZX1_auto_pc_0_ MercuryZX1_auto_pc_2_sim_netlist.v
-// Design      : MercuryZX1_auto_pc_2
+//               MercuryZX1_auto_pc_0_ MercuryZX1_auto_pc_0_sim_netlist.v
+// Design      : MercuryZX1_auto_pc_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z030fbg676-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "MercuryZX1_auto_pc_2,axi_protocol_converter_v2_1_19_axi_protocol_converter,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "axi_protocol_converter_v2_1_19_axi_protocol_converter,Vivado 2019.1" *) 
+(* CHECK_LICENSE_TYPE = "MercuryZX1_auto_pc_0,axi_protocol_converter_v2_1_19_axi_protocol_converter,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "axi_protocol_converter_v2_1_19_axi_protocol_converter,Vivado 2019.1" *) 
 (* NotValidForBitStream *)
 module MercuryZX1_auto_pc_0
    (aclk,

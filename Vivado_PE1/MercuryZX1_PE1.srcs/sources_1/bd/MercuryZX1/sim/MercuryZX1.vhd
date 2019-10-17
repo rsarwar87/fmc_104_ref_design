@@ -1,12 +1,152 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
---Date        : Thu Oct 17 08:10:03 2019
+--Date        : Thu Oct 17 12:31:53 2019
 --Host        : ukaea-fpga running 64-bit KDE neon User Edition 5.16
 --Command     : generate_target MercuryZX1.bd
 --Design      : MercuryZX1
 --Purpose     : IP block netlist
 ----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity adc_ila_imp_SP6JT7 is
+  port (
+    adc_clock : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    adc_data_in_a : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    adc_data_in_b : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    adc_data_in_c : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    adc_data_in_d : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    clk : in STD_LOGIC
+  );
+end adc_ila_imp_SP6JT7;
+
+architecture STRUCTURE of adc_ila_imp_SP6JT7 is
+  component MercuryZX1_system_ila_1_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
+  );
+  end component MercuryZX1_system_ila_1_0;
+  component MercuryZX1_system_ila_2_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
+  );
+  end component MercuryZX1_system_ila_2_0;
+  component MercuryZX1_system_ila_3_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
+  );
+  end component MercuryZX1_system_ila_3_0;
+  component MercuryZX1_system_ila_4_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
+  );
+  end component MercuryZX1_system_ila_4_0;
+  component MercuryZX1_system_ila_5_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
+  );
+  end component MercuryZX1_system_ila_5_0;
+  component MercuryZX1_xlslice_0_0 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component MercuryZX1_xlslice_0_0;
+  component MercuryZX1_xlslice_1_0 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component MercuryZX1_xlslice_1_0;
+  component MercuryZX1_xlslice_2_0 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component MercuryZX1_xlslice_2_0;
+  component MercuryZX1_xlslice_3_0 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component MercuryZX1_xlslice_3_0;
+  signal adc_clock_1 : STD_LOGIC_VECTOR ( 4 downto 0 );
+  signal adc_data_in_a_1 : STD_LOGIC_VECTOR ( 13 downto 0 );
+  attribute DEBUG : string;
+  attribute DEBUG of adc_data_in_a_1 : signal is "true";
+  signal adc_data_in_b_1 : STD_LOGIC_VECTOR ( 13 downto 0 );
+  attribute DEBUG of adc_data_in_b_1 : signal is "true";
+  signal adc_data_in_c_1 : STD_LOGIC_VECTOR ( 13 downto 0 );
+  attribute DEBUG of adc_data_in_c_1 : signal is "true";
+  signal adc_data_in_d_1 : STD_LOGIC_VECTOR ( 13 downto 0 );
+  attribute DEBUG of adc_data_in_d_1 : signal is "true";
+  attribute MARK_DEBUG : boolean;
+  attribute MARK_DEBUG of adc_data_in_d_1 : signal is std.standard.true;
+  signal clk_1 : STD_LOGIC;
+  signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xlslice_1_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xlslice_2_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xlslice_3_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+begin
+  adc_clock_1(4 downto 0) <= adc_clock(4 downto 0);
+  adc_data_in_a_1(13 downto 0) <= adc_data_in_a(13 downto 0);
+  adc_data_in_b_1(13 downto 0) <= adc_data_in_b(13 downto 0);
+  adc_data_in_c_1(13 downto 0) <= adc_data_in_c(13 downto 0);
+  adc_data_in_d_1(13 downto 0) <= adc_data_in_d(13 downto 0);
+  clk_1 <= clk;
+system_ila_1: component MercuryZX1_system_ila_1_0
+     port map (
+      clk => xlslice_0_Dout(0),
+      probe0(13 downto 0) => adc_data_in_d_1(13 downto 0)
+    );
+system_ila_2: component MercuryZX1_system_ila_2_0
+     port map (
+      clk => xlslice_1_Dout(0),
+      probe0(13 downto 0) => adc_data_in_a_1(13 downto 0)
+    );
+system_ila_3: component MercuryZX1_system_ila_3_0
+     port map (
+      clk => xlslice_2_Dout(0),
+      probe0(13 downto 0) => adc_data_in_b_1(13 downto 0)
+    );
+system_ila_4: component MercuryZX1_system_ila_4_0
+     port map (
+      clk => xlslice_3_Dout(0),
+      probe0(13 downto 0) => adc_data_in_c_1(13 downto 0)
+    );
+system_ila_5: component MercuryZX1_system_ila_5_0
+     port map (
+      clk => clk_1,
+      probe0(13 downto 0) => adc_data_in_d_1(13 downto 0)
+    );
+xlslice_0: component MercuryZX1_xlslice_0_0
+     port map (
+      Din(4 downto 0) => adc_clock_1(4 downto 0),
+      Dout(0) => xlslice_0_Dout(0)
+    );
+xlslice_1: component MercuryZX1_xlslice_1_0
+     port map (
+      Din(4 downto 0) => adc_clock_1(4 downto 0),
+      Dout(0) => xlslice_1_Dout(0)
+    );
+xlslice_2: component MercuryZX1_xlslice_2_0
+     port map (
+      Din(4 downto 0) => adc_clock_1(4 downto 0),
+      Dout(0) => xlslice_2_Dout(0)
+    );
+xlslice_3: component MercuryZX1_xlslice_3_0
+     port map (
+      Din(4 downto 0) => adc_clock_1(4 downto 0),
+      Dout(0) => xlslice_3_Dout(0)
+    );
+end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
@@ -24,32 +164,6 @@ entity freq_counter_imp_8UHE7K is
 end freq_counter_imp_8UHE7K;
 
 architecture STRUCTURE of freq_counter_imp_8UHE7K is
-  component MercuryZX1_xlconcat_1_0 is
-  port (
-    In0 : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    dout : out STD_LOGIC_VECTOR ( 8 downto 0 )
-  );
-  end component MercuryZX1_xlconcat_1_0;
-  component MercuryZX1_vio_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe_in0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in4 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in5 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in6 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in7 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in8 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe_in9 : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    probe_out0 : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component MercuryZX1_vio_0_0;
   component MercuryZX1_labtools_fmeter_0_0 is
   port (
     refclk : in STD_LOGIC;
@@ -66,6 +180,32 @@ architecture STRUCTURE of freq_counter_imp_8UHE7K is
     update : out STD_LOGIC
   );
   end component MercuryZX1_labtools_fmeter_0_0;
+  component MercuryZX1_vio_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe_in0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in4 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in5 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in6 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in7 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in8 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe_in9 : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    probe_out0 : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component MercuryZX1_vio_0_0;
+  component MercuryZX1_xlconcat_1_0 is
+  port (
+    In0 : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In4 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 8 downto 0 )
+  );
+  end component MercuryZX1_xlconcat_1_0;
   signal In4_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal adc_clock_1 : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal labtools_fmeter_0_F0 : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -3177,8 +3317,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
--- Enter Comments here
-  entity MercuryZX1 is
+entity MercuryZX1 is
   port (
     Clk200 : out STD_LOGIC;
     DDR3_addr : out STD_LOGIC_VECTOR ( 13 downto 0 );
@@ -3250,10 +3389,10 @@ use UNISIM.VCOMPONENTS.ALL;
     spi_ss_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     spi_ss_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of MercuryZX1 : entity is "MercuryZX1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=MercuryZX1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=36,numReposBlks=29,numNonXlnxBlks=1,numHierBlks=7,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""da_axi4_cnt""=1,""da_clkrst_cnt""=3,synth_mode=OOC_per_IP}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of MercuryZX1 : entity is "MercuryZX1.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of MercuryZX1 : entity is "MercuryZX1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=MercuryZX1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=37,numReposBlks=29,numNonXlnxBlks=1,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of MercuryZX1 : entity is "MercuryZX1.hwdef";
 end MercuryZX1;
 
 architecture STRUCTURE of MercuryZX1 is
@@ -3321,6 +3460,70 @@ architecture STRUCTURE of MercuryZX1 is
     aresetn : in STD_LOGIC
   );
   end component MercuryZX1_SDRAM_0;
+  component MercuryZX1_axi_quad_spi_1_0 is
+  port (
+    ext_spi_clk : in STD_LOGIC;
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    io0_i : in STD_LOGIC;
+    io0_o : out STD_LOGIC;
+    io0_t : out STD_LOGIC;
+    io1_i : in STD_LOGIC;
+    io1_o : out STD_LOGIC;
+    io1_t : out STD_LOGIC;
+    sck_i : in STD_LOGIC;
+    sck_o : out STD_LOGIC;
+    sck_t : out STD_LOGIC;
+    ss_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    ss_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    ss_t : out STD_LOGIC;
+    ip2intc_irpt : out STD_LOGIC
+  );
+  end component MercuryZX1_axi_quad_spi_1_0;
+  component MercuryZX1_clk_wiz_0 is
+  port (
+    reset : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
+    clk_out1 : out STD_LOGIC;
+    locked : out STD_LOGIC
+  );
+  end component MercuryZX1_clk_wiz_0;
+  component MercuryZX1_system_ila_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  end component MercuryZX1_system_ila_0_0;
+  component MercuryZX1_xlconcat_0_0 is
+  port (
+    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 1 downto 0 )
+  );
+  end component MercuryZX1_xlconcat_0_0;
   component MercuryZX1_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -3505,76 +3708,6 @@ architecture STRUCTURE of MercuryZX1 is
     temp_out : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   end component MercuryZX1_xadc_wiz_0_0;
-  component MercuryZX1_xlconcat_0_0 is
-  port (
-    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    dout : out STD_LOGIC_VECTOR ( 1 downto 0 )
-  );
-  end component MercuryZX1_xlconcat_0_0;
-  component MercuryZX1_axi_quad_spi_1_0 is
-  port (
-    ext_spi_clk : in STD_LOGIC;
-    s_axi_aclk : in STD_LOGIC;
-    s_axi_aresetn : in STD_LOGIC;
-    s_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    s_axi_awvalid : in STD_LOGIC;
-    s_axi_awready : out STD_LOGIC;
-    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_wvalid : in STD_LOGIC;
-    s_axi_wready : out STD_LOGIC;
-    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_bvalid : out STD_LOGIC;
-    s_axi_bready : in STD_LOGIC;
-    s_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    s_axi_arvalid : in STD_LOGIC;
-    s_axi_arready : out STD_LOGIC;
-    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_rvalid : out STD_LOGIC;
-    s_axi_rready : in STD_LOGIC;
-    io0_i : in STD_LOGIC;
-    io0_o : out STD_LOGIC;
-    io0_t : out STD_LOGIC;
-    io1_i : in STD_LOGIC;
-    io1_o : out STD_LOGIC;
-    io1_t : out STD_LOGIC;
-    sck_i : in STD_LOGIC;
-    sck_o : out STD_LOGIC;
-    sck_t : out STD_LOGIC;
-    ss_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    ss_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    ss_t : out STD_LOGIC;
-    ip2intc_irpt : out STD_LOGIC
-  );
-  end component MercuryZX1_axi_quad_spi_1_0;
-  component MercuryZX1_system_ila_0_1 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component MercuryZX1_system_ila_0_1;
-  component MercuryZX1_system_ila_1_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component MercuryZX1_system_ila_1_0;
-  component MercuryZX1_clk_wiz_0 is
-  port (
-    reset : in STD_LOGIC;
-    clk_in1 : in STD_LOGIC;
-    clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC
-  );
-  end component MercuryZX1_clk_wiz_0;
   component MercuryZX1_vio_0_1 is
   port (
     clk : in STD_LOGIC;
@@ -3589,54 +3722,6 @@ architecture STRUCTURE of MercuryZX1 is
     probe_out2 : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component MercuryZX1_vio_0_1;
-  component MercuryZX1_system_ila_2_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component MercuryZX1_system_ila_2_0;
-  component MercuryZX1_system_ila_3_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component MercuryZX1_system_ila_3_0;
-  component MercuryZX1_system_ila_4_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component MercuryZX1_system_ila_4_0;
-  component MercuryZX1_system_ila_5_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component MercuryZX1_system_ila_5_0;
-  component MercuryZX1_xlslice_0_0 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component MercuryZX1_xlslice_0_0;
-  component MercuryZX1_xlslice_0_1 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component MercuryZX1_xlslice_0_1;
-  component MercuryZX1_xlslice_1_0 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component MercuryZX1_xlslice_1_0;
-  component MercuryZX1_xlslice_1_1 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component MercuryZX1_xlslice_1_1;
   signal In0_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal In1_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal SDIO0_CDN_1 : STD_LOGIC;
@@ -3645,31 +3730,31 @@ architecture STRUCTURE of MercuryZX1 is
   signal SYS_CLK_1_CLK_P : STD_LOGIC;
   signal adc_clock_1 : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal adc_data_in_a_1 : STD_LOGIC_VECTOR ( 13 downto 0 );
+  attribute DEBUG : string;
+  attribute DEBUG of adc_data_in_a_1 : signal is "true";
   attribute MARK_DEBUG : boolean;
   attribute MARK_DEBUG of adc_data_in_a_1 : signal is std.standard.true;
-  attribute debug : string;
-  attribute debug of adc_data_in_a_1 : signal is "true";
   signal adc_data_in_b_1 : STD_LOGIC_VECTOR ( 13 downto 0 );
+  attribute DEBUG of adc_data_in_b_1 : signal is "true";
   attribute MARK_DEBUG of adc_data_in_b_1 : signal is std.standard.true;
-  attribute debug of adc_data_in_b_1 : signal is "true";
   signal adc_data_in_c_1 : STD_LOGIC_VECTOR ( 13 downto 0 );
+  attribute DEBUG of adc_data_in_c_1 : signal is "true";
   attribute MARK_DEBUG of adc_data_in_c_1 : signal is std.standard.true;
-  attribute debug of adc_data_in_c_1 : signal is "true";
   signal adc_data_in_d_1 : STD_LOGIC_VECTOR ( 13 downto 0 );
+  attribute DEBUG of adc_data_in_d_1 : signal is "true";
   attribute MARK_DEBUG of adc_data_in_d_1 : signal is std.standard.true;
-  attribute debug of adc_data_in_d_1 : signal is "true";
   signal adc_error_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal adc_valid_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_gpio_1_gpio_TRI_O : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal axi_quad_spi_1_io0_o : STD_LOGIC;
+  attribute DEBUG of axi_quad_spi_1_io0_o : signal is "true";
   attribute MARK_DEBUG of axi_quad_spi_1_io0_o : signal is std.standard.true;
-  attribute debug of axi_quad_spi_1_io0_o : signal is "true";
   signal axi_quad_spi_1_sck_o : STD_LOGIC;
+  attribute DEBUG of axi_quad_spi_1_sck_o : signal is "true";
   attribute MARK_DEBUG of axi_quad_spi_1_sck_o : signal is std.standard.true;
-  attribute debug of axi_quad_spi_1_sck_o : signal is "true";
   signal axi_quad_spi_1_ss_o : STD_LOGIC_VECTOR ( 7 downto 0 );
+  attribute DEBUG of axi_quad_spi_1_ss_o : signal is "true";
   attribute MARK_DEBUG of axi_quad_spi_1_ss_o : signal is std.standard.true;
-  attribute debug of axi_quad_spi_1_ss_o : signal is "true";
   signal clk_wiz_clk_out1 : STD_LOGIC;
   signal freq_counter_VCO_PWR_EN : STD_LOGIC_VECTOR ( 0 to 0 );
   signal mig_7series_0_DDR3_ADDR : STD_LOGIC_VECTOR ( 13 downto 0 );
@@ -3850,26 +3935,22 @@ architecture STRUCTURE of MercuryZX1 is
   signal processing_system7_1_iic_0_SDA_T : STD_LOGIC;
   signal rst_mig_7series_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal spi_sck_i_1 : STD_LOGIC;
+  attribute DEBUG of spi_sck_i_1 : signal is "true";
   attribute MARK_DEBUG of spi_sck_i_1 : signal is std.standard.true;
-  attribute debug of spi_sck_i_1 : signal is "true";
   signal spi_sdi_i_1 : STD_LOGIC;
+  attribute DEBUG of spi_sdi_i_1 : signal is "true";
   attribute MARK_DEBUG of spi_sdi_i_1 : signal is std.standard.true;
-  attribute debug of spi_sdi_i_1 : signal is "true";
   signal spi_sdo_i_1 : STD_LOGIC;
+  attribute DEBUG of spi_sdo_i_1 : signal is "true";
   attribute MARK_DEBUG of spi_sdo_i_1 : signal is std.standard.true;
-  attribute debug of spi_sdo_i_1 : signal is "true";
   signal spi_sdo_iss_i_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  attribute DEBUG of spi_sdo_iss_i_1 : signal is "true";
   attribute MARK_DEBUG of spi_sdo_iss_i_1 : signal is std.standard.true;
-  attribute debug of spi_sdo_iss_i_1 : signal is "true";
   signal vio_0_probe_out0 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal vio_0_probe_out1 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal vio_0_probe_out2 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal xadc_wiz_0_temp_out : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlslice_1_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlslice_2_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlslice_3_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_SDRAM_init_calib_complete_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_quad_spi_1_io0_t_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_quad_spi_1_io1_o_UNCONNECTED : STD_LOGIC;
@@ -3913,60 +3994,60 @@ architecture STRUCTURE of MercuryZX1 is
   signal NLW_xadc_wiz_0_vccpaux_alarm_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_vccpint_alarm_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_channel_out_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
-  attribute x_interface_info : string;
-  attribute x_interface_info of Clk200 : signal is "xilinx.com:signal:clock:1.0 CLK.CLK200 CLK";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of Clk200 : signal is "XIL_INTERFACENAME CLK.CLK200, CLK_DOMAIN /clk_wiz_clk_out1, FREQ_HZ 200000000, INSERT_VIP 0, PHASE 0.0";
-  attribute x_interface_info of DDR3_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 CAS_N";
-  attribute x_interface_info of DDR3_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 RAS_N";
-  attribute x_interface_info of DDR3_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 RESET_N";
-  attribute x_interface_info of DDR3_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 WE_N";
-  attribute x_interface_info of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
-  attribute x_interface_info of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
-  attribute x_interface_info of DDR_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_P";
-  attribute x_interface_info of DDR_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR CKE";
-  attribute x_interface_info of DDR_cs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CS_N";
-  attribute x_interface_info of DDR_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR ODT";
-  attribute x_interface_info of DDR_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RAS_N";
-  attribute x_interface_info of DDR_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RESET_N";
-  attribute x_interface_info of DDR_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
-  attribute x_interface_info of FCLK_CLK1 : signal is "xilinx.com:signal:clock:1.0 CLK.FCLK_CLK1 CLK";
-  attribute x_interface_parameter of FCLK_CLK1 : signal is "XIL_INTERFACENAME CLK.FCLK_CLK1, CLK_DOMAIN MercuryZX1_processing_system7_1_0_FCLK_CLK1, FREQ_HZ 50000000, INSERT_VIP 0, PHASE 0.000";
-  attribute x_interface_info of FIXED_IO_ddr_vrn : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN";
-  attribute x_interface_parameter of FIXED_IO_ddr_vrn : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
-  attribute x_interface_info of FIXED_IO_ddr_vrp : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP";
-  attribute x_interface_info of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
-  attribute x_interface_info of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
-  attribute x_interface_info of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
-  attribute x_interface_info of IIC_0_scl_i : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_I";
-  attribute x_interface_info of IIC_0_scl_o : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_O";
-  attribute x_interface_info of IIC_0_scl_t : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_T";
-  attribute x_interface_info of IIC_0_sda_i : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_I";
-  attribute x_interface_info of IIC_0_sda_o : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_O";
-  attribute x_interface_info of IIC_0_sda_t : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_T";
-  attribute x_interface_info of SYS_CLK_clk_n : signal is "xilinx.com:interface:diff_clock:1.0 SYS_CLK CLK_N";
-  attribute x_interface_parameter of SYS_CLK_clk_n : signal is "XIL_INTERFACENAME SYS_CLK, CAN_DEBUG false, FREQ_HZ 100000000";
-  attribute x_interface_info of SYS_CLK_clk_p : signal is "xilinx.com:interface:diff_clock:1.0 SYS_CLK CLK_P";
-  attribute x_interface_info of DDR3_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR3 ADDR";
-  attribute x_interface_parameter of DDR3_addr : signal is "XIL_INTERFACENAME DDR3, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
-  attribute x_interface_info of DDR3_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR3 BA";
-  attribute x_interface_info of DDR3_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 CK_N";
-  attribute x_interface_info of DDR3_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR3 CK_P";
-  attribute x_interface_info of DDR3_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR3 CKE";
-  attribute x_interface_info of DDR3_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR3 DM";
-  attribute x_interface_info of DDR3_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR3 DQ";
-  attribute x_interface_info of DDR3_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 DQS_N";
-  attribute x_interface_info of DDR3_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR3 DQS_P";
-  attribute x_interface_info of DDR3_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR3 ODT";
-  attribute x_interface_info of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
-  attribute x_interface_parameter of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
-  attribute x_interface_info of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
-  attribute x_interface_info of DDR_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
-  attribute x_interface_info of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
-  attribute x_interface_info of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
-  attribute x_interface_info of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
-  attribute x_interface_info of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
-  attribute x_interface_info of gpio_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio TRI_O";
+  attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of Clk200 : signal is "xilinx.com:signal:clock:1.0 CLK.CLK200 CLK";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of Clk200 : signal is "XIL_INTERFACENAME CLK.CLK200, CLK_DOMAIN /clk_wiz_clk_out1, FREQ_HZ 200000000, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_INFO of DDR3_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 CAS_N";
+  attribute X_INTERFACE_INFO of DDR3_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 RAS_N";
+  attribute X_INTERFACE_INFO of DDR3_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 RESET_N";
+  attribute X_INTERFACE_INFO of DDR3_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 WE_N";
+  attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
+  attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
+  attribute X_INTERFACE_INFO of DDR_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_P";
+  attribute X_INTERFACE_INFO of DDR_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR CKE";
+  attribute X_INTERFACE_INFO of DDR_cs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CS_N";
+  attribute X_INTERFACE_INFO of DDR_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR ODT";
+  attribute X_INTERFACE_INFO of DDR_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RAS_N";
+  attribute X_INTERFACE_INFO of DDR_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RESET_N";
+  attribute X_INTERFACE_INFO of DDR_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
+  attribute X_INTERFACE_INFO of FCLK_CLK1 : signal is "xilinx.com:signal:clock:1.0 CLK.FCLK_CLK1 CLK";
+  attribute X_INTERFACE_PARAMETER of FCLK_CLK1 : signal is "XIL_INTERFACENAME CLK.FCLK_CLK1, CLK_DOMAIN MercuryZX1_processing_system7_1_0_FCLK_CLK1, FREQ_HZ 50000000, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_INFO of FIXED_IO_ddr_vrn : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN";
+  attribute X_INTERFACE_PARAMETER of FIXED_IO_ddr_vrn : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
+  attribute X_INTERFACE_INFO of FIXED_IO_ddr_vrp : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
+  attribute X_INTERFACE_INFO of IIC_0_scl_i : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_I";
+  attribute X_INTERFACE_INFO of IIC_0_scl_o : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_O";
+  attribute X_INTERFACE_INFO of IIC_0_scl_t : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_T";
+  attribute X_INTERFACE_INFO of IIC_0_sda_i : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_I";
+  attribute X_INTERFACE_INFO of IIC_0_sda_o : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_O";
+  attribute X_INTERFACE_INFO of IIC_0_sda_t : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_T";
+  attribute X_INTERFACE_INFO of SYS_CLK_clk_n : signal is "xilinx.com:interface:diff_clock:1.0 SYS_CLK CLK_N";
+  attribute X_INTERFACE_PARAMETER of SYS_CLK_clk_n : signal is "XIL_INTERFACENAME SYS_CLK, CAN_DEBUG false, FREQ_HZ 100000000";
+  attribute X_INTERFACE_INFO of SYS_CLK_clk_p : signal is "xilinx.com:interface:diff_clock:1.0 SYS_CLK CLK_P";
+  attribute X_INTERFACE_INFO of DDR3_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR3 ADDR";
+  attribute X_INTERFACE_PARAMETER of DDR3_addr : signal is "XIL_INTERFACENAME DDR3, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
+  attribute X_INTERFACE_INFO of DDR3_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR3 BA";
+  attribute X_INTERFACE_INFO of DDR3_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 CK_N";
+  attribute X_INTERFACE_INFO of DDR3_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR3 CK_P";
+  attribute X_INTERFACE_INFO of DDR3_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR3 CKE";
+  attribute X_INTERFACE_INFO of DDR3_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR3 DM";
+  attribute X_INTERFACE_INFO of DDR3_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR3 DQ";
+  attribute X_INTERFACE_INFO of DDR3_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR3 DQS_N";
+  attribute X_INTERFACE_INFO of DDR3_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR3 DQS_P";
+  attribute X_INTERFACE_INFO of DDR3_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR3 ODT";
+  attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
+  attribute X_INTERFACE_PARAMETER of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
+  attribute X_INTERFACE_INFO of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
+  attribute X_INTERFACE_INFO of DDR_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
+  attribute X_INTERFACE_INFO of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
+  attribute X_INTERFACE_INFO of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
+  attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
+  attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
+  attribute X_INTERFACE_INFO of gpio_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio TRI_O";
 begin
   Clk200 <= clk_wiz_clk_out1;
   DDR3_addr(13 downto 0) <= mig_7series_0_DDR3_ADDR(13 downto 0);
@@ -4075,6 +4156,15 @@ SDRAM: component MercuryZX1_SDRAM_0
       sys_rst => processing_system7_1_fclk_reset0_n,
       ui_clk => mig_7series_0_ui_clk,
       ui_clk_sync_rst => mig_7series_0_ui_clk_sync_rst
+    );
+adc_ila: entity work.adc_ila_imp_SP6JT7
+     port map (
+      adc_clock(4 downto 0) => adc_clock_1(4 downto 0),
+      adc_data_in_a(13 downto 0) => adc_data_in_a_1(13 downto 0),
+      adc_data_in_b(13 downto 0) => adc_data_in_b_1(13 downto 0),
+      adc_data_in_c(13 downto 0) => adc_data_in_c_1(13 downto 0),
+      adc_data_in_d(13 downto 0) => adc_data_in_d_1(13 downto 0),
+      clk => clk_wiz_clk_out1
     );
 axi_gpio_0: component MercuryZX1_axi_gpio_0_0
      port map (
@@ -4411,7 +4501,7 @@ rst_mig_7series_0_100M: component MercuryZX1_rst_mig_7series_0_100M_0
       peripheral_reset(0) => NLW_rst_mig_7series_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => mig_7series_0_ui_clk
     );
-system_ila_0: component MercuryZX1_system_ila_0_1
+system_ila_0: component MercuryZX1_system_ila_0_0
      port map (
       clk => processing_system7_1_fclk_clk0,
       probe0(0) => spi_sck_i_1,
@@ -4421,31 +4511,6 @@ system_ila_0: component MercuryZX1_system_ila_0_1
       probe4(0) => axi_quad_spi_1_io0_o,
       probe5(0) => axi_quad_spi_1_sck_o,
       probe6(7 downto 0) => axi_quad_spi_1_ss_o(7 downto 0)
-    );
-system_ila_1: component MercuryZX1_system_ila_1_0
-     port map (
-      clk => xlslice_0_Dout(0),
-      probe0(13 downto 0) => adc_data_in_d_1(13 downto 0)
-    );
-system_ila_2: component MercuryZX1_system_ila_2_0
-     port map (
-      clk => xlslice_1_Dout(0),
-      probe0(13 downto 0) => adc_data_in_a_1(13 downto 0)
-    );
-system_ila_3: component MercuryZX1_system_ila_3_0
-     port map (
-      clk => xlslice_2_Dout(0),
-      probe0(13 downto 0) => adc_data_in_b_1(13 downto 0)
-    );
-system_ila_4: component MercuryZX1_system_ila_4_0
-     port map (
-      clk => xlslice_3_Dout(0),
-      probe0(13 downto 0) => adc_data_in_c_1(13 downto 0)
-    );
-system_ila_5: component MercuryZX1_system_ila_5_0
-     port map (
-      clk => clk_wiz_clk_out1,
-      probe0(13 downto 0) => adc_data_in_d_1(13 downto 0)
     );
 vio_0: component MercuryZX1_vio_0_1
      port map (
@@ -4503,25 +4568,5 @@ xlconcat_0: component MercuryZX1_xlconcat_0_0
       In0(0) => In0_1(0),
       In1(0) => In1_1(0),
       dout(1 downto 0) => xlconcat_0_dout(1 downto 0)
-    );
-xlslice_0: component MercuryZX1_xlslice_0_0
-     port map (
-      Din(4 downto 0) => adc_clock_1(4 downto 0),
-      Dout(0) => xlslice_0_Dout(0)
-    );
-xlslice_1: component MercuryZX1_xlslice_0_1
-     port map (
-      Din(4 downto 0) => adc_clock_1(4 downto 0),
-      Dout(0) => xlslice_1_Dout(0)
-    );
-xlslice_2: component MercuryZX1_xlslice_1_0
-     port map (
-      Din(4 downto 0) => adc_clock_1(4 downto 0),
-      Dout(0) => xlslice_2_Dout(0)
-    );
-xlslice_3: component MercuryZX1_xlslice_1_1
-     port map (
-      Din(4 downto 0) => adc_clock_1(4 downto 0),
-      Dout(0) => xlslice_3_Dout(0)
     );
 end STRUCTURE;

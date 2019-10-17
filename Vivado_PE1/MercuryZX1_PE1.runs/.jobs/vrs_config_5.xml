@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
-	<Run Id="MercuryPE1_synth" LaunchDir="/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="MercuryPE1_impl" LaunchDir="/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_impl" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
-		<Parent Id="MercuryPE1_synth"/>
-	</Run>
+	<Run Id="MercuryPE1_impl" LaunchDir="/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_impl" FlowId="Vivado_Implementation" FromStepId="write_bitstream" ToStepId="write_bitstream"/>
 	<Parameters>
 		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
 	</Parameters>

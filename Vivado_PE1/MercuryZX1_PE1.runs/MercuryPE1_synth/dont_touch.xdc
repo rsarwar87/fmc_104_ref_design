@@ -9,6 +9,54 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1 || O
 # IP: bd/MercuryZX1/ip/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_SDRAM_0 || ORIG_REF_NAME==MercuryZX1_SDRAM_0} -quiet] -quiet
 
+# IP: bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_axi_quad_spi_1_0 || ORIG_REF_NAME==MercuryZX1_axi_quad_spi_1_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_clk_wiz_0 || ORIG_REF_NAME==MercuryZX1_clk_wiz_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_1_0 || ORIG_REF_NAME==MercuryZX1_system_ila_1_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_2_0 || ORIG_REF_NAME==MercuryZX1_system_ila_2_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_3_0 || ORIG_REF_NAME==MercuryZX1_system_ila_3_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_4_0 || ORIG_REF_NAME==MercuryZX1_system_ila_4_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_5_0 || ORIG_REF_NAME==MercuryZX1_system_ila_5_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_xlslice_0_0/MercuryZX1_xlslice_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlslice_0_0 || ORIG_REF_NAME==MercuryZX1_xlslice_0_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_xlslice_1_0/MercuryZX1_xlslice_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlslice_1_0 || ORIG_REF_NAME==MercuryZX1_xlslice_1_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_xlslice_2_0/MercuryZX1_xlslice_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlslice_2_0 || ORIG_REF_NAME==MercuryZX1_xlslice_2_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_xlslice_3_0/MercuryZX1_xlslice_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlslice_3_0 || ORIG_REF_NAME==MercuryZX1_xlslice_3_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_labtools_fmeter_0_0 || ORIG_REF_NAME==MercuryZX1_labtools_fmeter_0_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_vio_0_0 || ORIG_REF_NAME==MercuryZX1_vio_0_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_xlconcat_1_0/MercuryZX1_xlconcat_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlconcat_1_0 || ORIG_REF_NAME==MercuryZX1_xlconcat_1_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_0_0/MercuryZX1_system_ila_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_0_0 || ORIG_REF_NAME==MercuryZX1_system_ila_0_0} -quiet] -quiet
+
+# IP: bd/MercuryZX1/ip/MercuryZX1_xlconcat_0_0/MercuryZX1_xlconcat_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlconcat_0_0 || ORIG_REF_NAME==MercuryZX1_xlconcat_0_0} -quiet] -quiet
+
 # IP: bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_axi_gpio_0_0 || ORIG_REF_NAME==MercuryZX1_axi_gpio_0_0} -quiet] -quiet
 
@@ -30,56 +78,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_rst_
 # IP: bd/MercuryZX1/ip/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xadc_wiz_0_0 || ORIG_REF_NAME==MercuryZX1_xadc_wiz_0_0} -quiet] -quiet
 
-# IP: bd/MercuryZX1/ip/MercuryZX1_xlconcat_0_0/MercuryZX1_xlconcat_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlconcat_0_0 || ORIG_REF_NAME==MercuryZX1_xlconcat_0_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_axi_quad_spi_1_0 || ORIG_REF_NAME==MercuryZX1_axi_quad_spi_1_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_xlconcat_1_0/MercuryZX1_xlconcat_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlconcat_1_0 || ORIG_REF_NAME==MercuryZX1_xlconcat_1_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_vio_0_0 || ORIG_REF_NAME==MercuryZX1_vio_0_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_labtools_fmeter_0_0 || ORIG_REF_NAME==MercuryZX1_labtools_fmeter_0_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/MercuryZX1_system_ila_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_0_1 || ORIG_REF_NAME==MercuryZX1_system_ila_0_1} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_1_0 || ORIG_REF_NAME==MercuryZX1_system_ila_1_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_clk_wiz_0 || ORIG_REF_NAME==MercuryZX1_clk_wiz_0} -quiet] -quiet
-
 # IP: bd/MercuryZX1/ip/MercuryZX1_vio_0_1/MercuryZX1_vio_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_vio_0_1 || ORIG_REF_NAME==MercuryZX1_vio_0_1} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_2_0 || ORIG_REF_NAME==MercuryZX1_system_ila_2_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_3_0 || ORIG_REF_NAME==MercuryZX1_system_ila_3_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_4_0 || ORIG_REF_NAME==MercuryZX1_system_ila_4_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_system_ila_5_0 || ORIG_REF_NAME==MercuryZX1_system_ila_5_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_xlslice_0_0/MercuryZX1_xlslice_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlslice_0_0 || ORIG_REF_NAME==MercuryZX1_xlslice_0_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_xlslice_0_1/MercuryZX1_xlslice_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlslice_0_1 || ORIG_REF_NAME==MercuryZX1_xlslice_0_1} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_xlslice_1_0/MercuryZX1_xlslice_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlslice_1_0 || ORIG_REF_NAME==MercuryZX1_xlslice_1_0} -quiet] -quiet
-
-# IP: bd/MercuryZX1/ip/MercuryZX1_xlslice_1_1/MercuryZX1_xlslice_1_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_xlslice_1_1 || ORIG_REF_NAME==MercuryZX1_xlslice_1_1} -quiet] -quiet
 
 # IP: bd/MercuryZX1/ip/MercuryZX1_auto_pc_3/MercuryZX1_auto_pc_3.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MercuryZX1_auto_pc_3 || ORIG_REF_NAME==MercuryZX1_auto_pc_3} -quiet] -quiet

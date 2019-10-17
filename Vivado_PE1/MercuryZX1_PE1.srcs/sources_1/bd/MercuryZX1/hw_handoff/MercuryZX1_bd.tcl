@@ -109,9 +109,6 @@ if { ${design_name} eq "" } {
 
 }
 
-  # Add USER_COMMENTS on $design_name
-  set_property USER_COMMENTS.comment_1 "Enter Comments here" [get_bd_designs $design_name]
-
 common::send_msg_id "BD_TCL-005" "INFO" "Currently the variable <design_name> is equal to \"$design_name\"."
 
 if { $nRet != 0 } {
@@ -368,6 +365,142 @@ proc create_hier_cell_freq_counter { parentCell nameHier } {
   current_bd_instance $oldCurInst
 }
 
+# Hierarchical cell: adc_ila
+proc create_hier_cell_adc_ila { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_adc_ila() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I -from 4 -to 0 adc_clock
+  create_bd_pin -dir I -from 13 -to 0 adc_data_in_a
+  create_bd_pin -dir I -from 13 -to 0 adc_data_in_b
+  create_bd_pin -dir I -from 13 -to 0 adc_data_in_c
+  create_bd_pin -dir I -from 13 -to 0 adc_data_in_d
+  create_bd_pin -dir I -type clk clk
+
+  # Create instance: system_ila_1, and set properties
+  set system_ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_1 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_1
+
+  # Create instance: system_ila_2, and set properties
+  set system_ila_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_2 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_2
+
+  # Create instance: system_ila_3, and set properties
+  set system_ila_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_3 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_3
+
+  # Create instance: system_ila_4, and set properties
+  set system_ila_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_4 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_4
+
+  # Create instance: system_ila_5, and set properties
+  set system_ila_5 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_5 ]
+  set_property -dict [ list \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_5
+
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {0} \
+   CONFIG.DIN_TO {0} \
+   CONFIG.DIN_WIDTH {5} \
+ ] $xlslice_0
+
+  # Create instance: xlslice_1, and set properties
+  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {1} \
+   CONFIG.DIN_TO {1} \
+   CONFIG.DIN_WIDTH {5} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_1
+
+  # Create instance: xlslice_2, and set properties
+  set xlslice_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_2 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {2} \
+   CONFIG.DIN_TO {2} \
+   CONFIG.DIN_WIDTH {5} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_2
+
+  # Create instance: xlslice_3, and set properties
+  set xlslice_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_3 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {3} \
+   CONFIG.DIN_TO {3} \
+   CONFIG.DIN_WIDTH {5} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_3
+
+  # Create port connections
+  connect_bd_net -net adc_clock_1 [get_bd_pins adc_clock] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din] [get_bd_pins xlslice_3/Din]
+  connect_bd_net -net adc_data_in_a_1 [get_bd_pins adc_data_in_a] [get_bd_pins system_ila_2/probe0]
+  connect_bd_net -net adc_data_in_b_1 [get_bd_pins adc_data_in_b] [get_bd_pins system_ila_3/probe0]
+  connect_bd_net -net adc_data_in_c_1 [get_bd_pins adc_data_in_c] [get_bd_pins system_ila_4/probe0]
+  connect_bd_net -net adc_data_in_d_1 [get_bd_pins adc_data_in_d] [get_bd_pins system_ila_1/probe0] [get_bd_pins system_ila_5/probe0]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_d_1]
+  connect_bd_net -net clk_1 [get_bd_pins clk] [get_bd_pins system_ila_5/clk]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins system_ila_1/clk] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_1_Dout [get_bd_pins system_ila_2/clk] [get_bd_pins xlslice_1/Dout]
+  connect_bd_net -net xlslice_2_Dout [get_bd_pins system_ila_3/clk] [get_bd_pins xlslice_2/Dout]
+  connect_bd_net -net xlslice_3_Dout [get_bd_pins system_ila_4/clk] [get_bd_pins xlslice_3/Dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
 
 # Procedure to create entire design; Provide argument to make
 # procedure reusable. If parentCell is "", will use root.
@@ -459,6 +592,9 @@ proc create_root_design { parentCell } {
    CONFIG.XML_INPUT_FILE {mig_a.prj} \
  ] $SDRAM
 
+  # Create instance: adc_ila
+  create_hier_cell_adc_ila [current_bd_instance .] adc_ila
+
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
@@ -470,7 +606,6 @@ proc create_root_design { parentCell } {
   set axi_quad_spi_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_quad_spi:3.2 axi_quad_spi_1 ]
   set_property -dict [ list \
    CONFIG.C_NUM_SS_BITS {8} \
-   CONFIG.C_SCK_RATIO {8} \
    CONFIG.C_USE_STARTUP {0} \
    CONFIG.C_USE_STARTUP_INT {0} \
  ] $axi_quad_spi_1
@@ -970,46 +1105,6 @@ proc create_root_design { parentCell } {
    CONFIG.C_PROBE6_TYPE {0} \
  ] $system_ila_0
 
-  # Create instance: system_ila_1, and set properties
-  set system_ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_1 ]
-  set_property -dict [ list \
-   CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {1} \
-   CONFIG.C_PROBE0_TYPE {0} \
- ] $system_ila_1
-
-  # Create instance: system_ila_2, and set properties
-  set system_ila_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_2 ]
-  set_property -dict [ list \
-   CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {1} \
-   CONFIG.C_PROBE0_TYPE {0} \
- ] $system_ila_2
-
-  # Create instance: system_ila_3, and set properties
-  set system_ila_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_3 ]
-  set_property -dict [ list \
-   CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {1} \
-   CONFIG.C_PROBE0_TYPE {0} \
- ] $system_ila_3
-
-  # Create instance: system_ila_4, and set properties
-  set system_ila_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_4 ]
-  set_property -dict [ list \
-   CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {1} \
-   CONFIG.C_PROBE0_TYPE {0} \
- ] $system_ila_4
-
-  # Create instance: system_ila_5, and set properties
-  set system_ila_5 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_5 ]
-  set_property -dict [ list \
-   CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {1} \
-   CONFIG.C_PROBE0_TYPE {0} \
- ] $system_ila_5
-
   # Create instance: vio_0, and set properties
   set vio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 vio_0 ]
   set_property -dict [ list \
@@ -1032,41 +1127,6 @@ proc create_root_design { parentCell } {
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
 
-  # Create instance: xlslice_0, and set properties
-  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {0} \
-   CONFIG.DIN_TO {0} \
-   CONFIG.DIN_WIDTH {5} \
- ] $xlslice_0
-
-  # Create instance: xlslice_1, and set properties
-  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {1} \
-   CONFIG.DIN_TO {1} \
-   CONFIG.DIN_WIDTH {5} \
-   CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_1
-
-  # Create instance: xlslice_2, and set properties
-  set xlslice_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_2 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {2} \
-   CONFIG.DIN_TO {2} \
-   CONFIG.DIN_WIDTH {5} \
-   CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_2
-
-  # Create instance: xlslice_3, and set properties
-  set xlslice_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_3 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {3} \
-   CONFIG.DIN_TO {3} \
-   CONFIG.DIN_WIDTH {5} \
-   CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_3
-
   # Create interface connections
   connect_bd_intf_net -intf_net SYS_CLK_1 [get_bd_intf_ports SYS_CLK] [get_bd_intf_pins SDRAM/SYS_CLK]
   connect_bd_intf_net -intf_net axi_gpio_1_gpio [get_bd_intf_ports gpio] [get_bd_intf_pins axi_gpio_0/GPIO]
@@ -1085,14 +1145,14 @@ proc create_root_design { parentCell } {
   connect_bd_net -net In1_1 [get_bd_ports IRQ1] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net SDIO0_CDN_1 [get_bd_ports SDIO0_CDN] [get_bd_pins processing_system7_1/SDIO0_CDN]
   connect_bd_net -net SDIO0_WP_1 [get_bd_ports SDIO0_WP] [get_bd_pins processing_system7_1/SDIO0_WP]
-  connect_bd_net -net adc_clock_1 [get_bd_ports adc_clock] [get_bd_pins freq_counter/adc_clock] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din] [get_bd_pins xlslice_3/Din]
-  connect_bd_net -net adc_data_in_a_1 [get_bd_ports adc_data_in_a] [get_bd_pins system_ila_2/probe0] [get_bd_pins vio_0/probe_in0]
+  connect_bd_net -net adc_clock_1 [get_bd_ports adc_clock] [get_bd_pins adc_ila/adc_clock] [get_bd_pins freq_counter/adc_clock]
+  connect_bd_net -net adc_data_in_a_1 [get_bd_ports adc_data_in_a] [get_bd_pins adc_ila/adc_data_in_a] [get_bd_pins vio_0/probe_in0]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_a_1]
-  connect_bd_net -net adc_data_in_b_1 [get_bd_ports adc_data_in_b] [get_bd_pins system_ila_3/probe0] [get_bd_pins vio_0/probe_in1]
+  connect_bd_net -net adc_data_in_b_1 [get_bd_ports adc_data_in_b] [get_bd_pins adc_ila/adc_data_in_b] [get_bd_pins vio_0/probe_in1]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_b_1]
-  connect_bd_net -net adc_data_in_c_1 [get_bd_ports adc_data_in_c] [get_bd_pins system_ila_4/probe0] [get_bd_pins vio_0/probe_in2]
+  connect_bd_net -net adc_data_in_c_1 [get_bd_ports adc_data_in_c] [get_bd_pins adc_ila/adc_data_in_c] [get_bd_pins vio_0/probe_in2]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_c_1]
-  connect_bd_net -net adc_data_in_d_1 [get_bd_ports adc_data_in_d] [get_bd_pins system_ila_1/probe0] [get_bd_pins system_ila_5/probe0] [get_bd_pins vio_0/probe_in3]
+  connect_bd_net -net adc_data_in_d_1 [get_bd_ports adc_data_in_d] [get_bd_pins adc_ila/adc_data_in_d] [get_bd_pins vio_0/probe_in3]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets adc_data_in_d_1]
   connect_bd_net -net adc_error_1 [get_bd_ports adc_error] [get_bd_pins vio_0/probe_in5]
   connect_bd_net -net adc_valid_1 [get_bd_ports adc_valid] [get_bd_pins vio_0/probe_in4]
@@ -1102,7 +1162,7 @@ proc create_root_design { parentCell } {
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_sck_o]
   connect_bd_net -net axi_quad_spi_1_ss_o [get_bd_ports spi_ss_o] [get_bd_pins axi_quad_spi_1/ss_o] [get_bd_pins system_ila_0/probe6]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_ss_o]
-  connect_bd_net -net clk_wiz_clk_out1 [get_bd_ports Clk200] [get_bd_pins clk_wiz/clk_out1] [get_bd_pins freq_counter/In4] [get_bd_pins system_ila_5/clk] [get_bd_pins vio_0/clk]
+  connect_bd_net -net clk_wiz_clk_out1 [get_bd_ports Clk200] [get_bd_pins adc_ila/clk] [get_bd_pins clk_wiz/clk_out1] [get_bd_pins freq_counter/In4] [get_bd_pins vio_0/clk]
   connect_bd_net -net freq_counter_VCO_PWR_EN [get_bd_ports VCO_PWR_EN] [get_bd_pins freq_counter/VCO_PWR_EN]
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_pins SDRAM/mmcm_locked] [get_bd_pins rst_mig_7series_0_100M/dcm_locked]
   connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins SDRAM/ui_clk] [get_bd_pins freq_counter/In1] [get_bd_pins processing_system7_1_axi_periph/M03_ACLK] [get_bd_pins rst_mig_7series_0_100M/slowest_sync_clk]
@@ -1127,10 +1187,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net vio_0_probe_out2 [get_bd_ports adc_clear_error] [get_bd_pins vio_0/probe_out2]
   connect_bd_net -net xadc_wiz_0_temp_out [get_bd_pins SDRAM/device_temp_i] [get_bd_pins freq_counter/probe_in9] [get_bd_pins xadc_wiz_0/temp_out]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_1/IRQ_F2P] [get_bd_pins xlconcat_0/dout]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins system_ila_1/clk] [get_bd_pins xlslice_0/Dout]
-  connect_bd_net -net xlslice_1_Dout [get_bd_pins system_ila_2/clk] [get_bd_pins xlslice_1/Dout]
-  connect_bd_net -net xlslice_2_Dout [get_bd_pins system_ila_3/clk] [get_bd_pins xlslice_2/Dout]
-  connect_bd_net -net xlslice_3_Dout [get_bd_pins system_ila_4/clk] [get_bd_pins xlslice_3/Dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_1_Reg

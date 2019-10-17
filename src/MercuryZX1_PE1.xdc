@@ -274,11 +274,66 @@ set_property PACKAGE_PIN N1 [get_ports chg_p[5]]
 set_property PACKAGE_PIN N2 [get_ports chg_n[6]]
 set_property PACKAGE_PIN N3 [get_ports chg_p[6]]
 
-set_property -dict {IOSTANDARD LVCMOS18 PACKAGE_PIN N4} [get_ports ad9510_clk]
-set_property -dict {IOSTANDARD LVCMOS18 PACKAGE_PIN M4} [get_ports ad9510_mosi]
-set_property -dict {IOSTANDARD LVCMOS18 PACKAGE_PIN K5} [get_ports ad9510_csn]
-set_property -dict {IOSTANDARD LVCMOS18 PACKAGE_PIN J5} [get_ports FMC_LA_N[33]]
+set_property -dict {IOSTANDARD LVCMOS18 SLEW SLOW PACKAGE_PIN N4} [get_ports ad9510_clk]
+set_property -dict {IOSTANDARD LVCMOS18 SLEW SLOW PACKAGE_PIN M4} [get_ports ad9510_mosi]
+set_property -dict {IOSTANDARD LVCMOS18 SLEW SLOW PACKAGE_PIN K5} [get_ports ad9510_csn]
+set_property -dict {IOSTANDARD LVCMOS18 SLEW SLOW PACKAGE_PIN J5} [get_ports FMC_LA_N[33]]
 
+
+create_clock -name adc_clk_p0 -period 4.00 [get_ports adc_clk_p[0]]
+create_clock -name adc_clk_p1 -period 4.00 [get_ports adc_clk_p[1]]
+create_clock -name adc_clk_p2 -period 4.00 [get_ports adc_clk_p[2]]
+create_clock -name adc_clk_p3 -period 4.00 [get_ports adc_clk_p[3]]
+set_clock_groups -name ad_clk_grp -group [get_clocks -include_generated_clocks adc_clk_p0] \
+    -group [get_clocks -include_generated_clocks adc_clk_p2] \
+    -group [get_clocks -include_generated_clocks adc_clk_p3] \
+    -group [get_clocks -include_generated_clocks adc_clk_p1] -asynchronous
+
+set_false_path -from [get_clocks clk_fpga_0] -to [get_clocks adc_clk_p*]
+set_false_path -from [get_clocks adc_clk_p*] -to [get_clocks clk_fpga_0]
+set_false_path -from [get_clocks clk_out1_MercuryZX1_clk_wiz_0] -to [get_clocks adc_clk_p*]
+set_false_path -from [get_clocks adc_clk_p*] -to [get_clocks clk_out1_MercuryZX1_clk_wiz_0]
+
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {cha_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {cha_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -min -add_delay 4.400 [get_ports {cha_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -max -add_delay 1.700 [get_ports {cha_n[*]}]
+
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {cha_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {cha_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -min -add_delay 4.400 [get_ports {cha_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -max -add_delay 1.700 [get_ports {cha_p[*]}]
+
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {chc_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {chc_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -min -add_delay 4.400 [get_ports {chc_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -max -add_delay 1.700 [get_ports {chc_n[*]}]
+
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {chc_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {chc_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -min -add_delay 4.400 [get_ports {chc_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -max -add_delay 1.700 [get_ports {chc_p[*]}]
+
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {che_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {che_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -min -add_delay 4.400 [get_ports {che_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -max -add_delay 1.700 [get_ports {che_n[*]}]
+
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {che_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {che_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -min -add_delay 4.400 [get_ports {che_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -max -add_delay 1.700 [get_ports {che_p[*]}]
+
+
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {chg_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {chg_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -min -add_delay 4.400 [get_ports {chg_n[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -max -add_delay 1.700 [get_ports {chg_n[*]}]
+
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {chg_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {chg_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -min -add_delay 4.400 [get_ports {chg_p[*]}]
+set_input_delay -clock [get_clocks adc_clk_p0] -max -add_delay 1.700 [get_ports {chg_p[*]}]
 # -------------------------------------------------------------------------------------------------
 # PE1_SW
 # -------------------------------------------------------------------------------------------------

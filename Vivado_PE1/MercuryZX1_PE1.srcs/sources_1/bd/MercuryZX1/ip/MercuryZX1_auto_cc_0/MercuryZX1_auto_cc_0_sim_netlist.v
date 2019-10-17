@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Wed Oct 16 17:13:32 2019
+// Date        : Thu Oct 17 12:30:25 2019
 // Host        : ukaea-fpga running 64-bit KDE neon User Edition 5.16
 // Command     : write_verilog -force -mode funcsim -rename_top MercuryZX1_auto_cc_0 -prefix
 //               MercuryZX1_auto_cc_0_ MercuryZX1_auto_cc_0_sim_netlist.v

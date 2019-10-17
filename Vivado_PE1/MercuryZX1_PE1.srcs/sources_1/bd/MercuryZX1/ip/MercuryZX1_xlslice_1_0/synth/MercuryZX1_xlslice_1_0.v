@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "xlslice_v1_0_2_xlslice,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "MercuryZX1_xlslice_1_0,xlslice_v1_0_2_xlslice,{}" *)
-(* CORE_GENERATION_INFO = "MercuryZX1_xlslice_1_0,xlslice_v1_0_2_xlslice,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,DIN_WIDTH=5,DIN_FROM=2,DIN_TO=2}" *)
+(* CORE_GENERATION_INFO = "MercuryZX1_xlslice_1_0,xlslice_v1_0_2_xlslice,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,DIN_WIDTH=5,DIN_FROM=1,DIN_TO=1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module MercuryZX1_xlslice_1_0 (
   Din,
@@ -64,8 +64,8 @@ output wire [0 : 0] Dout;
 
   xlslice_v1_0_2_xlslice #(
     .DIN_WIDTH(5),
-    .DIN_FROM(2),
-    .DIN_TO(2)
+    .DIN_FROM(1),
+    .DIN_TO(1)
   ) inst (
     .Din(Din),
     .Dout(Dout)

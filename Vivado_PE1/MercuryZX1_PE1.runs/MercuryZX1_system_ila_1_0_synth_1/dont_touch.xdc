@@ -10,10 +10,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==bd_8ff7 || ORIG
 # IP: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/bd_8ff7_ila_lib_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==bd_8ff7_ila_lib_0 || ORIG_REF_NAME==bd_8ff7_ila_lib_0} -quiet] -quiet
 
-# XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_ooc.xdc
-# XDC: The top module name and the constraint reference have the same name: 'MercuryZX1_system_ila_1_0'. Do not add the DONT_TOUCH constraint.
-set_property DONT_TOUCH TRUE [get_cells U0 -quiet] -quiet
-
 # XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==bd_8ff7_ila_lib_0 || ORIG_REF_NAME==bd_8ff7_ila_lib_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
@@ -24,6 +20,10 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/bd_8ff7_ooc.xdc
 
+# XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_ooc.xdc
+# XDC: The top module name and the constraint reference have the same name: 'MercuryZX1_system_ila_1_0'. Do not add the DONT_TOUCH constraint.
+set_property DONT_TOUCH TRUE [get_cells U0 -quiet] -quiet
+
 # IP: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0.xci
 # IP: The module: 'MercuryZX1_system_ila_1_0' is the root of the design. Do not add the DONT_TOUCH constraint.
 
@@ -32,10 +32,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # IP: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/bd_8ff7_ila_lib_0.xci
 #dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==bd_8ff7_ila_lib_0 || ORIG_REF_NAME==bd_8ff7_ila_lib_0} -quiet] -quiet
-
-# XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_ooc.xdc
-# XDC: The top module name and the constraint reference have the same name: 'MercuryZX1_system_ila_1_0'. Do not add the DONT_TOUCH constraint.
-#dup# set_property DONT_TOUCH TRUE [get_cells U0 -quiet] -quiet
 
 # XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==bd_8ff7_ila_lib_0 || ORIG_REF_NAME==bd_8ff7_ila_lib_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
@@ -46,3 +42,7 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 # XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/bd_8ff7_ila_lib_0_ooc.xdc
 
 # XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/bd_8ff7_ooc.xdc
+
+# XDC: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_ooc.xdc
+# XDC: The top module name and the constraint reference have the same name: 'MercuryZX1_system_ila_1_0'. Do not add the DONT_TOUCH constraint.
+#dup# set_property DONT_TOUCH TRUE [get_cells U0 -quiet] -quiet

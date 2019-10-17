@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
---Date        : Thu Oct 17 08:10:03 2019
+--Date        : Thu Oct 17 12:31:53 2019
 --Host        : ukaea-fpga running 64-bit KDE neon User Edition 5.16
 --Command     : generate_target MercuryZX1_wrapper.bd
 --Design      : MercuryZX1_wrapper
@@ -84,13 +84,6 @@ end MercuryZX1_wrapper;
 architecture STRUCTURE of MercuryZX1_wrapper is
   component MercuryZX1 is
   port (
-    FCLK_CLK1 : out STD_LOGIC;
-    IRQ0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    IRQ1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    RESET_N : out STD_LOGIC;
-    SDIO0_CDN : in STD_LOGIC;
-    SDIO0_WP : in STD_LOGIC;
-    adc_clock : in STD_LOGIC_VECTOR ( 4 downto 0 );
     spi_sck_i : in STD_LOGIC;
     spi_sck_o : out STD_LOGIC;
     spi_sdi_i : in STD_LOGIC;
@@ -98,31 +91,25 @@ architecture STRUCTURE of MercuryZX1_wrapper is
     spi_sdo_o : out STD_LOGIC;
     spi_ss_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     spi_ss_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    VCO_PWR_EN : out STD_LOGIC_VECTOR ( 0 to 0 );
-    adc_error : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    adc_valid : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Clk200 : out STD_LOGIC;
+    adc_clear_error : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    adc_clock : in STD_LOGIC_VECTOR ( 4 downto 0 );
     adc_data_in_a : in STD_LOGIC_VECTOR ( 13 downto 0 );
     adc_data_in_b : in STD_LOGIC_VECTOR ( 13 downto 0 );
     adc_data_in_c : in STD_LOGIC_VECTOR ( 13 downto 0 );
     adc_data_in_d : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    Clk200 : out STD_LOGIC;
-    adc_clear_error : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    adc_delay_inc : out STD_LOGIC_VECTOR ( 3 downto 0 );
     adc_delay_dec : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    adc_delay_inc : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    adc_error : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    adc_valid : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    FCLK_CLK1 : out STD_LOGIC;
+    IRQ0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    IRQ1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    RESET_N : out STD_LOGIC;
+    SDIO0_CDN : in STD_LOGIC;
+    SDIO0_WP : in STD_LOGIC;
     SYS_CLK_clk_p : in STD_LOGIC;
     SYS_CLK_clk_n : in STD_LOGIC;
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    IIC_0_sda_i : in STD_LOGIC;
-    IIC_0_sda_o : out STD_LOGIC;
-    IIC_0_sda_t : out STD_LOGIC;
-    IIC_0_scl_i : in STD_LOGIC;
-    IIC_0_scl_o : out STD_LOGIC;
-    IIC_0_scl_t : out STD_LOGIC;
     gpio_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     DDR3_dq : inout STD_LOGIC_VECTOR ( 15 downto 0 );
     DDR3_dqs_p : inout STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -152,7 +139,20 @@ architecture STRUCTURE of MercuryZX1_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    IIC_0_sda_i : in STD_LOGIC;
+    IIC_0_sda_o : out STD_LOGIC;
+    IIC_0_sda_t : out STD_LOGIC;
+    IIC_0_scl_i : in STD_LOGIC;
+    IIC_0_scl_o : out STD_LOGIC;
+    IIC_0_scl_t : out STD_LOGIC;
+    VCO_PWR_EN : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component MercuryZX1;
   component IOBUF is

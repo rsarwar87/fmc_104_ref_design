@@ -12,16 +12,16 @@ source system_top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'.
-add_files: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1518.797 ; gain = 108.273 ; free physical = 17769 ; free virtual = 115900
+add_files: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1506.113 ; gain = 95.617 ; free physical = 14944 ; free virtual = 113701
 Command: synth_design -top system_top -part xc7z030fbg676-2
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: [Device 21-403] Loading part xc7z030fbg676-2
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 79473 
+INFO: Helper process launched with PID 115808 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1925.141 ; gain = 152.543 ; free physical = 17339 ; free virtual = 115470
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1926.395 ; gain = 153.543 ; free physical = 14549 ; free virtual = 113307
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'system_top' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/system_top_PE1.vhd:166]
 	Parameter RESOLUTION bound to: 14 - type: integer 
@@ -882,26 +882,70 @@ INFO: [Synth 8-113] binding component instance 'bufg_ab_inst' to cell 'BUFG' [/m
 WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'pec_out_reg' in module 'adc_aquire_data__parameterized5' in the same process may cause logic issues. 
  Please split the sync and async parts into different processes [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/adc_data_fmc104.vhd:220]
 INFO: [Synth 8-256] done synthesizing module 'adc_aquire_data__parameterized5' (1#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/adc_data_fmc104.vhd:74]
-INFO: [Synth 8-3491] module 'MercuryZX1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3181' bound to instance 'i_system' of component 'MercuryZX1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/system_top_PE1.vhd:377]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3259]
-WARNING: [Synth 8-5640] Port 'app_sr_active' is missing in component declaration [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3260]
-WARNING: [Synth 8-5640] Port 'app_ref_ack' is missing in component declaration [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3260]
-WARNING: [Synth 8-5640] Port 'app_zq_ack' is missing in component declaration [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3260]
-WARNING: [Synth 8-5640] Port 'device_temp' is missing in component declaration [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3260]
-INFO: [Synth 8-3491] module 'MercuryZX1_SDRAM_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_SDRAM_0_stub.vhdl:5' bound to instance 'SDRAM' of component 'MercuryZX1_SDRAM_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4016]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_SDRAM_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_SDRAM_0_stub.vhdl:75]
-INFO: [Synth 8-3491] module 'MercuryZX1_axi_gpio_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'MercuryZX1_axi_gpio_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4079]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_axi_gpio_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_axi_gpio_0_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'MercuryZX1_axi_quad_spi_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_axi_quad_spi_1_0_stub.vhdl:5' bound to instance 'axi_quad_spi_1' of component 'MercuryZX1_axi_quad_spi_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4102]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_axi_quad_spi_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_axi_quad_spi_1_0_stub.vhdl:44]
-INFO: [Synth 8-3491] module 'MercuryZX1_clk_wiz_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz' of component 'MercuryZX1_clk_wiz_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4138]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_clk_wiz_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_clk_wiz_0_stub.vhdl:15]
-INFO: [Synth 8-638] synthesizing module 'freq_counter_imp_8UHE7K' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:26]
-INFO: [Synth 8-3491] module 'MercuryZX1_labtools_fmeter_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_labtools_fmeter_0_0_stub.vhdl:5' bound to instance 'labtools_fmeter_0' of component 'MercuryZX1_labtools_fmeter_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:95]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_labtools_fmeter_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_labtools_fmeter_0_0_stub.vhdl:23]
-INFO: [Synth 8-3491] module 'MercuryZX1_vio_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_vio_0_0_stub.vhdl:5' bound to instance 'vio_0' of component 'MercuryZX1_vio_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:110]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_vio_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_vio_0_0_stub.vhdl:23]
-INFO: [Synth 8-3491] module 'MercuryZX1_xlconcat_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_1_0/synth/MercuryZX1_xlconcat_1_0.v:58' bound to instance 'xlconcat_1' of component 'MercuryZX1_xlconcat_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:125]
+INFO: [Synth 8-3491] module 'MercuryZX1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3320' bound to instance 'i_system' of component 'MercuryZX1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/system_top_PE1.vhd:377]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3398]
+WARNING: [Synth 8-5640] Port 'app_sr_active' is missing in component declaration [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3399]
+WARNING: [Synth 8-5640] Port 'app_ref_ack' is missing in component declaration [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3399]
+WARNING: [Synth 8-5640] Port 'app_zq_ack' is missing in component declaration [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3399]
+WARNING: [Synth 8-5640] Port 'device_temp' is missing in component declaration [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3399]
+INFO: [Synth 8-3491] module 'MercuryZX1_SDRAM_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_SDRAM_0_stub.vhdl:5' bound to instance 'SDRAM' of component 'MercuryZX1_SDRAM_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4097]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_SDRAM_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_SDRAM_0_stub.vhdl:75]
+INFO: [Synth 8-638] synthesizing module 'adc_ila_imp_SP6JT7' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:25]
+INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_1_0_stub.vhdl:5' bound to instance 'system_ila_1' of component 'MercuryZX1_system_ila_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_1_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_2_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_2_0_stub.vhdl:5' bound to instance 'system_ila_2' of component 'MercuryZX1_system_ila_2_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:109]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_2_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_2_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_3_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_3_0_stub.vhdl:5' bound to instance 'system_ila_3' of component 'MercuryZX1_system_ila_3_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:114]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_3_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_3_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_4_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_4_0_stub.vhdl:5' bound to instance 'system_ila_4' of component 'MercuryZX1_system_ila_4_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_4_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_4_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_5_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_5_0_stub.vhdl:5' bound to instance 'system_ila_5' of component 'MercuryZX1_system_ila_5_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_5_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_5_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'MercuryZX1_xlslice_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_0/synth/MercuryZX1_xlslice_0_0.v:57' bound to instance 'xlslice_0' of component 'MercuryZX1_xlslice_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:129]
+INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlslice_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_0/synth/MercuryZX1_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 5 - type: integer 
+	Parameter DIN_FROM bound to: 0 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (2#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlslice_0_0' (3#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_0/synth/MercuryZX1_xlslice_0_0.v:57]
+INFO: [Synth 8-3491] module 'MercuryZX1_xlslice_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_0/synth/MercuryZX1_xlslice_1_0.v:57' bound to instance 'xlslice_1' of component 'MercuryZX1_xlslice_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:134]
+INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlslice_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_0/synth/MercuryZX1_xlslice_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 5 - type: integer 
+	Parameter DIN_FROM bound to: 1 - type: integer 
+	Parameter DIN_TO bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (3#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlslice_1_0' (4#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_0/synth/MercuryZX1_xlslice_1_0.v:57]
+INFO: [Synth 8-3491] module 'MercuryZX1_xlslice_2_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_2_0/synth/MercuryZX1_xlslice_2_0.v:57' bound to instance 'xlslice_2' of component 'MercuryZX1_xlslice_2_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:139]
+INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlslice_2_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_2_0/synth/MercuryZX1_xlslice_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 5 - type: integer 
+	Parameter DIN_FROM bound to: 2 - type: integer 
+	Parameter DIN_TO bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (4#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlslice_2_0' (5#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_2_0/synth/MercuryZX1_xlslice_2_0.v:57]
+INFO: [Synth 8-3491] module 'MercuryZX1_xlslice_3_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_3_0/synth/MercuryZX1_xlslice_3_0.v:57' bound to instance 'xlslice_3' of component 'MercuryZX1_xlslice_3_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:144]
+INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlslice_3_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_3_0/synth/MercuryZX1_xlslice_3_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 5 - type: integer 
+	Parameter DIN_FROM bound to: 3 - type: integer 
+	Parameter DIN_TO bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (5#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlslice_3_0' (6#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_3_0/synth/MercuryZX1_xlslice_3_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'adc_ila_imp_SP6JT7' (7#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:25]
+INFO: [Synth 8-3491] module 'MercuryZX1_axi_gpio_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'MercuryZX1_axi_gpio_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4169]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_axi_gpio_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_axi_gpio_0_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'MercuryZX1_axi_quad_spi_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_axi_quad_spi_1_0_stub.vhdl:5' bound to instance 'axi_quad_spi_1' of component 'MercuryZX1_axi_quad_spi_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4192]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_axi_quad_spi_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_axi_quad_spi_1_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'MercuryZX1_clk_wiz_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz' of component 'MercuryZX1_clk_wiz_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4228]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_clk_wiz_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_clk_wiz_0_stub.vhdl:15]
+INFO: [Synth 8-638] synthesizing module 'freq_counter_imp_8UHE7K' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:166]
+INFO: [Synth 8-3491] module 'MercuryZX1_labtools_fmeter_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_labtools_fmeter_0_0_stub.vhdl:5' bound to instance 'labtools_fmeter_0' of component 'MercuryZX1_labtools_fmeter_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:235]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_labtools_fmeter_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_labtools_fmeter_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'MercuryZX1_vio_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_vio_0_0_stub.vhdl:5' bound to instance 'vio_0' of component 'MercuryZX1_vio_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:250]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_vio_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_vio_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'MercuryZX1_xlconcat_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_1_0/synth/MercuryZX1_xlconcat_1_0.v:58' bound to instance 'xlconcat_1' of component 'MercuryZX1_xlconcat_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:265]
 INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlconcat_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_1_0/synth/MercuryZX1_xlconcat_1_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 5 - type: integer 
@@ -938,56 +982,46 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/media/2TB/
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 9 - type: integer 
 	Parameter NUM_PORTS bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (2#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlconcat_1_0' (3#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_1_0/synth/MercuryZX1_xlconcat_1_0.v:58]
-INFO: [Synth 8-256] done synthesizing module 'freq_counter_imp_8UHE7K' (4#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:26]
-INFO: [Synth 8-3491] module 'MercuryZX1_proc_sys_reset_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_proc_sys_reset_0_stub.vhdl:5' bound to instance 'proc_sys_reset' of component 'MercuryZX1_proc_sys_reset_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4155]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_proc_sys_reset_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_proc_sys_reset_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'MercuryZX1_processing_system7_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_processing_system7_1_0_stub.vhdl:5' bound to instance 'processing_system7_1' of component 'MercuryZX1_processing_system7_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4168]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_processing_system7_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_processing_system7_1_0_stub.vhdl:100]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_processing_system7_1_axi_periph_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:2070]
-INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1I3RZS7' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:204]
-INFO: [Synth 8-3491] module 'MercuryZX1_auto_pc_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'MercuryZX1_auto_pc_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:388]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_pc_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_pc_0_stub.vhdl:71]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1I3RZS7' (5#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:204]
-INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1AI25R5' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:521]
-INFO: [Synth 8-3491] module 'MercuryZX1_auto_pc_1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'MercuryZX1_auto_pc_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:705]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_pc_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_pc_1_stub.vhdl:71]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1AI25R5' (6#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:521]
-INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_29TQWB' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:838]
-INFO: [Synth 8-3491] module 'MercuryZX1_auto_pc_2' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_pc_2_stub.vhdl:5' bound to instance 'auto_pc' of component 'MercuryZX1_auto_pc_2' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1022]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_pc_2' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_pc_2_stub.vhdl:71]
-INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_29TQWB' (7#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:838]
-INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_UC4QWD' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1175]
-INFO: [Synth 8-3491] module 'MercuryZX1_auto_cc_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_cc_0_stub.vhdl:5' bound to instance 'auto_cc' of component 'MercuryZX1_auto_cc_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1425]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_cc_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_cc_0_stub.vhdl:93]
-INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_UC4QWD' (8#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1175]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_18LGTGM' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1599]
-INFO: [Synth 8-3491] module 'MercuryZX1_auto_pc_3' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_pc_3_stub.vhdl:5' bound to instance 'auto_pc' of component 'MercuryZX1_auto_pc_3' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1840]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_pc_3' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_auto_pc_3_stub.vhdl:90]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_18LGTGM' (9#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1599]
-INFO: [Synth 8-3491] module 'MercuryZX1_xbar_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'MercuryZX1_xbar_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:2977]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_xbar_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_xbar_0_stub.vhdl:89]
-INFO: [Synth 8-256] done synthesizing module 'MercuryZX1_processing_system7_1_axi_periph_0' (10#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:2070]
-INFO: [Synth 8-3491] module 'MercuryZX1_rst_mig_7series_0_100M_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_rst_mig_7series_0_100M_0_stub.vhdl:5' bound to instance 'rst_mig_7series_0_100M' of component 'MercuryZX1_rst_mig_7series_0_100M_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4401]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_rst_mig_7series_0_100M_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_rst_mig_7series_0_100M_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_0_1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_0_1_stub.vhdl:5' bound to instance 'system_ila_0' of component 'MercuryZX1_system_ila_0_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4414]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_0_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_0_1_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_1_0_stub.vhdl:5' bound to instance 'system_ila_1' of component 'MercuryZX1_system_ila_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4425]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_1_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_2_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_2_0_stub.vhdl:5' bound to instance 'system_ila_2' of component 'MercuryZX1_system_ila_2_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4430]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_2_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_2_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_3_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_3_0_stub.vhdl:5' bound to instance 'system_ila_3' of component 'MercuryZX1_system_ila_3_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4435]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_3_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_3_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_4_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_4_0_stub.vhdl:5' bound to instance 'system_ila_4' of component 'MercuryZX1_system_ila_4_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4440]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_4_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_4_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_5_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_5_0_stub.vhdl:5' bound to instance 'system_ila_5' of component 'MercuryZX1_system_ila_5_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4445]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_5_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_system_ila_5_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'MercuryZX1_vio_0_1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_vio_0_1_stub.vhdl:5' bound to instance 'vio_0' of component 'MercuryZX1_vio_0_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4450]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_vio_0_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_vio_0_1_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'MercuryZX1_xadc_wiz_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_xadc_wiz_0_0_stub.vhdl:5' bound to instance 'xadc_wiz_0' of component 'MercuryZX1_xadc_wiz_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4463]
-INFO: [Synth 8-638] synthesizing module 'MercuryZX1_xadc_wiz_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-79297-ukaea-fpga/realtime/MercuryZX1_xadc_wiz_0_0_stub.vhdl:46]
-INFO: [Synth 8-3491] module 'MercuryZX1_xlconcat_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_0_0/synth/MercuryZX1_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'MercuryZX1_xlconcat_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4501]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (8#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlconcat_1_0' (9#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_1_0/synth/MercuryZX1_xlconcat_1_0.v:58]
+INFO: [Synth 8-256] done synthesizing module 'freq_counter_imp_8UHE7K' (10#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:166]
+INFO: [Synth 8-3491] module 'MercuryZX1_proc_sys_reset_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_proc_sys_reset_0_stub.vhdl:5' bound to instance 'proc_sys_reset' of component 'MercuryZX1_proc_sys_reset_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4245]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_proc_sys_reset_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_proc_sys_reset_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'MercuryZX1_processing_system7_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_processing_system7_1_0_stub.vhdl:5' bound to instance 'processing_system7_1' of component 'MercuryZX1_processing_system7_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4258]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_processing_system7_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_processing_system7_1_0_stub.vhdl:100]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_processing_system7_1_axi_periph_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:2210]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1I3RZS7' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:344]
+INFO: [Synth 8-3491] module 'MercuryZX1_auto_pc_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'MercuryZX1_auto_pc_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:528]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_pc_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_pc_0_stub.vhdl:71]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1I3RZS7' (11#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:344]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1AI25R5' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:661]
+INFO: [Synth 8-3491] module 'MercuryZX1_auto_pc_1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'MercuryZX1_auto_pc_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:845]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_pc_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_pc_1_stub.vhdl:71]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1AI25R5' (12#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:661]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_29TQWB' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:978]
+INFO: [Synth 8-3491] module 'MercuryZX1_auto_pc_2' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_pc_2_stub.vhdl:5' bound to instance 'auto_pc' of component 'MercuryZX1_auto_pc_2' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1162]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_pc_2' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_pc_2_stub.vhdl:71]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_29TQWB' (13#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:978]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_UC4QWD' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1315]
+INFO: [Synth 8-3491] module 'MercuryZX1_auto_cc_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_cc_0_stub.vhdl:5' bound to instance 'auto_cc' of component 'MercuryZX1_auto_cc_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1565]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_cc_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_cc_0_stub.vhdl:93]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_UC4QWD' (14#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1315]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_18LGTGM' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1739]
+INFO: [Synth 8-3491] module 'MercuryZX1_auto_pc_3' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_pc_3_stub.vhdl:5' bound to instance 'auto_pc' of component 'MercuryZX1_auto_pc_3' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1980]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_auto_pc_3' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_auto_pc_3_stub.vhdl:90]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_18LGTGM' (15#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:1739]
+INFO: [Synth 8-3491] module 'MercuryZX1_xbar_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'MercuryZX1_xbar_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3117]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_xbar_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_xbar_0_stub.vhdl:89]
+INFO: [Synth 8-256] done synthesizing module 'MercuryZX1_processing_system7_1_axi_periph_0' (16#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:2210]
+INFO: [Synth 8-3491] module 'MercuryZX1_rst_mig_7series_0_100M_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_rst_mig_7series_0_100M_0_stub.vhdl:5' bound to instance 'rst_mig_7series_0_100M' of component 'MercuryZX1_rst_mig_7series_0_100M_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4491]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_rst_mig_7series_0_100M_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_rst_mig_7series_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'MercuryZX1_system_ila_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_0_0_stub.vhdl:5' bound to instance 'system_ila_0' of component 'MercuryZX1_system_ila_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4504]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_system_ila_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_system_ila_0_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'MercuryZX1_vio_0_1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_vio_0_1_stub.vhdl:5' bound to instance 'vio_0' of component 'MercuryZX1_vio_0_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4515]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_vio_0_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_vio_0_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'MercuryZX1_xadc_wiz_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_xadc_wiz_0_0_stub.vhdl:5' bound to instance 'xadc_wiz_0' of component 'MercuryZX1_xadc_wiz_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4528]
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_xadc_wiz_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/.Xil/Vivado-115532-ukaea-fpga/realtime/MercuryZX1_xadc_wiz_0_0_stub.vhdl:46]
+INFO: [Synth 8-3491] module 'MercuryZX1_xlconcat_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_0_0/synth/MercuryZX1_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'MercuryZX1_xlconcat_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4566]
 INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlconcat_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_0_0/synth/MercuryZX1_xlconcat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -1024,58 +1058,11 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterize
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 2 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (10#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlconcat_0_0' (11#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_0_0/synth/MercuryZX1_xlconcat_0_0.v:58]
-INFO: [Synth 8-3491] module 'MercuryZX1_xlslice_0_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_0/synth/MercuryZX1_xlslice_0_0.v:57' bound to instance 'xlslice_0' of component 'MercuryZX1_xlslice_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4507]
-INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlslice_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_0/synth/MercuryZX1_xlslice_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-	Parameter DIN_WIDTH bound to: 5 - type: integer 
-	Parameter DIN_FROM bound to: 0 - type: integer 
-	Parameter DIN_TO bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (12#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlslice_0_0' (13#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_0/synth/MercuryZX1_xlslice_0_0.v:57]
-INFO: [Synth 8-3491] module 'MercuryZX1_xlslice_0_1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_1/synth/MercuryZX1_xlslice_0_1.v:57' bound to instance 'xlslice_1' of component 'MercuryZX1_xlslice_0_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4512]
-INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlslice_0_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_1/synth/MercuryZX1_xlslice_0_1.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-	Parameter DIN_WIDTH bound to: 5 - type: integer 
-	Parameter DIN_FROM bound to: 1 - type: integer 
-	Parameter DIN_TO bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (13#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlslice_0_1' (14#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_0_1/synth/MercuryZX1_xlslice_0_1.v:57]
-INFO: [Synth 8-3491] module 'MercuryZX1_xlslice_1_0' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_0/synth/MercuryZX1_xlslice_1_0.v:57' bound to instance 'xlslice_2' of component 'MercuryZX1_xlslice_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4517]
-INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlslice_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_0/synth/MercuryZX1_xlslice_1_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-	Parameter DIN_WIDTH bound to: 5 - type: integer 
-	Parameter DIN_FROM bound to: 2 - type: integer 
-	Parameter DIN_TO bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (14#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlslice_1_0' (15#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_0/synth/MercuryZX1_xlslice_1_0.v:57]
-INFO: [Synth 8-3491] module 'MercuryZX1_xlslice_1_1' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_1/synth/MercuryZX1_xlslice_1_1.v:57' bound to instance 'xlslice_3' of component 'MercuryZX1_xlslice_1_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4522]
-INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_xlslice_1_1' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_1/synth/MercuryZX1_xlslice_1_1.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-	Parameter DIN_WIDTH bound to: 5 - type: integer 
-	Parameter DIN_FROM bound to: 3 - type: integer 
-	Parameter DIN_TO bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (15#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlslice_1_1' (16#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlslice_1_1/synth/MercuryZX1_xlslice_1_1.v:57]
-INFO: [Synth 8-256] done synthesizing module 'MercuryZX1' (17#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3259]
-INFO: [Synth 8-256] done synthesizing module 'system_top' (18#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/system_top_PE1.vhd:166]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[4]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[2]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[1]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[0]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[4]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[3]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[1]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[0]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[4]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[3]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[2]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[0]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[4]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[3]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[2]
-WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[1]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (16#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_xlconcat_0_0' (17#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xlconcat_0_0/synth/MercuryZX1_xlconcat_0_0.v:58]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'adc_ila'. This will prevent further optimization [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:4160]
+INFO: [Synth 8-256] done synthesizing module 'MercuryZX1' (18#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/synth/MercuryZX1.vhd:3398]
+INFO: [Synth 8-256] done synthesizing module 'system_top' (19#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/system_top_PE1.vhd:166]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In2[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In3[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In4[0]
@@ -1149,6 +1136,22 @@ WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In2
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In29[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In30[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In31[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[1]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[1]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[1]
 WARNING: [Synth 8-3331] design system_top has unconnected port IO_MIO40_SDCLK_B12_AA13
 WARNING: [Synth 8-3331] design system_top has unconnected port IO_MIO41_SDCMD_B12_AA12
 WARNING: [Synth 8-3331] design system_top has unconnected port IO_MIO42_SDD0_B12_AB17
@@ -1162,7 +1165,7 @@ WARNING: [Synth 8-3331] design system_top has unconnected port IO_MIO49_B12_Y15
 WARNING: [Synth 8-3331] design system_top has unconnected port IO_MIO50_B12_W16
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1990.859 ; gain = 218.262 ; free physical = 17367 ; free virtual = 115499
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1991.113 ; gain = 218.262 ; free physical = 14557 ; free virtual = 113316
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1175,10 +1178,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1998.797 ; gain = 226.199 ; free physical = 17368 ; free virtual = 115500
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1997.051 ; gain = 224.199 ; free physical = 14551 ; free virtual = 113309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1998.797 ; gain = 226.199 ; free physical = 17368 ; free virtual = 115500
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1997.051 ; gain = 224.199 ; free physical = 14551 ; free virtual = 113309
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 92 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1188,6 +1191,26 @@ Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0_in_context.xdc] for cell 'i_system/SDRAM'
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0_in_context.xdc] for cell 'i_system/SDRAM'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0_in_context.xdc] for cell 'i_system/axi_quad_spi_1'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0_in_context.xdc] for cell 'i_system/axi_quad_spi_1'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0_in_context.xdc] for cell 'i_system/clk_wiz'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0_in_context.xdc] for cell 'i_system/clk_wiz'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_1'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_1'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_2'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_2'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_3'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_3'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_4'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_4'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_5'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0_in_context.xdc] for cell 'i_system/adc_ila/system_ila_5'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0_in_context.xdc] for cell 'i_system/freq_counter/labtools_fmeter_0'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0_in_context.xdc] for cell 'i_system/freq_counter/labtools_fmeter_0'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0_in_context.xdc] for cell 'i_system/freq_counter/vio_0'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0_in_context.xdc] for cell 'i_system/freq_counter/vio_0'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_0/MercuryZX1_system_ila_0_0/MercuryZX1_system_ila_0_0_in_context.xdc] for cell 'i_system/system_ila_0'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_0/MercuryZX1_system_ila_0_0/MercuryZX1_system_ila_0_0_in_context.xdc] for cell 'i_system/system_ila_0'
 Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0_in_context.xdc] for cell 'i_system/axi_gpio_0'
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0_in_context.xdc] for cell 'i_system/axi_gpio_0'
 Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0_in_context.xdc] for cell 'i_system/proc_sys_reset'
@@ -1200,36 +1223,16 @@ Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0_in_context.xdc] for cell 'i_system/rst_mig_7series_0_100M'
 Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0_in_context.xdc] for cell 'i_system/xadc_wiz_0'
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0_in_context.xdc] for cell 'i_system/xadc_wiz_0'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0_in_context.xdc] for cell 'i_system/axi_quad_spi_1'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0_in_context.xdc] for cell 'i_system/axi_quad_spi_1'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0_in_context.xdc] for cell 'i_system/freq_counter/vio_0'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0_in_context.xdc] for cell 'i_system/freq_counter/vio_0'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0_in_context.xdc] for cell 'i_system/freq_counter/labtools_fmeter_0'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0_in_context.xdc] for cell 'i_system/freq_counter/labtools_fmeter_0'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/MercuryZX1_system_ila_0_1/MercuryZX1_system_ila_0_1_in_context.xdc] for cell 'i_system/system_ila_0'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/MercuryZX1_system_ila_0_1/MercuryZX1_system_ila_0_1_in_context.xdc] for cell 'i_system/system_ila_0'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_in_context.xdc] for cell 'i_system/system_ila_1'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_in_context.xdc] for cell 'i_system/system_ila_1'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0_in_context.xdc] for cell 'i_system/clk_wiz'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0_in_context.xdc] for cell 'i_system/clk_wiz'
 Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_1/MercuryZX1_vio_0_1/MercuryZX1_vio_0_1_in_context.xdc] for cell 'i_system/vio_0'
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_1/MercuryZX1_vio_0_1/MercuryZX1_vio_0_1_in_context.xdc] for cell 'i_system/vio_0'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0_in_context.xdc] for cell 'i_system/system_ila_2'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0_in_context.xdc] for cell 'i_system/system_ila_2'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0_in_context.xdc] for cell 'i_system/system_ila_3'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0_in_context.xdc] for cell 'i_system/system_ila_3'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0_in_context.xdc] for cell 'i_system/system_ila_4'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0_in_context.xdc] for cell 'i_system/system_ila_4'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0_in_context.xdc] for cell 'i_system/system_ila_5'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0_in_context.xdc] for cell 'i_system/system_ila_5'
 Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_3/MercuryZX1_auto_pc_3/MercuryZX1_auto_pc_3_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/s00_couplers/auto_pc'
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_3/MercuryZX1_auto_pc_3/MercuryZX1_auto_pc_3_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/s00_couplers/auto_pc'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_2_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m00_couplers/auto_pc'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_2_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m00_couplers/auto_pc'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_2_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m01_couplers/auto_pc'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_2_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m01_couplers/auto_pc'
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_2_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m02_couplers/auto_pc'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_2_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m02_couplers/auto_pc'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_0_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m00_couplers/auto_pc'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_0_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m00_couplers/auto_pc'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_0_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m01_couplers/auto_pc'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_0_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m01_couplers/auto_pc'
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_0_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m02_couplers/auto_pc'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_0_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m02_couplers/auto_pc'
 Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m03_couplers/auto_cc'
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0_in_context.xdc] for cell 'i_system/processing_system7_1_axi_periph/m03_couplers/auto_cc'
 Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc]
@@ -1239,103 +1242,111 @@ WARNING: [Vivado 12-584] No ports matched 'FMC_CLK0_M2C_P'. [/media/2TB/workspac
 WARNING: [Vivado 12-584] No ports matched 'FMC_CLK0_M2C_N'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:199]
 WARNING: [Vivado 12-584] No ports matched 'FMC_CLK1_M2C_P'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:200]
 WARNING: [Vivado 12-584] No ports matched 'FMC_LA_N[33]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:280]
-WARNING: [Vivado 12-584] No ports matched 'PE1_SW[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:285]
-WARNING: [Vivado 12-584] No ports matched 'PE1_SW[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:286]
-WARNING: [Vivado 12-584] No ports matched 'PE1_SW[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:287]
-WARNING: [Vivado 12-584] No ports matched 'PE1_SW[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:288]
-WARNING: [Vivado 12-584] No ports matched 'PE1_LED[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:298]
-WARNING: [Vivado 12-584] No ports matched 'PE1_LED[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:299]
-WARNING: [Vivado 12-584] No ports matched 'PE1_LED[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:300]
-WARNING: [Vivado 12-584] No ports matched 'PE1_LED[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:301]
-WARNING: [Vivado 12-584] No ports matched 'PE1_PB[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:305]
-WARNING: [Vivado 12-584] No ports matched 'PE1_PB[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:306]
-WARNING: [Vivado 12-584] No ports matched 'PE1_PB[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:307]
-WARNING: [Vivado 12-584] No ports matched 'PE1_PB[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:308]
-WARNING: [Vivado 12-584] No ports matched 'PMOD_A[5]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:335]
-WARNING: [Vivado 12-584] No ports matched 'PMOD_A[4]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:336]
-WARNING: [Vivado 12-584] No ports matched 'PMOD_A[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:339]
-WARNING: [Vivado 12-584] No ports matched 'PMOD_A[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:340]
-WARNING: [Vivado 12-584] No ports matched 'PMOD_B[5]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:344]
-WARNING: [Vivado 12-584] No ports matched 'PMOD_B[4]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:345]
-WARNING: [Vivado 12-584] No ports matched 'PMOD_B[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:348]
-WARNING: [Vivado 12-584] No ports matched 'PMOD_B[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:349]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A_CLK[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:354]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A_CLK[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:355]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[23]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:356]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[22]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:357]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[21]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:358]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[20]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:359]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[19]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:360]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[18]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:361]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[17]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:362]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[16]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:363]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[15]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:364]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[14]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:365]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[13]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:366]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[12]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:367]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[11]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:368]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[10]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:369]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[9]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:370]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[8]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:371]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[7]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:372]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[6]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:373]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[5]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:374]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[4]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:375]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:376]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:377]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:378]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:379]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B_CLK[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:381]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B_CLK[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:382]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[15]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:391]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[14]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:392]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[13]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:393]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[12]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:394]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[11]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:395]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[10]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:396]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[9]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:397]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[8]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:398]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[7]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:399]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[6]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:400]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[5]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:401]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[4]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:402]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:403]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:404]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:405]
-WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:406]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_PERST'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:412]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_PERST'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:413]
-WARNING: [Vivado 12-584] No ports matched 'MGT_RCLK0_PCIE_REFCLK_clk_p[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:415]
-WARNING: [Vivado 12-584] No ports matched 'MGT_RCLK0_PCIE_REFCLK_clk_n[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:416]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:418]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:419]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:420]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txn[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:421]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:422]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:423]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:424]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txn[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:425]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:426]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:427]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:428]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txn[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:429]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:430]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:431]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:432]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txn[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:433]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:435]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:436]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:437]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:438]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:440]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:441]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:442]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:443]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:445]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:446]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:447]
-WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:448]
-INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:448]
+WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:292]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:292]
+WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:293]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:293]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_MercuryZX1_clk_wiz_0'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:294]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:294]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_MercuryZX1_clk_wiz_0'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:295]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:295]
+WARNING: [Vivado 12-584] No ports matched 'PE1_SW[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:340]
+WARNING: [Vivado 12-584] No ports matched 'PE1_SW[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:341]
+WARNING: [Vivado 12-584] No ports matched 'PE1_SW[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:342]
+WARNING: [Vivado 12-584] No ports matched 'PE1_SW[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:343]
+WARNING: [Vivado 12-584] No ports matched 'PE1_LED[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:353]
+WARNING: [Vivado 12-584] No ports matched 'PE1_LED[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:354]
+WARNING: [Vivado 12-584] No ports matched 'PE1_LED[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:355]
+WARNING: [Vivado 12-584] No ports matched 'PE1_LED[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:356]
+WARNING: [Vivado 12-584] No ports matched 'PE1_PB[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:360]
+WARNING: [Vivado 12-584] No ports matched 'PE1_PB[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:361]
+WARNING: [Vivado 12-584] No ports matched 'PE1_PB[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:362]
+WARNING: [Vivado 12-584] No ports matched 'PE1_PB[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:363]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A[5]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:390]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A[4]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:391]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:394]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:395]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_B[5]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:399]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_B[4]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:400]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_B[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:403]
+WARNING: [Vivado 12-584] No ports matched 'PMOD_B[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:404]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A_CLK[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:409]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A_CLK[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:410]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[23]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:411]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[22]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:412]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[21]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:413]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[20]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:414]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[19]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:415]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[18]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:416]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[17]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:417]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[16]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:418]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[15]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:419]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[14]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:420]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[13]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:421]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[12]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:422]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[11]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:423]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[10]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:424]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[9]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:425]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[8]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:426]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[7]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:427]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[6]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:428]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[5]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:429]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[4]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:430]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:431]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:432]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:433]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_A[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:434]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B_CLK[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:436]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B_CLK[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:437]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[15]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:446]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[14]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:447]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[13]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:448]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[12]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:449]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[11]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:450]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[10]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:451]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[9]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:452]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[8]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:453]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[7]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:454]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[6]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:455]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[5]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:456]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[4]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:457]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:458]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:459]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:460]
+WARNING: [Vivado 12-584] No ports matched 'ANIOS_B[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:461]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_PERST'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:467]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_PERST'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:468]
+WARNING: [Vivado 12-584] No ports matched 'MGT_RCLK0_PCIE_REFCLK_clk_p[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:470]
+WARNING: [Vivado 12-584] No ports matched 'MGT_RCLK0_PCIE_REFCLK_clk_n[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:471]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:473]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:474]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:475]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txn[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:476]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:477]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:478]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:479]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txn[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:480]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:481]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:482]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:483]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txn[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:484]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:485]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:486]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:487]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txn[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:488]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:490]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:491]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:492]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxp[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:493]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:495]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:496]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:497]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_rxn[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:498]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[0]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:500]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[1]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:501]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[2]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:502]
+WARNING: [Vivado 12-584] No ports matched 'PCIE_MGT_txp[3]'. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:503]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc:503]
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/system_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_top_propImpl.xdc].
@@ -1344,21 +1355,25 @@ Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe
 Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2173.453 ; gain = 0.000 ; free physical = 17255 ; free virtual = 115387
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2172.676 ; gain = 0.000 ; free physical = 14437 ; free virtual = 113196
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2173.453 ; gain = 0.000 ; free physical = 17255 ; free virtual = 115387
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2172.676 ; gain = 0.000 ; free physical = 14437 ; free virtual = 113196
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'i_system/axi_quad_spi_1' at clock pin 'ext_spi_clk' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'i_system/adc_ila/system_ila_1' at clock pin 'clk' is different from the actual clock period '4.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'i_system/adc_ila/system_ila_2' at clock pin 'clk' is different from the actual clock period '4.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'i_system/adc_ila/system_ila_3' at clock pin 'clk' is different from the actual clock period '4.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'i_system/adc_ila/system_ila_4' at clock pin 'clk' is different from the actual clock period '4.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17316 ; free virtual = 115449
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14525 ; free virtual = 113288
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z030fbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17325 ; free virtual = 115458
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14525 ; free virtual = 113288
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1723,6 +1738,22 @@ Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint fi
 Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0_in_context.xdc, line 262).
 Applied set_property DONT_TOUCH = true for i_system. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/SDRAM. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/axi_quad_spi_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/clk_wiz. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/system_ila_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/system_ila_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/system_ila_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/system_ila_4. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/system_ila_5. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/xlslice_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/xlslice_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/xlslice_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/adc_ila/xlslice_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/freq_counter/labtools_fmeter_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/freq_counter/vio_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/freq_counter/xlconcat_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/system_ila_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for i_system/xlconcat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/axi_gpio_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/proc_sys_reset. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/processing_system7_1. (constraint file  auto generated constraint, line ).
@@ -1730,33 +1761,17 @@ Applied set_property DONT_TOUCH = true for i_system/processing_system7_1_axi_per
 Applied set_property DONT_TOUCH = true for i_system/processing_system7_1_axi_periph. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/rst_mig_7series_0_100M. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/xadc_wiz_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/xlconcat_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/axi_quad_spi_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/freq_counter/xlconcat_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/freq_counter/vio_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/freq_counter/labtools_fmeter_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/system_ila_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/system_ila_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/clk_wiz. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/vio_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/system_ila_2. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/system_ila_3. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/system_ila_4. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/system_ila_5. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/xlslice_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/xlslice_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/xlslice_2. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for i_system/xlslice_3. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/processing_system7_1_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/processing_system7_1_axi_periph/m00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/processing_system7_1_axi_periph/m01_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/processing_system7_1_axi_periph/m02_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for i_system/processing_system7_1_axi_periph/m03_couplers/auto_cc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17329 ; free virtual = 115461
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14524 ; free virtual = 113286
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17319 ; free virtual = 115453
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14540 ; free virtual = 113301
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1825,7 +1840,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17302 ; free virtual = 115438
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14527 ; free virtual = 113290
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1837,20 +1852,20 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5578] Moved timing constraint from pin 'i_system/SDRAM/ui_clk' to pin 'i_system/SDRAM/bbstub_ui_clk/O'
-INFO: [Synth 8-5578] Moved timing constraint from pin 'i_system/processing_system7_1/FCLK_CLK0' to pin 'i_system/processing_system7_1/bbstub_FCLK_CLK0/O'
-INFO: [Synth 8-5578] Moved timing constraint from pin 'i_system/processing_system7_1/FCLK_CLK1' to pin 'i_system/processing_system7_1/bbstub_FCLK_CLK1/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'i_system/clk_wiz/clk_in1' to pin 'i_system/processing_system7_1/bbstub_FCLK_CLK0/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'i_system/clk_wiz/clk_out1' to pin 'i_system/clk_wiz/bbstub_clk_out1/O'
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'i_system/clk_wiz/clk_in1' to 'i_system/processing_system7_1/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'i_system/processing_system7_1/FCLK_CLK0' to pin 'i_system/processing_system7_1/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'i_system/processing_system7_1/FCLK_CLK1' to pin 'i_system/processing_system7_1/bbstub_FCLK_CLK1/O'
 INFO: [Synth 8-5819] Moved 5 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17188 ; free virtual = 115324
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14377 ; free virtual = 113140
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17182 ; free virtual = 115318
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14376 ; free virtual = 113139
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1862,7 +1877,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17192 ; free virtual = 115328
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14375 ; free virtual = 113138
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1886,7 +1901,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17189 ; free virtual = 115325
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14374 ; free virtual = 113137
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1899,7 +1914,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17189 ; free virtual = 115325
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14374 ; free virtual = 113137
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1911,25 +1926,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17189 ; free virtual = 115325
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14374 ; free virtual = 113137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17189 ; free virtual = 115325
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14374 ; free virtual = 113137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17189 ; free virtual = 115325
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14374 ; free virtual = 113137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17189 ; free virtual = 115325
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14374 ; free virtual = 113137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1939,25 +1954,25 @@ Report BlackBoxes:
 +------+------------------------------------+----------+
 |      |BlackBox name                       |Instances |
 +------+------------------------------------+----------+
-|1     |MercuryZX1_xbar_0                   |         1|
-|2     |MercuryZX1_auto_pc_0                |         1|
-|3     |MercuryZX1_auto_pc_1                |         1|
-|4     |MercuryZX1_auto_pc_2                |         1|
-|5     |MercuryZX1_auto_cc_0                |         1|
-|6     |MercuryZX1_auto_pc_3                |         1|
-|7     |MercuryZX1_SDRAM_0                  |         1|
-|8     |MercuryZX1_axi_gpio_0_0             |         1|
-|9     |MercuryZX1_axi_quad_spi_1_0         |         1|
-|10    |MercuryZX1_clk_wiz_0                |         1|
-|11    |MercuryZX1_proc_sys_reset_0         |         1|
-|12    |MercuryZX1_processing_system7_1_0   |         1|
-|13    |MercuryZX1_rst_mig_7series_0_100M_0 |         1|
-|14    |MercuryZX1_system_ila_0_1           |         1|
-|15    |MercuryZX1_system_ila_1_0           |         1|
-|16    |MercuryZX1_system_ila_2_0           |         1|
-|17    |MercuryZX1_system_ila_3_0           |         1|
-|18    |MercuryZX1_system_ila_4_0           |         1|
-|19    |MercuryZX1_system_ila_5_0           |         1|
+|1     |MercuryZX1_system_ila_1_0           |         1|
+|2     |MercuryZX1_system_ila_2_0           |         1|
+|3     |MercuryZX1_system_ila_3_0           |         1|
+|4     |MercuryZX1_system_ila_4_0           |         1|
+|5     |MercuryZX1_system_ila_5_0           |         1|
+|6     |MercuryZX1_xbar_0                   |         1|
+|7     |MercuryZX1_auto_pc_0                |         1|
+|8     |MercuryZX1_auto_pc_1                |         1|
+|9     |MercuryZX1_auto_pc_2                |         1|
+|10    |MercuryZX1_auto_cc_0                |         1|
+|11    |MercuryZX1_auto_pc_3                |         1|
+|12    |MercuryZX1_SDRAM_0                  |         1|
+|13    |MercuryZX1_axi_gpio_0_0             |         1|
+|14    |MercuryZX1_axi_quad_spi_1_0         |         1|
+|15    |MercuryZX1_clk_wiz_0                |         1|
+|16    |MercuryZX1_proc_sys_reset_0         |         1|
+|17    |MercuryZX1_processing_system7_1_0   |         1|
+|18    |MercuryZX1_rst_mig_7series_0_100M_0 |         1|
+|19    |MercuryZX1_system_ila_0_0           |         1|
 |20    |MercuryZX1_vio_0_1                  |         1|
 |21    |MercuryZX1_xadc_wiz_0_0             |         1|
 |22    |MercuryZX1_labtools_fmeter_0_0      |         1|
@@ -1969,28 +1984,28 @@ Report Cell Usage:
 |      |Cell                                        |Count |
 +------+--------------------------------------------+------+
 |1     |MercuryZX1_SDRAM_0_bbox_0                   |     1|
-|2     |MercuryZX1_auto_cc_0_bbox_11                |     1|
-|3     |MercuryZX1_auto_pc_0_bbox_8                 |     1|
-|4     |MercuryZX1_auto_pc_1_bbox_9                 |     1|
-|5     |MercuryZX1_auto_pc_2_bbox_10                |     1|
-|6     |MercuryZX1_auto_pc_3_bbox_12                |     1|
-|7     |MercuryZX1_axi_gpio_0_0_bbox_1              |     1|
-|8     |MercuryZX1_axi_quad_spi_1_0_bbox_2          |     1|
-|9     |MercuryZX1_clk_wiz_0_bbox_3                 |     1|
-|10    |MercuryZX1_labtools_fmeter_0_0_bbox_4       |     1|
-|11    |MercuryZX1_proc_sys_reset_0_bbox_6          |     1|
-|12    |MercuryZX1_processing_system7_1_0_bbox_7    |     1|
-|13    |MercuryZX1_rst_mig_7series_0_100M_0_bbox_14 |     1|
-|14    |MercuryZX1_system_ila_0_1_bbox_15           |     1|
-|15    |MercuryZX1_system_ila_1_0_bbox_16           |     1|
-|16    |MercuryZX1_system_ila_2_0_bbox_17           |     1|
-|17    |MercuryZX1_system_ila_3_0_bbox_18           |     1|
-|18    |MercuryZX1_system_ila_4_0_bbox_19           |     1|
-|19    |MercuryZX1_system_ila_5_0_bbox_20           |     1|
-|20    |MercuryZX1_vio_0_0_bbox_5                   |     1|
+|2     |MercuryZX1_auto_cc_0_bbox_16                |     1|
+|3     |MercuryZX1_auto_pc_0_bbox_13                |     1|
+|4     |MercuryZX1_auto_pc_1_bbox_14                |     1|
+|5     |MercuryZX1_auto_pc_2_bbox_15                |     1|
+|6     |MercuryZX1_auto_pc_3_bbox_17                |     1|
+|7     |MercuryZX1_axi_gpio_0_0_bbox_6              |     1|
+|8     |MercuryZX1_axi_quad_spi_1_0_bbox_7          |     1|
+|9     |MercuryZX1_clk_wiz_0_bbox_8                 |     1|
+|10    |MercuryZX1_labtools_fmeter_0_0_bbox_9       |     1|
+|11    |MercuryZX1_proc_sys_reset_0_bbox_11         |     1|
+|12    |MercuryZX1_processing_system7_1_0_bbox_12   |     1|
+|13    |MercuryZX1_rst_mig_7series_0_100M_0_bbox_19 |     1|
+|14    |MercuryZX1_system_ila_0_0_bbox_20           |     1|
+|15    |MercuryZX1_system_ila_1_0_bbox_1            |     1|
+|16    |MercuryZX1_system_ila_2_0_bbox_2            |     1|
+|17    |MercuryZX1_system_ila_3_0_bbox_3            |     1|
+|18    |MercuryZX1_system_ila_4_0_bbox_4            |     1|
+|19    |MercuryZX1_system_ila_5_0_bbox_5            |     1|
+|20    |MercuryZX1_vio_0_0_bbox_10                  |     1|
 |21    |MercuryZX1_vio_0_1_bbox_21                  |     1|
 |22    |MercuryZX1_xadc_wiz_0_0_bbox_22             |     1|
-|23    |MercuryZX1_xbar_0_bbox_13                   |     1|
+|23    |MercuryZX1_xbar_0_bbox_18                   |     1|
 |24    |BUFG                                        |     4|
 |25    |BUFR                                        |     4|
 |26    |CARRY4                                      |     6|
@@ -2015,49 +2030,50 @@ Report Instance Areas:
 +------+------------------------------------+---------------------------------------------+------+
 |1     |top                                 |                                             |  2909|
 |2     |  i_system                          |MercuryZX1                                   |  2661|
-|3     |    processing_system7_1_axi_periph |MercuryZX1_processing_system7_1_axi_periph_0 |  1849|
-|4     |      m00_couplers                  |m00_couplers_imp_1I3RZS7                     |   177|
-|5     |      m01_couplers                  |m01_couplers_imp_1AI25R5                     |   177|
-|6     |      m02_couplers                  |m02_couplers_imp_29TQWB                      |   177|
-|7     |      m03_couplers                  |m03_couplers_imp_UC4QWD                      |   246|
-|8     |      s00_couplers                  |s00_couplers_imp_18LGTGM                     |   254|
-|9     |    xlconcat_0                      |MercuryZX1_xlconcat_0_0                      |     0|
-|10    |    xlslice_0                       |MercuryZX1_xlslice_0_0                       |     0|
-|11    |    xlslice_1                       |MercuryZX1_xlslice_0_1                       |     0|
-|12    |    xlslice_2                       |MercuryZX1_xlslice_1_0                       |     0|
-|13    |    xlslice_3                       |MercuryZX1_xlslice_1_1                       |     0|
-|14    |    freq_counter                    |freq_counter_imp_8UHE7K                      |   290|
-|15    |      xlconcat_1                    |MercuryZX1_xlconcat_1_0                      |     0|
-|16    |  \CLK_GEN[0].INX                   |adc_aquire_data                              |    49|
-|17    |  \CLK_GEN[1].INX                   |adc_aquire_data__parameterized1              |    47|
-|18    |  \CLK_GEN[2].INX                   |adc_aquire_data__parameterized3              |    47|
-|19    |  \CLK_GEN[3].INX                   |adc_aquire_data__parameterized5              |    47|
+|3     |    adc_ila                         |adc_ila_imp_SP6JT7                           |     0|
+|4     |      xlslice_0                     |MercuryZX1_xlslice_0_0                       |     0|
+|5     |      xlslice_1                     |MercuryZX1_xlslice_1_0                       |     0|
+|6     |      xlslice_2                     |MercuryZX1_xlslice_2_0                       |     0|
+|7     |      xlslice_3                     |MercuryZX1_xlslice_3_0                       |     0|
+|8     |    processing_system7_1_axi_periph |MercuryZX1_processing_system7_1_axi_periph_0 |  1849|
+|9     |      m00_couplers                  |m00_couplers_imp_1I3RZS7                     |   177|
+|10    |      m01_couplers                  |m01_couplers_imp_1AI25R5                     |   177|
+|11    |      m02_couplers                  |m02_couplers_imp_29TQWB                      |   177|
+|12    |      m03_couplers                  |m03_couplers_imp_UC4QWD                      |   246|
+|13    |      s00_couplers                  |s00_couplers_imp_18LGTGM                     |   254|
+|14    |    xlconcat_0                      |MercuryZX1_xlconcat_0_0                      |     0|
+|15    |    freq_counter                    |freq_counter_imp_8UHE7K                      |   290|
+|16    |      xlconcat_1                    |MercuryZX1_xlconcat_1_0                      |     0|
+|17    |  \CLK_GEN[0].INX                   |adc_aquire_data                              |    49|
+|18    |  \CLK_GEN[1].INX                   |adc_aquire_data__parameterized1              |    47|
+|19    |  \CLK_GEN[2].INX                   |adc_aquire_data__parameterized3              |    47|
+|20    |  \CLK_GEN[3].INX                   |adc_aquire_data__parameterized5              |    47|
 +------+------------------------------------+---------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17189 ; free virtual = 115325
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14374 ; free virtual = 113137
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 37 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2177.422 ; gain = 226.199 ; free physical = 17244 ; free virtual = 115380
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2177.422 ; gain = 404.824 ; free physical = 17246 ; free virtual = 115382
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2178.613 ; gain = 224.199 ; free physical = 14428 ; free virtual = 113191
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2178.613 ; gain = 405.762 ; free physical = 14432 ; free virtual = 113195
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 100 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2177.422 ; gain = 0.000 ; free physical = 17189 ; free virtual = 115325
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.613 ; gain = 0.000 ; free physical = 14363 ; free virtual = 113127
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-230 Infos, 212 Warnings, 0 Critical Warnings and 0 Errors encountered.
+237 Infos, 220 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2177.422 ; gain = 658.625 ; free physical = 17273 ; free virtual = 115409
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2178.613 ; gain = 672.500 ; free physical = 14461 ; free virtual = 113225
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2177.422 ; gain = 0.000 ; free physical = 17272 ; free virtual = 115408
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.613 ; gain = 0.000 ; free physical = 14461 ; free virtual = 113225
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/system_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_top_utilization_synth.rpt -pb system_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 17 08:37:53 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 17 12:55:26 2019...

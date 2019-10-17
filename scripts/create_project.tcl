@@ -43,15 +43,25 @@ foreach hw_platform $hw_platforms {
     set obj [get_filesets sources_1]
     set files [list \
     "[file normalize "$origin_dir/src/system_top_${hw_platform}.vhd"]"\
+    "[file normalize "${origin_dir}/src/adc_data_fmc104.vhd"]" \
     ]
     add_files -norecurse -fileset $obj $files
     
     
+    set file "${origin_dir}/src/adc_data_fmc104.vhd"
+    set file [file normalize $file]
+    set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+    set_property -name "file_type" -value "VHDL" -objects $file_obj
     set file "$origin_dir/src/system_top_${hw_platform}.vhd"
     set file [file normalize $file]
     set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
     set_property "file_type" "VHDL" $file_obj
-    
+   
+    update_compile_order -fileset sources_1
+    set_property  ip_repo_paths  "$origin_dir/ip_repo" [current_project]
+    update_ip_catalog
+
+
     #############################################
     #
     #
@@ -123,7 +133,7 @@ foreach hw_platform $hw_platforms {
     delete_runs "synth_1 impl_1"
     
     # remove out-of-context (OOC) run
-    set_property synth_checkpoint_mode None [get_files  ./${run_dir}/${project_name}.srcs/sources_1/bd/${project_base_name}/${project_base_name}.bd]
+    set_property synth_checkpoint_mode Hierarchical [get_files  ./${run_dir}/${project_name}.srcs/sources_1/bd/${project_base_name}/${project_base_name}.bd]
 
     puts "INFO: Project created:${project_name}"
 

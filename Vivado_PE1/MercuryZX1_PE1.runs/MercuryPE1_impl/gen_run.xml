@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="MercuryPE1_impl" LaunchPart="xc7z030fbg676-2" LaunchTime="1571297835">
+<GenRun Id="MercuryPE1_impl" LaunchPart="xc7z030fbg676-2" LaunchTime="1571313289">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="system_top.drc"/>
   <File Type="BG-BGN" Name="system_top.bgn"/>
@@ -119,7 +119,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -130,21 +132,22 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_4_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_vio_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_5_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_axi_quad_spi_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_clk_wiz_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_3_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_xadc_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_labtools_fmeter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_5_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_processing_system7_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_rst_mig_7series_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_proc_sys_reset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_SDRAM_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_vio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_labtools_fmeter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_4_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_proc_sys_reset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_rst_mig_7series_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_vio_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_xadc_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_3_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MercuryZX1_system_ila_1_0"/>
 </GenRun>

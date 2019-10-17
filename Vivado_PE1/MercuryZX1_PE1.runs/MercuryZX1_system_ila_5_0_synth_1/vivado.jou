@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Oct 16 23:55:09 2019
-# Process ID: 10072
+# Start of session at: Thu Oct 17 12:32:19 2019
+# Process ID: 22190
 # Current directory: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_system_ila_5_0_synth_1
 # Command line: vivado -log MercuryZX1_system_ila_5_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MercuryZX1_system_ila_5_0.tcl
 # Log file: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_system_ila_5_0_synth_1/MercuryZX1_system_ila_5_0.vds
