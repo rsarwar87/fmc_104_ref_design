@@ -77,6 +77,7 @@
 #define EN_FLUSH fflush(stdout)
 #elif SYSTEM == XILINX_ARM_SOC
 #include "xil_printf.h"
+#include "xil_io.h"
 #define EN_FLUSH fflush(stdout)
 #define EN_PRINTF xil_printf
 #elif SYSTEM == ALTERA_NIOS

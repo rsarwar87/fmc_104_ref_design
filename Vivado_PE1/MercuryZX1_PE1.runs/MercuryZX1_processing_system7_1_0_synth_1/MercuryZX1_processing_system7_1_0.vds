@@ -2,26 +2,29 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Aug 22 21:37:59 2019
-# Process ID: 94714
-# Current directory: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1
+# Start of session at: Wed Oct 16 17:12:38 2019
+# Process ID: 86508
+# Current directory: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1
 # Command line: vivado -log MercuryZX1_processing_system7_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MercuryZX1_processing_system7_1_0.tcl
-# Log file: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/MercuryZX1_processing_system7_1_0.vds
-# Journal file: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/vivado.jou
+# Log file: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/MercuryZX1_processing_system7_1_0.vds
+# Journal file: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/vivado.jou
 #-----------------------------------------------------------
 source MercuryZX1_processing_system7_1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'.
 Command: synth_design -top MercuryZX1_processing_system7_1_0 -part xc7z030fbg676-2 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: [Device 21-403] Loading part xc7z030fbg676-2
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 95171 
+INFO: Helper process launched with PID 87091 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1824.742 ; gain = 153.547 ; free physical = 473 ; free virtual = 123645
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1824.355 ; gain = 153.543 ; free physical = 12916 ; free virtual = 106436
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_processing_system7_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/synth/MercuryZX1_processing_system7_1_0.v:60]
-INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
+INFO: [Synth 8-6157] synthesizing module 'MercuryZX1_processing_system7_1_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/synth/MercuryZX1_processing_system7_1_0.v:60]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -78,17 +81,17 @@ INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_sys
 	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
 	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 0 - type: integer 
 	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 0 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1349]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1349]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (1#1) [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (2#1) [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
 INFO: [Synth 8-6155] done synthesizing module 'PS7' (3#1) [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (4#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
-WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/synth/MercuryZX1_processing_system7_1_0.v:393]
-INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_processing_system7_1_0' (5#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/synth/MercuryZX1_processing_system7_1_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (4#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/synth/MercuryZX1_processing_system7_1_0.v:393]
+INFO: [Synth 8-6155] done synthesizing module 'MercuryZX1_processing_system7_1_0' (5#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/synth/MercuryZX1_processing_system7_1_0.v:60]
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_COL
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_CRS
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_DV
@@ -169,7 +172,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[1]
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1885.461 ; gain = 214.266 ; free physical = 509 ; free virtual = 123566
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1886.074 ; gain = 215.262 ; free physical = 12515 ; free virtual = 106037
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -182,47 +185,47 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1888.430 ; gain = 217.234 ; free physical = 441 ; free virtual = 123499
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1889.043 ; gain = 218.230 ; free physical = 12696 ; free virtual = 106219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1888.430 ; gain = 217.234 ; free physical = 441 ; free virtual = 123499
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1889.043 ; gain = 218.230 ; free physical = 12696 ; free virtual = 106219
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc] for cell 'inst'
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc] for cell 'inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/MercuryZX1_processing_system7_1_0_propImpl.xdc].
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc] for cell 'inst'
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/MercuryZX1_processing_system7_1_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/MercuryZX1_processing_system7_1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/dont_touch.xdc]
+Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1989.117 ; gain = 0.000 ; free physical = 518 ; free virtual = 123228
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1988.730 ; gain = 0.000 ; free physical = 12364 ; free virtual = 105888
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1993.086 ; gain = 3.969 ; free physical = 515 ; free virtual = 123225
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1994.668 ; gain = 5.938 ; free physical = 12360 ; free virtual = 105884
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1993.086 ; gain = 321.891 ; free physical = 532 ; free virtual = 123264
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1994.668 ; gain = 323.855 ; free physical = 12376 ; free virtual = 105914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z030fbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1993.086 ; gain = 321.891 ; free physical = 533 ; free virtual = 123265
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1994.668 ; gain = 323.855 ; free physical = 12376 ; free virtual = 105915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1993.086 ; gain = 321.891 ; free physical = 475 ; free virtual = 123209
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1994.668 ; gain = 323.855 ; free physical = 12342 ; free virtual = 105907
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1993.086 ; gain = 321.891 ; free physical = 401 ; free virtual = 123118
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1994.668 ; gain = 323.855 ; free physical = 12280 ; free virtual = 105856
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -280,7 +283,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1993.086 ; gain = 321.891 ; free physical = 421 ; free virtual = 123021
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1994.668 ; gain = 323.855 ; free physical = 12241 ; free virtual = 105788
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -292,13 +295,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2133.070 ; gain = 461.875 ; free physical = 677 ; free virtual = 122556
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2132.652 ; gain = 461.840 ; free physical = 11147 ; free virtual = 104701
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2152.078 ; gain = 480.883 ; free physical = 664 ; free virtual = 122543
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2152.660 ; gain = 481.848 ; free physical = 11163 ; free virtual = 104717
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -310,7 +313,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2160.086 ; gain = 488.891 ; free physical = 665 ; free virtual = 122548
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2160.668 ; gain = 489.855 ; free physical = 11156 ; free virtual = 104710
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -334,7 +337,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2170.992 ; gain = 499.797 ; free physical = 2024 ; free virtual = 123907
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2169.574 ; gain = 498.762 ; free physical = 14152 ; free virtual = 107695
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -347,7 +350,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2170.992 ; gain = 499.797 ; free physical = 2018 ; free virtual = 123901
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2169.574 ; gain = 498.762 ; free physical = 14164 ; free virtual = 107707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -359,25 +362,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2170.992 ; gain = 499.797 ; free physical = 2018 ; free virtual = 123901
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2169.574 ; gain = 498.762 ; free physical = 14169 ; free virtual = 107712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2170.992 ; gain = 499.797 ; free physical = 2021 ; free virtual = 123904
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2169.574 ; gain = 498.762 ; free physical = 14169 ; free virtual = 107712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2170.992 ; gain = 499.797 ; free physical = 2020 ; free virtual = 123903
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2169.574 ; gain = 498.762 ; free physical = 14169 ; free virtual = 107712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2170.992 ; gain = 499.797 ; free physical = 2018 ; free virtual = 123901
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2169.574 ; gain = 498.762 ; free physical = 14169 ; free virtual = 107712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -407,31 +410,31 @@ Report Instance Areas:
 |2     |  inst   |processing_system7_v5_5_processing_system7 |   245|
 +------+---------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2170.992 ; gain = 499.797 ; free physical = 2012 ; free virtual = 123895
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2169.574 ; gain = 498.762 ; free physical = 14169 ; free virtual = 107712
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 79 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2170.992 ; gain = 395.141 ; free physical = 2057 ; free virtual = 123938
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2171.000 ; gain = 499.797 ; free physical = 2056 ; free virtual = 123937
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2169.574 ; gain = 393.137 ; free physical = 14219 ; free virtual = 107762
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2169.582 ; gain = 498.762 ; free physical = 14219 ; free virtual = 107762
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2186.867 ; gain = 0.000 ; free physical = 2627 ; free virtual = 124512
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2186.418 ; gain = 0.000 ; free physical = 14140 ; free virtual = 107684
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-23 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+26 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2186.867 ; gain = 749.531 ; free physical = 2848 ; free virtual = 124736
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2186.867 ; gain = 0.000 ; free physical = 2848 ; free virtual = 124736
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2186.418 ; gain = 765.406 ; free physical = 14495 ; free virtual = 108039
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2186.418 ; gain = 0.000 ; free physical = 14499 ; free virtual = 108043
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/MercuryZX1_processing_system7_1_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/MercuryZX1_processing_system7_1_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
 INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP MercuryZX1_processing_system7_1_0, cache-ID = 659ee1fa225078c4
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2186.867 ; gain = 0.000 ; free physical = 2986 ; free virtual = 124880
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2186.418 ; gain = 0.000 ; free physical = 14997 ; free virtual = 108542
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/MercuryZX1_processing_system7_1_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_processing_system7_1_0_synth_1/MercuryZX1_processing_system7_1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MercuryZX1_processing_system7_1_0_utilization_synth.rpt -pb MercuryZX1_processing_system7_1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Aug 22 21:38:46 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 16 17:13:13 2019...

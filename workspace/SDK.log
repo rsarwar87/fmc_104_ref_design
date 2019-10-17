@@ -1,0 +1,866 @@
+18:16:16 INFO  : Registering command handlers for SDK TCF services
+18:16:17 INFO  : Launching XSCT server: xsct -n -interactive /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/temp_xsdb_launch_script.tcl
+18:16:19 INFO  : XSCT server has started successfully.
+18:16:19 INFO  : Successfully done setting XSCT server connection channel  
+18:16:19 INFO  : Successfully done setting SDK workspace  
+18:16:19 INFO  : Processing command line option -hwspec /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top.hdf.
+18:30:54 INFO  : Refreshed build settings on project FlashTest
+18:30:54 INFO  : Refreshed build settings on project HelloWorld
+18:30:54 INFO  : Refreshed build settings on project LwIP_Example
+18:30:54 INFO  : Refreshed build settings on project MemoryTest
+18:30:54 INFO  : Refreshed build settings on project USB_Test
+18:30:54 INFO  : Refreshed build settings on project i2c_example
+18:35:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+18:35:29 INFO  : 'fpga -state' command is executed.
+18:35:29 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+18:35:29 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+18:35:29 INFO  : 'jtag frequency' command is executed.
+18:35:29 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+18:35:29 INFO  : Context for 'APU' is selected.
+18:35:29 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+18:35:29 INFO  : 'configparams force-mem-access 1' command is executed.
+18:35:29 INFO  : Context for 'APU' is selected.
+18:35:29 INFO  : 'stop' command is executed.
+18:35:29 INFO  : 'ps7_init' command is executed.
+18:35:29 INFO  : 'ps7_post_config' command is executed.
+18:35:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:35:29 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:35:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:35:29 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:35:29 INFO  : 'configparams force-mem-access 0' command is executed.
+18:35:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:36:06 INFO  : Disconnected from the channel tcfchan#2.
+18:43:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+18:43:41 INFO  : 'fpga -state' command is executed.
+18:43:41 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+18:43:41 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+18:43:41 INFO  : 'jtag frequency' command is executed.
+18:43:41 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+18:43:41 INFO  : Context for 'APU' is selected.
+18:43:41 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+18:43:41 INFO  : 'configparams force-mem-access 1' command is executed.
+18:43:41 INFO  : Context for 'APU' is selected.
+18:43:41 INFO  : 'stop' command is executed.
+18:43:41 INFO  : 'ps7_init' command is executed.
+18:43:41 INFO  : 'ps7_post_config' command is executed.
+18:43:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:43:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:43:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:43:41 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:43:41 INFO  : 'configparams force-mem-access 0' command is executed.
+18:43:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:51:26 INFO  : Disconnected from the channel tcfchan#3.
+18:51:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+18:51:27 INFO  : 'fpga -state' command is executed.
+18:51:27 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+18:51:27 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+18:51:27 INFO  : 'jtag frequency' command is executed.
+18:51:27 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+18:51:27 INFO  : Context for 'APU' is selected.
+18:51:30 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+18:51:30 INFO  : 'configparams force-mem-access 1' command is executed.
+18:51:30 INFO  : Context for 'APU' is selected.
+18:51:30 INFO  : 'stop' command is executed.
+18:51:30 INFO  : 'ps7_init' command is executed.
+18:51:30 INFO  : 'ps7_post_config' command is executed.
+18:51:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:51:30 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:51:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:51:30 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:51:30 INFO  : 'configparams force-mem-access 0' command is executed.
+18:51:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:55:57 INFO  : Disconnected from the channel tcfchan#4.
+18:55:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+18:55:58 INFO  : 'fpga -state' command is executed.
+18:55:58 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+18:55:58 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+18:55:58 INFO  : 'jtag frequency' command is executed.
+18:55:58 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+18:55:58 INFO  : Context for 'APU' is selected.
+18:56:00 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+18:56:00 INFO  : 'configparams force-mem-access 1' command is executed.
+18:56:00 INFO  : Context for 'APU' is selected.
+18:56:00 INFO  : 'stop' command is executed.
+18:56:01 INFO  : 'ps7_init' command is executed.
+18:56:01 INFO  : 'ps7_post_config' command is executed.
+18:56:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:56:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:01 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:01 INFO  : 'configparams force-mem-access 0' command is executed.
+18:56:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:04:24 INFO  : Disconnected from the channel tcfchan#5.
+19:04:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+19:04:25 INFO  : 'fpga -state' command is executed.
+19:04:25 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+19:04:26 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+19:04:26 INFO  : 'jtag frequency' command is executed.
+19:04:26 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+19:04:26 INFO  : Context for 'APU' is selected.
+19:04:28 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+19:04:28 INFO  : 'configparams force-mem-access 1' command is executed.
+19:04:28 INFO  : Context for 'APU' is selected.
+19:04:28 INFO  : 'stop' command is executed.
+19:04:29 INFO  : 'ps7_init' command is executed.
+19:04:29 INFO  : 'ps7_post_config' command is executed.
+19:04:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:04:29 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:04:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:04:29 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:04:29 INFO  : 'configparams force-mem-access 0' command is executed.
+19:04:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:18:22 INFO  : Disconnected from the channel tcfchan#6.
+19:18:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+19:18:23 INFO  : 'fpga -state' command is executed.
+19:18:23 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+19:18:23 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+19:18:23 INFO  : 'jtag frequency' command is executed.
+19:18:23 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+19:18:23 INFO  : Context for 'APU' is selected.
+19:18:26 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+19:18:26 INFO  : 'configparams force-mem-access 1' command is executed.
+19:18:26 INFO  : Context for 'APU' is selected.
+19:18:26 INFO  : 'stop' command is executed.
+19:18:26 INFO  : 'ps7_init' command is executed.
+19:18:26 INFO  : 'ps7_post_config' command is executed.
+19:18:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:18:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:26 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:18:26 INFO  : 'configparams force-mem-access 0' command is executed.
+19:18:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:18:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:26 INFO  : 'con' command is executed.
+19:18:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+19:18:26 INFO  : Disconnected from the channel tcfchan#7.
+19:31:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+19:31:22 INFO  : 'fpga -state' command is executed.
+19:31:22 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+19:31:22 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+19:31:22 INFO  : 'jtag frequency' command is executed.
+19:31:22 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+19:31:22 INFO  : Context for 'APU' is selected.
+19:31:22 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+19:31:22 INFO  : 'configparams force-mem-access 1' command is executed.
+19:31:22 INFO  : Context for 'APU' is selected.
+19:31:22 INFO  : 'stop' command is executed.
+19:31:23 INFO  : 'ps7_init' command is executed.
+19:31:23 INFO  : 'ps7_post_config' command is executed.
+19:31:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:31:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:31:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:31:23 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:31:23 INFO  : 'configparams force-mem-access 0' command is executed.
+19:31:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:31:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:31:23 INFO  : 'con' command is executed.
+19:31:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+19:31:23 INFO  : Disconnected from the channel tcfchan#8.
+19:43:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+19:43:07 INFO  : 'fpga -state' command is executed.
+19:43:07 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+19:43:07 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+19:43:07 INFO  : 'jtag frequency' command is executed.
+19:43:07 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+19:43:07 INFO  : Context for 'APU' is selected.
+19:43:07 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+19:43:07 INFO  : 'configparams force-mem-access 1' command is executed.
+19:43:07 INFO  : Context for 'APU' is selected.
+19:43:07 INFO  : 'stop' command is executed.
+19:43:07 INFO  : 'ps7_init' command is executed.
+19:43:07 INFO  : 'ps7_post_config' command is executed.
+19:43:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:43:07 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:43:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:43:07 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:43:07 INFO  : 'configparams force-mem-access 0' command is executed.
+19:43:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:43:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:43:07 INFO  : 'con' command is executed.
+19:43:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+19:43:07 INFO  : Disconnected from the channel tcfchan#9.
+19:44:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+19:44:44 INFO  : 'fpga -state' command is executed.
+19:44:44 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+19:44:45 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+19:44:45 INFO  : 'jtag frequency' command is executed.
+19:44:45 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+19:44:45 INFO  : Context for 'APU' is selected.
+19:44:45 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+19:44:45 INFO  : 'configparams force-mem-access 1' command is executed.
+19:44:45 INFO  : Context for 'APU' is selected.
+19:44:45 INFO  : 'stop' command is executed.
+19:44:45 INFO  : 'ps7_init' command is executed.
+19:44:45 INFO  : 'ps7_post_config' command is executed.
+19:44:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:44:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:44:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:44:45 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:44:45 INFO  : 'configparams force-mem-access 0' command is executed.
+19:44:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:44:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:44:45 INFO  : 'con' command is executed.
+19:44:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+19:44:45 INFO  : Disconnected from the channel tcfchan#10.
+19:51:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+19:51:42 INFO  : 'fpga -state' command is executed.
+19:51:42 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+19:51:42 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+19:51:42 INFO  : 'jtag frequency' command is executed.
+19:51:42 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+19:51:42 INFO  : Context for 'APU' is selected.
+19:51:42 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+19:51:42 INFO  : 'configparams force-mem-access 1' command is executed.
+19:51:42 INFO  : Context for 'APU' is selected.
+19:51:42 INFO  : 'stop' command is executed.
+19:51:42 INFO  : 'ps7_init' command is executed.
+19:51:42 INFO  : 'ps7_post_config' command is executed.
+19:51:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:51:42 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:51:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:51:43 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:51:43 INFO  : 'configparams force-mem-access 0' command is executed.
+19:51:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:56:07 INFO  : Disconnected from the channel tcfchan#11.
+19:58:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+19:58:09 INFO  : 'fpga -state' command is executed.
+19:58:09 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+19:58:09 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+19:58:09 INFO  : 'jtag frequency' command is executed.
+19:58:09 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+19:58:09 INFO  : Context for 'APU' is selected.
+19:58:12 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+19:58:12 INFO  : 'configparams force-mem-access 1' command is executed.
+19:58:12 INFO  : Context for 'APU' is selected.
+19:58:12 INFO  : 'stop' command is executed.
+19:58:12 INFO  : 'ps7_init' command is executed.
+19:58:12 INFO  : 'ps7_post_config' command is executed.
+19:58:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:58:12 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:58:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:58:12 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:58:12 INFO  : 'configparams force-mem-access 0' command is executed.
+19:58:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:58:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:58:12 INFO  : 'con' command is executed.
+19:58:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+19:58:12 INFO  : Disconnected from the channel tcfchan#12.
+20:10:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:10:08 INFO  : 'fpga -state' command is executed.
+20:10:08 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:10:08 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:10:08 INFO  : 'jtag frequency' command is executed.
+20:10:08 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:10:08 INFO  : Context for 'APU' is selected.
+20:10:09 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:10:09 INFO  : 'configparams force-mem-access 1' command is executed.
+20:10:09 INFO  : Context for 'APU' is selected.
+20:10:09 INFO  : 'stop' command is executed.
+20:10:09 INFO  : 'ps7_init' command is executed.
+20:10:09 INFO  : 'ps7_post_config' command is executed.
+20:10:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:10:09 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:10:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:10:09 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:10:09 INFO  : 'configparams force-mem-access 0' command is executed.
+20:10:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:10:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:10:09 INFO  : 'con' command is executed.
+20:10:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:10:09 INFO  : Disconnected from the channel tcfchan#13.
+20:12:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:12:59 INFO  : 'fpga -state' command is executed.
+20:12:59 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:12:59 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:12:59 INFO  : 'jtag frequency' command is executed.
+20:12:59 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:12:59 INFO  : Context for 'APU' is selected.
+20:12:59 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:12:59 INFO  : 'configparams force-mem-access 1' command is executed.
+20:12:59 INFO  : Context for 'APU' is selected.
+20:12:59 INFO  : 'stop' command is executed.
+20:12:59 INFO  : 'ps7_init' command is executed.
+20:12:59 INFO  : 'ps7_post_config' command is executed.
+20:12:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:13:00 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:13:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:13:00 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:13:00 INFO  : 'configparams force-mem-access 0' command is executed.
+20:13:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:13:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:13:00 INFO  : 'con' command is executed.
+20:13:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:13:00 INFO  : Disconnected from the channel tcfchan#14.
+20:14:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:14:55 INFO  : 'fpga -state' command is executed.
+20:14:55 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:14:56 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:14:56 INFO  : 'jtag frequency' command is executed.
+20:14:56 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:14:56 INFO  : Context for 'APU' is selected.
+20:14:58 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:14:58 INFO  : 'configparams force-mem-access 1' command is executed.
+20:14:58 INFO  : Context for 'APU' is selected.
+20:14:58 INFO  : 'stop' command is executed.
+20:14:59 INFO  : 'ps7_init' command is executed.
+20:14:59 INFO  : 'ps7_post_config' command is executed.
+20:14:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:14:59 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:14:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:14:59 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:14:59 INFO  : 'configparams force-mem-access 0' command is executed.
+20:14:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:14:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:14:59 INFO  : 'con' command is executed.
+20:14:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:14:59 INFO  : Disconnected from the channel tcfchan#15.
+20:16:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:16:34 INFO  : 'fpga -state' command is executed.
+20:16:34 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:16:34 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:16:34 INFO  : 'jtag frequency' command is executed.
+20:16:34 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:16:34 INFO  : Context for 'APU' is selected.
+20:16:37 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:16:37 INFO  : 'configparams force-mem-access 1' command is executed.
+20:16:37 INFO  : Context for 'APU' is selected.
+20:16:37 INFO  : 'stop' command is executed.
+20:16:37 INFO  : 'ps7_init' command is executed.
+20:16:37 INFO  : 'ps7_post_config' command is executed.
+20:16:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:16:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:16:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:16:37 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:16:37 INFO  : 'configparams force-mem-access 0' command is executed.
+20:16:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:16:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:16:37 INFO  : 'con' command is executed.
+20:16:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:16:37 INFO  : Disconnected from the channel tcfchan#16.
+20:19:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:19:00 INFO  : 'fpga -state' command is executed.
+20:19:00 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:19:00 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:19:00 INFO  : 'jtag frequency' command is executed.
+20:19:00 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:19:00 INFO  : Context for 'APU' is selected.
+20:19:00 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:19:00 INFO  : 'configparams force-mem-access 1' command is executed.
+20:19:00 INFO  : Context for 'APU' is selected.
+20:19:00 INFO  : 'stop' command is executed.
+20:19:00 INFO  : 'ps7_init' command is executed.
+20:19:00 INFO  : 'ps7_post_config' command is executed.
+20:19:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:19:00 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:19:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:19:01 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:19:01 INFO  : 'configparams force-mem-access 0' command is executed.
+20:19:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:19:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:19:01 INFO  : 'con' command is executed.
+20:19:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:19:01 INFO  : Disconnected from the channel tcfchan#17.
+20:22:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:22:01 INFO  : 'fpga -state' command is executed.
+20:22:01 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:22:01 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:22:01 INFO  : 'jtag frequency' command is executed.
+20:22:01 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:22:01 INFO  : Context for 'APU' is selected.
+20:22:03 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:22:03 INFO  : 'configparams force-mem-access 1' command is executed.
+20:22:03 INFO  : Context for 'APU' is selected.
+20:22:03 INFO  : 'stop' command is executed.
+20:22:04 INFO  : 'ps7_init' command is executed.
+20:22:04 INFO  : 'ps7_post_config' command is executed.
+20:22:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:22:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:04 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:22:04 INFO  : 'configparams force-mem-access 0' command is executed.
+20:22:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:22:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:04 INFO  : 'con' command is executed.
+20:22:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:22:04 INFO  : Disconnected from the channel tcfchan#18.
+20:31:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:31:17 INFO  : 'fpga -state' command is executed.
+20:31:17 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:31:17 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:31:17 INFO  : 'jtag frequency' command is executed.
+20:31:17 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:31:17 INFO  : Context for 'APU' is selected.
+20:31:20 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:31:20 INFO  : 'configparams force-mem-access 1' command is executed.
+20:31:20 INFO  : Context for 'APU' is selected.
+20:31:20 INFO  : 'stop' command is executed.
+20:31:20 INFO  : 'ps7_init' command is executed.
+20:31:20 INFO  : 'ps7_post_config' command is executed.
+20:31:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:31:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:31:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:31:21 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:31:21 INFO  : 'configparams force-mem-access 0' command is executed.
+20:31:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:31:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:31:21 INFO  : 'con' command is executed.
+20:31:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:31:21 INFO  : Disconnected from the channel tcfchan#19.
+20:33:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:33:07 INFO  : 'fpga -state' command is executed.
+20:33:07 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:33:07 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:33:07 INFO  : 'jtag frequency' command is executed.
+20:33:07 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:33:07 INFO  : Context for 'APU' is selected.
+20:33:10 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:33:10 INFO  : 'configparams force-mem-access 1' command is executed.
+20:33:10 INFO  : Context for 'APU' is selected.
+20:33:10 INFO  : 'stop' command is executed.
+20:33:10 INFO  : 'ps7_init' command is executed.
+20:33:10 INFO  : 'ps7_post_config' command is executed.
+20:33:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:33:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:33:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:33:10 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:33:10 INFO  : 'configparams force-mem-access 0' command is executed.
+20:33:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:33:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:33:10 INFO  : 'con' command is executed.
+20:33:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:33:10 INFO  : Disconnected from the channel tcfchan#20.
+20:34:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:34:38 INFO  : 'fpga -state' command is executed.
+20:34:38 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:34:38 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:34:38 INFO  : 'jtag frequency' command is executed.
+20:34:38 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:34:38 INFO  : Context for 'APU' is selected.
+20:34:40 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:34:40 INFO  : 'configparams force-mem-access 1' command is executed.
+20:34:40 INFO  : Context for 'APU' is selected.
+20:34:41 INFO  : 'stop' command is executed.
+20:34:41 INFO  : 'ps7_init' command is executed.
+20:34:41 INFO  : 'ps7_post_config' command is executed.
+20:34:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:34:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:34:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:34:41 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:34:41 INFO  : 'configparams force-mem-access 0' command is executed.
+20:34:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:44:12 INFO  : Disconnected from the channel tcfchan#21.
+20:44:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27" && level==0} -index 1' command is executed.
+20:44:13 INFO  : 'fpga -state' command is executed.
+20:44:13 INFO  : Connected to target on host '10.211.3.139' and port '3121'.
+20:44:14 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A17B27' is selected.
+20:44:14 INFO  : 'jtag frequency' command is executed.
+20:44:14 INFO  : Sourcing of '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl' is done.
+20:44:14 INFO  : Context for 'APU' is selected.
+20:44:16 INFO  : Hardware design information is loaded from '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf'.
+20:44:16 INFO  : 'configparams force-mem-access 1' command is executed.
+20:44:16 INFO  : Context for 'APU' is selected.
+20:44:16 INFO  : 'stop' command is executed.
+20:44:17 INFO  : 'ps7_init' command is executed.
+20:44:17 INFO  : 'ps7_post_config' command is executed.
+20:44:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:44:17 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:44:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:44:17 INFO  : The application '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:44:17 INFO  : 'configparams force-mem-access 0' command is executed.
+20:44:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:10.211.3.139:3121
+source /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+loadhw -hw /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+dow /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:44:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:44:17 INFO  : 'con' command is executed.
+20:44:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A17B27"} -index 0
+con
+----------------End of Script----------------
+
+20:44:17 INFO  : Disconnected from the channel tcfchan#22.

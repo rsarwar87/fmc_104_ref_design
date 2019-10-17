@@ -65,21 +65,25 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
+  set_param tcl.collectionResultDisplayLimit 0
   set_param chipscope.maxJobs 8
   create_project -in_memory -part xc7z030fbg676-2
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.cache/wt [current_project]
-  set_property parent.project_path /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.xpr [current_project]
-  set_property ip_output_repo /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.cache/ip [current_project]
+  set_property webtalk.parent_dir /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.cache/wt [current_project]
+  set_property parent.project_path /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.xpr [current_project]
+  set_property ip_repo_paths /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/ip_repo [current_project]
+  update_ip_catalog
+  set_property ip_output_repo /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/system_top.dcp
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
+  add_files -quiet /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryPE1_synth/system_top.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd
+  add_files /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd
   set_param project.isImplRun false
-  read_xdc /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/src/MercuryZX1_PE1.xdc
+  read_xdc /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc
   set_param project.isImplRun true
   link_design -top system_top -part xc7z030fbg676-2
   set_param project.isImplRun false
@@ -162,7 +166,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force system_top.mmi }
   write_bitstream -force system_top.bit 
   catch { write_sysdef -hwdef system_top.hwdef -bitfile system_top.bit -meminfo system_top.mmi -file system_top.sysdef }

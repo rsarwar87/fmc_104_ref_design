@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date             : Thu Aug 22 21:45:35 2019
+| Date             : Thu Oct 17 08:41:13 2019
 | Host             : ukaea-fpga running 64-bit KDE neon User Edition 5.16
 | Command          : report_power -file system_top_power_routed.rpt -pb system_top_power_summary_routed.pb -rpx system_top_power_routed.rpx
 | Design           : system_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.396        |
+| Total On-Chip Power (W)  | 3.020        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 2.252        |
-| Device Static (W)        | 0.144        |
+| Dynamic (W)              | 2.873        |
+| Device Static (W)        | 0.147        |
 | Effective TJA (C/W)      | 1.9          |
-| Max Ambient (C)          | 80.5         |
-| Junction Temperature (C) | 29.5         |
+| Max Ambient (C)          | 79.3         |
+| Junction Temperature (C) | 30.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,24 +52,28 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.047 |       23 |       --- |             --- |
-| Slice Logic              |     0.015 |    21000 |       --- |             --- |
-|   LUT as Logic           |     0.013 |     7489 |     78600 |            9.53 |
-|   Register               |    <0.001 |     9014 |    157200 |            5.73 |
-|   LUT as Distributed RAM |    <0.001 |      692 |     26600 |            2.60 |
-|   CARRY4                 |    <0.001 |      252 |     19650 |            1.28 |
-|   F7/F8 Muxes            |    <0.001 |      122 |     78600 |            0.16 |
-|   LUT as Shift Register  |    <0.001 |      342 |     26600 |            1.29 |
-|   Others                 |    <0.001 |      668 |       --- |             --- |
-| Signals                  |     0.022 |    15911 |       --- |             --- |
-| MMCM                     |     0.095 |        1 |         5 |           20.00 |
+| Clocks                   |     0.125 |       27 |       --- |             --- |
+| Slice Logic              |     0.038 |    41211 |       --- |             --- |
+|   LUT as Logic           |     0.028 |    13560 |     78600 |           17.25 |
+|   Register               |     0.005 |    20314 |    157200 |           12.92 |
+|   LUT as Shift Register  |     0.004 |      843 |     26600 |            3.17 |
+|   LUT as Distributed RAM |    <0.001 |      732 |     26600 |            2.75 |
+|   CARRY4                 |    <0.001 |      371 |     19650 |            1.89 |
+|   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
+|   F7/F8 Muxes            |    <0.001 |      279 |     78600 |            0.35 |
+|   Others                 |    <0.001 |     1641 |       --- |             --- |
+|   BUFR                   |     0.000 |        4 |       116 |            3.45 |
+| Signals                  |     0.082 |    31543 |       --- |             --- |
+| Block RAM                |     0.002 |      3.5 |       265 |            1.32 |
+| MMCM                     |     0.201 |        2 |         5 |           40.00 |
 | PLL                      |     0.092 |        1 |         5 |           20.00 |
-| I/O                      |     0.313 |       56 |       250 |           22.40 |
+| DSPs                     |     0.002 |       10 |       400 |            2.50 |
+| I/O                      |     0.663 |      124 |       250 |           49.60 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.002 |        1 |       --- |             --- |
 | PS7                      |     1.531 |        1 |       --- |             --- |
-| Static Power             |     0.144 |          |           |                 |
-| Total                    |     2.396 |          |           |                 |
+| Static Power             |     0.147 |          |           |                 |
+| Total                    |     3.020 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,11 +83,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.153 |       0.128 |      0.025 |
-| Vccaux    |       1.800 |     0.230 |       0.215 |      0.015 |
+| Vccint    |       1.000 |     0.362 |       0.336 |      0.026 |
+| Vccaux    |       1.800 |     0.459 |       0.444 |      0.015 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.004 |       0.003 |      0.001 |
-| Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |
+| Vcco18    |       1.800 |     0.003 |       0.002 |      0.001 |
 | Vcco15    |       1.500 |     0.131 |       0.130 |      0.001 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -92,7 +96,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.736 |       0.718 |      0.019 |
+| Vccpint   |       1.000 |     0.737 |       0.718 |      0.019 |
 | Vccpaux   |       1.800 |     0.062 |       0.052 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
@@ -143,9 +147,13 @@ Table of Contents
 | Clock                                                                                                                                                     | Domain                                                                                                                                                                                                     | Constraint (ns) |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | CLK200_P                                                                                                                                                  | CLK200_P                                                                                                                                                                                                   |             5.0 |
+| clk_fpga_0                                                                                                                                                | i_system/processing_system7_1/inst/FCLK_CLK0                                                                                                                                                               |            10.0 |
 | clk_fpga_0                                                                                                                                                | i_system/processing_system7_1/inst/FCLK_CLK_unbuffered[0]                                                                                                                                                  |            10.0 |
 | clk_fpga_1                                                                                                                                                | i_system/processing_system7_1/inst/FCLK_CLK_unbuffered[1]                                                                                                                                                  |            20.0 |
+| clk_out1_MercuryZX1_clk_wiz_0                                                                                                                             | i_system/clk_wiz/inst/clk_out1_MercuryZX1_clk_wiz_0                                                                                                                                                        |             5.0 |
 | clk_pll_i                                                                                                                                                 | i_system/SDRAM/u_MercuryZX1_SDRAM_0_mig/u_ddr3_infrastructure/clk_pll_i                                                                                                                                    |            10.0 |
+| clkfbout_MercuryZX1_clk_wiz_0                                                                                                                             | i_system/clk_wiz/inst/clkfbout_MercuryZX1_clk_wiz_0                                                                                                                                                        |            10.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK                                                                | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs                                                                                                                                       |            33.0 |
 | freq_refclk                                                                                                                                               | i_system/SDRAM/u_MercuryZX1_SDRAM_0_mig/u_ddr3_infrastructure/freq_refclk                                                                                                                                  |             1.2 |
 | iserdes_clkdiv                                                                                                                                            | i_system/SDRAM/u_MercuryZX1_SDRAM_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/iserdes_clkdiv       |            10.0 |
 | iserdes_clkdiv_1                                                                                                                                          | i_system/SDRAM/u_MercuryZX1_SDRAM_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/iserdes_clkdiv       |            10.0 |
@@ -175,19 +183,48 @@ Table of Contents
 +-------------------------------------+-----------+
 | Name                                | Power (W) |
 +-------------------------------------+-----------+
-| system_top                          |     2.252 |
+| system_top                          |     2.873 |
+|   CLK_GEN[0].INX                    |     0.096 |
+|   CLK_GEN[1].INX                    |     0.097 |
+|   CLK_GEN[2].INX                    |     0.096 |
+|   CLK_GEN[3].INX                    |     0.098 |
 |   I2C_SCL_IOBUF_inst                |     0.004 |
 |   I2C_SDA_IOBUF_inst                |     0.004 |
-|   i_system                          |     2.244 |
-|     SDRAM                           |     0.684 |
-|       u_MercuryZX1_SDRAM_0_mig      |     0.684 |
+|   dbg_hub                           |     0.005 |
+|     inst                            |     0.005 |
+|       BSCANID.u_xsdbm_id            |     0.005 |
+|   i_system                          |     2.472 |
+|     SDRAM                           |     0.682 |
+|       u_MercuryZX1_SDRAM_0_mig      |     0.682 |
+|     axi_quad_spi_1                  |     0.005 |
+|       U0                            |     0.005 |
+|     clk_wiz                         |     0.107 |
+|       inst                          |     0.107 |
+|     freq_counter                    |     0.018 |
+|       labtools_fmeter_0             |     0.004 |
+|       vio_0                         |     0.014 |
 |     processing_system7_1            |     1.533 |
 |       inst                          |     1.533 |
-|     processing_system7_1_axi_periph |     0.021 |
+|     processing_system7_1_axi_periph |     0.025 |
 |       m00_couplers                  |     0.004 |
-|       m01_couplers                  |     0.005 |
+|       m01_couplers                  |     0.004 |
+|       m02_couplers                  |     0.004 |
 |       m03_couplers                  |     0.006 |
-|       xbar                          |     0.006 |
+|       xbar                          |     0.007 |
+|     system_ila_0                    |     0.013 |
+|       U0                            |     0.013 |
+|     system_ila_1                    |     0.015 |
+|       U0                            |     0.015 |
+|     system_ila_2                    |     0.014 |
+|       U0                            |     0.014 |
+|     system_ila_3                    |     0.015 |
+|       U0                            |     0.015 |
+|     system_ila_4                    |     0.014 |
+|       U0                            |     0.014 |
+|     system_ila_5                    |     0.013 |
+|       U0                            |     0.013 |
+|     vio_0                           |     0.012 |
+|       inst                          |     0.012 |
 |     xadc_wiz_0                      |     0.004 |
 |       U0                            |     0.004 |
 +-------------------------------------+-----------+

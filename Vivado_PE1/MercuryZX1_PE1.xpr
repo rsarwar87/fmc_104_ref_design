@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.xpr">
+<Project Version="7" Minor="40" Path="/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="d1be795c5bd047e58ef608a2290f121f"/>
+    <Option Name="Id" Val="9428a288ba6d4db89ceef272c76d6848"/>
     <Option Name="Part" Val="xc7z030fbg676-2"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -22,6 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -39,13 +40,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="2"/>
-    <Option Name="WTModelSimExportSim" Val="2"/>
-    <Option Name="WTQuestaExportSim" Val="2"/>
-    <Option Name="WTIesExportSim" Val="2"/>
-    <Option Name="WTVcsExportSim" Val="2"/>
-    <Option Name="WTRivieraExportSim" Val="2"/>
-    <Option Name="WTActivehdlExportSim" Val="2"/>
+    <Option Name="WTXSimExportSim" Val="0"/>
+    <Option Name="WTModelSimExportSim" Val="0"/>
+    <Option Name="WTQuestaExportSim" Val="0"/>
+    <Option Name="WTIesExportSim" Val="0"/>
+    <Option Name="WTVcsExportSim" Val="0"/>
+    <Option Name="WTRivieraExportSim" Val="0"/>
+    <Option Name="WTActivehdlExportSim" Val="0"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -64,6 +65,63 @@
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xci">
+          <Proxy FileSetName="MercuryZX1_processing_system7_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0.xci">
+          <Proxy FileSetName="MercuryZX1_proc_sys_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0.xci">
+          <Proxy FileSetName="MercuryZX1_rst_mig_7series_0_100M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0.xci">
+          <Proxy FileSetName="MercuryZX1_axi_gpio_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_xbar_0/MercuryZX1_xbar_0.xci">
+          <Proxy FileSetName="MercuryZX1_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0.xci">
+          <Proxy FileSetName="MercuryZX1_xadc_wiz_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0.xci">
+          <Proxy FileSetName="MercuryZX1_axi_quad_spi_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_system_ila_0_1/MercuryZX1_system_ila_0_1.xci">
+          <Proxy FileSetName="MercuryZX1_system_ila_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_vio_0_1/MercuryZX1_vio_0_1.xci">
+          <Proxy FileSetName="MercuryZX1_vio_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0.xci">
+          <Proxy FileSetName="MercuryZX1_system_ila_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0.xci">
+          <Proxy FileSetName="MercuryZX1_clk_wiz_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0.xci">
+          <Proxy FileSetName="MercuryZX1_system_ila_5_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0.xci">
+          <Proxy FileSetName="MercuryZX1_system_ila_2_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_labtools_fmeter_0_0/MercuryZX1_labtools_fmeter_0_0.xci">
+          <Proxy FileSetName="MercuryZX1_labtools_fmeter_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0.xci">
+          <Proxy FileSetName="MercuryZX1_system_ila_3_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0.xci">
+          <Proxy FileSetName="MercuryZX1_vio_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="MercuryZX1.bd" FileRelPathName="ip/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0.xci">
+          <Proxy FileSetName="MercuryZX1_system_ila_4_0"/>
+        </CompFileExtendedInfo>
+      </File>
+      <File Path="$PPRDIR/../src/adc_data_fmc104.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -119,15 +177,9 @@
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
-    <FileSet Name="MercuryZX1_SDRAM_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_SDRAM_0">
+    <FileSet Name="MercuryZX1_vio_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_vio_0_0">
       <Config>
-        <Option Name="TopModule" Val="MercuryZX1_SDRAM_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MercuryZX1_axi_gpio_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_axi_gpio_0_0">
-      <Config>
-        <Option Name="TopModule" Val="MercuryZX1_axi_gpio_0_0"/>
+        <Option Name="TopModule" Val="MercuryZX1_vio_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -137,15 +189,27 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="MercuryZX1_axi_gpio_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_axi_gpio_0_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_axi_gpio_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="MercuryZX1_processing_system7_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_processing_system7_1_0">
       <Config>
         <Option Name="TopModule" Val="MercuryZX1_processing_system7_1_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="MercuryZX1_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_xbar_0">
+    <FileSet Name="MercuryZX1_labtools_fmeter_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_labtools_fmeter_0_0">
       <Config>
-        <Option Name="TopModule" Val="MercuryZX1_xbar_0"/>
+        <Option Name="TopModule" Val="MercuryZX1_labtools_fmeter_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_xadc_wiz_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_xadc_wiz_0_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_xadc_wiz_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -155,9 +219,63 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="MercuryZX1_xadc_wiz_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_xadc_wiz_0_0">
+    <FileSet Name="MercuryZX1_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_xbar_0">
       <Config>
-        <Option Name="TopModule" Val="MercuryZX1_xadc_wiz_0_0"/>
+        <Option Name="TopModule" Val="MercuryZX1_xbar_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_clk_wiz_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_clk_wiz_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_clk_wiz_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_system_ila_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_system_ila_0_1">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_system_ila_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_system_ila_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_system_ila_1_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_system_ila_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_axi_quad_spi_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_axi_quad_spi_1_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_axi_quad_spi_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_system_ila_3_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_system_ila_3_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_system_ila_3_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_system_ila_2_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_system_ila_2_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_system_ila_2_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_system_ila_5_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_system_ila_5_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_system_ila_5_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_vio_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_vio_0_1">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_vio_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MercuryZX1_system_ila_4_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MercuryZX1_system_ila_4_0">
+      <Config>
+        <Option Name="TopModule" Val="MercuryZX1_system_ila_4_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -196,16 +314,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="MercuryZX1_SDRAM_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_SDRAM_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_SDRAM_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_SDRAM_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="MercuryZX1_axi_gpio_0_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_axi_gpio_0_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_axi_gpio_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_axi_gpio_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="MercuryZX1_vio_0_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_vio_0_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_vio_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_vio_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
@@ -223,6 +332,15 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="MercuryZX1_axi_gpio_0_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_axi_gpio_0_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_axi_gpio_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_axi_gpio_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="MercuryZX1_processing_system7_1_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_processing_system7_1_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_processing_system7_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_processing_system7_1_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
@@ -232,7 +350,16 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="MercuryZX1_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_xbar_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_xbar_0_synth_1" IncludeInArchive="true">
+    <Run Id="MercuryZX1_labtools_fmeter_0_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_labtools_fmeter_0_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_labtools_fmeter_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_labtools_fmeter_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_xadc_wiz_0_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_xadc_wiz_0_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_xadc_wiz_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_xadc_wiz_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
@@ -250,7 +377,88 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="MercuryZX1_xadc_wiz_0_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_xadc_wiz_0_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_xadc_wiz_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_xadc_wiz_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="MercuryZX1_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_xbar_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_xbar_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_clk_wiz_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_clk_wiz_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_clk_wiz_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_clk_wiz_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_0_1_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_system_ila_0_1" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_system_ila_0_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_1_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_system_ila_1_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_system_ila_1_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_axi_quad_spi_1_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_axi_quad_spi_1_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_axi_quad_spi_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_axi_quad_spi_1_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_3_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_system_ila_3_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_3_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_system_ila_3_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_2_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_system_ila_2_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_2_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_system_ila_2_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_5_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_system_ila_5_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_5_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_system_ila_5_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_vio_0_1_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_vio_0_1" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_vio_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_vio_0_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_4_0_synth_1" Type="Ft3:Synth" SrcSet="MercuryZX1_system_ila_4_0" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_4_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MercuryZX1_system_ila_4_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
@@ -276,23 +484,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="MercuryZX1_SDRAM_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_SDRAM_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_SDRAM_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="MercuryZX1_axi_gpio_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_axi_gpio_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_axi_gpio_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="MercuryZX1_vio_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_vio_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_vio_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
@@ -324,6 +516,22 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="MercuryZX1_axi_gpio_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_axi_gpio_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_axi_gpio_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="MercuryZX1_processing_system7_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_processing_system7_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_processing_system7_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
@@ -340,7 +548,23 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="MercuryZX1_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_xbar_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="MercuryZX1_labtools_fmeter_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_labtools_fmeter_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_labtools_fmeter_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_xadc_wiz_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_xadc_wiz_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_xadc_wiz_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
@@ -372,7 +596,151 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="MercuryZX1_xadc_wiz_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_xadc_wiz_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_xadc_wiz_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="MercuryZX1_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_xbar_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_clk_wiz_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_clk_wiz_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_clk_wiz_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_system_ila_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_system_ila_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_axi_quad_spi_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_axi_quad_spi_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_axi_quad_spi_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_3_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_3_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_system_ila_3_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_2_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_2_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_system_ila_2_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_5_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_5_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_system_ila_5_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_vio_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_vio_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_vio_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="MercuryZX1_system_ila_4_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="MercuryZX1_system_ila_4_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MercuryZX1_system_ila_4_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>

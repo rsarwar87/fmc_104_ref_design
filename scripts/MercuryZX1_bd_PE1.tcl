@@ -326,6 +326,16 @@ proc create_root_design { parentCell } {
   set SYS_CLK [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 SYS_CLK ]
   set gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio ]
 
+  set adc_clock [ create_bd_port -dir I -from 4 -to 0 adc_clock ]
+  set spi_sck_i [ create_bd_port -dir I spi_sck_i ]
+  set spi_sck_o [ create_bd_port -dir O spi_sck_o ]
+  set spi_sdi_i [ create_bd_port -dir I spi_sdi_i ]
+  set spi_sdo_i [ create_bd_port -dir I spi_sdo_i ]
+  set spi_sdo_o [ create_bd_port -dir O spi_sdo_o ]
+  set spi_ss_i [ create_bd_port -dir I -from 7 -to 0 spi_ss_i ]
+  set spi_ss_o [ create_bd_port -dir O -from 7 -to 0 spi_ss_o ]
+  set spi_status [ create_bd_port -dir I spi_status ]
+  
   # Create ports
   set FCLK_CLK1 [ create_bd_port -dir O -type clk FCLK_CLK1 ]
   set IRQ0 [ create_bd_port -dir I -from 0 -to 0 IRQ0 ]
@@ -343,6 +353,32 @@ proc create_root_design { parentCell } {
   set str_mig_file_path ${str_mig_folder}/${str_mig_file_name}
 
   write_mig_file_MercuryZX1_SDRAM_0 $str_mig_file_path
+
+  set axi_quad_spi_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_quad_spi:3.2 axi_quad_spi_1 ]
+  set_property -dict [ list \
+   CONFIG.C_NUM_SS_BITS {8} \
+   CONFIG.C_USE_STARTUP {0} \
+   CONFIG.C_USE_STARTUP_INT {0} \
+ ] $axi_quad_spi_1
+ 
+connect_bd_net -net spi_sck_i_1 [get_bd_ports spi_sck_i] [get_bd_pins axi_quad_spi_1/sck_i]
+set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sck_i_1]
+connect_bd_net -net spi_sdi_i_1 [get_bd_ports spi_sdi_i] [get_bd_pins axi_quad_spi_1/io1_i]
+set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdi_i_1]
+connect_bd_net -net spi_sdo_i_1 [get_bd_ports spi_sdo_i] [get_bd_pins axi_quad_spi_1/io0_i]
+set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdo_i_1]
+connect_bd_net -net spi_sdo_iss_i_1 [get_bd_ports spi_ss_i] [get_bd_pins axi_quad_spi_1/ss_i] 
+set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets spi_sdo_iss_i_1]
+connect_bd_net -net axi_quad_spi_1_io0_o [get_bd_ports spi_sdo_o] [get_bd_pins axi_quad_spi_1/io0_o] 
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_io0_o]
+  connect_bd_net -net axi_quad_spi_1_ip2intc_irpt [get_bd_pins axi_quad_spi_1/ip2intc_irpt]
+  connect_bd_net -net axi_quad_spi_1_sck_o [get_bd_ports spi_sck_o] [get_bd_pins axi_quad_spi_1/sck_o] 
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_sck_o]
+  connect_bd_net -net axi_quad_spi_1_ss_o [get_bd_ports spi_ss_o] [get_bd_pins axi_quad_spi_1/ss_o] 
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_quad_spi_1_ss_o]
+connect_bd_net [get_bd_pins axi_quad_spi_1/ext_spi_clk] [get_bd_pins processing_system7_1/FCLK_CLK0]
+
+
 
   set_property -dict [ list \
 CONFIG.BOARD_MIG_PARAM {Custom} \

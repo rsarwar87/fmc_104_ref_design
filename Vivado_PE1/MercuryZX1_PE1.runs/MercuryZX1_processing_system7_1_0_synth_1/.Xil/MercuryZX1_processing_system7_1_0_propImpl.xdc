@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc rfile:../../../MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
+set_property SRC_FILE_INFO {cfile:/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc rfile:../../../MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
 current_instance inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_1 0.6

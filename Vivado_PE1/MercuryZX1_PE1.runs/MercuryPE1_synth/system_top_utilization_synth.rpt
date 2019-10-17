@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Thu Aug 22 21:43:09 2019
+| Date         : Thu Oct 17 08:37:52 2019
 | Host         : ukaea-fpga running 64-bit KDE neon User Edition 5.16
 | Command      : report_utilization -file system_top_utilization_synth.rpt -pb system_top_utilization_synth.pb
 | Design       : system_top
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |    8 |     0 |     78600 |  0.01 |
-|   LUT as Logic          |    8 |     0 |     78600 |  0.01 |
+| Slice LUTs*             |   33 |     0 |     78600 |  0.04 |
+|   LUT as Logic          |   33 |     0 |     78600 |  0.04 |
 |   LUT as Memory         |    0 |     0 |     26600 |  0.00 |
-| Slice Registers         |   32 |     0 |    157200 |  0.02 |
-|   Register as Flip Flop |   32 |     0 |    157200 |  0.02 |
+| Slice Registers         |  100 |     0 |    157200 |  0.06 |
+|   Register as Flip Flop |  100 |     0 |    157200 |  0.06 |
 |   Register as Latch     |    0 |     0 |    157200 |  0.00 |
 | F7 Muxes                |    0 |     0 |     39300 |  0.00 |
 | F8 Muxes                |    0 |     0 |     19650 |  0.00 |
@@ -55,7 +55,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 8     |          Yes |           - |        Reset |
+| 76    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 24    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    7 |     0 |       250 |  2.80 |
+| Bonded IOB                  |   75 |     0 |       250 | 30.00 |
 | Bonded IPADs                |    0 |     0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         8 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
@@ -98,16 +98,18 @@ Table of Contents
 | PHASER_REF                  |    0 |     0 |         5 |  0.00 |
 | OUT_FIFO                    |    0 |     0 |        20 |  0.00 |
 | IN_FIFO                     |    0 |     0 |        20 |  0.00 |
-| IDELAYCTRL                  |    0 |     0 |         5 |  0.00 |
-| IBUFDS                      |    0 |     0 |       240 |  0.00 |
+| IDELAYCTRL                  |    1 |     0 |         5 | 20.00 |
+| IBUFDS                      |   32 |     0 |       240 | 13.33 |
 | GTXE2_COMMON                |    0 |     0 |         1 |  0.00 |
 | GTXE2_CHANNEL               |    0 |     0 |         4 |  0.00 |
 | PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        20 |  0.00 |
 | PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        20 |  0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       250 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |   28 |     0 |       250 | 11.20 |
+|   IDELAYE2 only             |   28 |     0 |           |       |
 | ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |       150 |  0.00 |
 | IBUFDS_GTE2                 |    0 |     0 |         2 |  0.00 |
-| ILOGIC                      |    0 |     0 |       250 |  0.00 |
+| ILOGIC                      |   28 |     0 |       250 | 11.20 |
+|   IDDR                      |   28 |       |           |       |
 | OLOGIC                      |    0 |     0 |       250 |  0.00 |
 +-----------------------------+------+-------+-----------+-------+
 
@@ -118,13 +120,13 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    0 |     0 |        32 |  0.00 |
+| BUFGCTRL   |    4 |     0 |        32 | 12.50 |
 | BUFIO      |    0 |     0 |        20 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         5 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         5 |  0.00 |
 | BUFMRCE    |    0 |     0 |        10 |  0.00 |
 | BUFHCE     |    0 |     0 |        96 |  0.00 |
-| BUFR       |    0 |     0 |        20 |  0.00 |
+| BUFR       |    4 |     0 |        20 | 20.00 |
 +------------+------+-------+-----------+-------+
 
 
@@ -149,17 +151,26 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDRE     |   24 |        Flop & Latch |
-| LUT1     |    8 |                 LUT |
-| FDCE     |    8 |        Flop & Latch |
-| CARRY4   |    6 |          CarryLogic |
-| IBUF     |    4 |                  IO |
-| OBUF     |    3 |                  IO |
-| OBUFT    |    2 |                  IO |
-+----------+------+---------------------+
++------------+------+---------------------+
+|  Ref Name  | Used | Functional Category |
++------------+------+---------------------+
+| FDCE       |   76 |        Flop & Latch |
+| IBUFDS     |   32 |                  IO |
+| IDELAYE2   |   28 |                  IO |
+| IDDR       |   28 |                  IO |
+| FDRE       |   24 |        Flop & Latch |
+| LUT2       |   10 |                 LUT |
+| LUT6       |    8 |                 LUT |
+| LUT4       |    8 |                 LUT |
+| LUT1       |    8 |                 LUT |
+| OBUF       |    7 |                  IO |
+| CARRY4     |    6 |          CarryLogic |
+| IBUF       |    4 |                  IO |
+| BUFR       |    4 |               Clock |
+| BUFG       |    4 |               Clock |
+| OBUFT      |    2 |                  IO |
+| IDELAYCTRL |    1 |                  IO |
++------------+------+---------------------+
 
 
 8. Black Boxes
@@ -170,10 +181,22 @@ Table of Contents
 +-------------------------------------+------+
 | MercuryZX1_xbar_0                   |    1 |
 | MercuryZX1_xadc_wiz_0_0             |    1 |
+| MercuryZX1_vio_0_1                  |    1 |
+| MercuryZX1_vio_0_0                  |    1 |
+| MercuryZX1_system_ila_5_0           |    1 |
+| MercuryZX1_system_ila_4_0           |    1 |
+| MercuryZX1_system_ila_3_0           |    1 |
+| MercuryZX1_system_ila_2_0           |    1 |
+| MercuryZX1_system_ila_1_0           |    1 |
+| MercuryZX1_system_ila_0_1           |    1 |
 | MercuryZX1_rst_mig_7series_0_100M_0 |    1 |
 | MercuryZX1_processing_system7_1_0   |    1 |
 | MercuryZX1_proc_sys_reset_0         |    1 |
+| MercuryZX1_labtools_fmeter_0_0      |    1 |
+| MercuryZX1_clk_wiz_0                |    1 |
+| MercuryZX1_axi_quad_spi_1_0         |    1 |
 | MercuryZX1_axi_gpio_0_0             |    1 |
+| MercuryZX1_auto_pc_3                |    1 |
 | MercuryZX1_auto_pc_2                |    1 |
 | MercuryZX1_auto_pc_1                |    1 |
 | MercuryZX1_auto_pc_0                |    1 |

@@ -17,43 +17,99 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 8
 create_project -in_memory -part xc7z030fbg676-2
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.cache/wt [current_project]
-set_property parent.project_path /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+set_property webtalk.parent_dir /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.cache/wt [current_project]
+set_property parent.project_path /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.cache/ip [current_project]
+set_property ip_repo_paths /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/ip_repo [current_project]
+update_ip_catalog
+set_property ip_output_repo /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/src/system_top_PE1.vhd
-add_files /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0/user_design/constraints/MercuryZX1_SDRAM_0.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0/user_design/constraints/MercuryZX1_SDRAM_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0_board.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xbar_0/MercuryZX1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_1_ooc.xdc]
-set_property used_in_synthesis false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1_ooc.xdc]
+read_vhdl -library xil_defaultlib {
+  /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/adc_data_fmc104.vhd
+  /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/system_top_PE1.vhd
+}
+add_files /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1.bd
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0/user_design/constraints/MercuryZX1_SDRAM_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_SDRAM_0/MercuryZX1_SDRAM_0/user_design/constraints/MercuryZX1_SDRAM_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_gpio_0_0/MercuryZX1_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0_board.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_proc_sys_reset_0/MercuryZX1_proc_sys_reset_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_processing_system7_1_0/MercuryZX1_processing_system7_1_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xbar_0/MercuryZX1_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_rst_mig_7series_0_100M_0/MercuryZX1_rst_mig_7series_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_xadc_wiz_0_0/MercuryZX1_xadc_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_axi_quad_spi_1_0/MercuryZX1_axi_quad_spi_1_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_0/MercuryZX1_vio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/MercuryZX1_system_ila_0_1_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/bd_0/ip/ip_0/bd_8f67_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_0_1/bd_0/bd_8f67_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/MercuryZX1_system_ila_1_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/ip/ip_0/bd_8ff7_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_1_0/bd_0/bd_8ff7_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_clk_wiz_0/MercuryZX1_clk_wiz_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_1/MercuryZX1_vio_0_1.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_vio_0_1/MercuryZX1_vio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/MercuryZX1_system_ila_2_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/bd_0/ip/ip_0/bd_8f07_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_2_0/bd_0/bd_8f07_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/MercuryZX1_system_ila_3_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/bd_0/ip/ip_0/bd_4f56_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_3_0/bd_0/bd_4f56_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/MercuryZX1_system_ila_4_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/bd_0/ip/ip_0/bd_8ee7_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_4_0/bd_0/bd_8ee7_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/MercuryZX1_system_ila_5_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/bd_0/ip/ip_0/bd_4eb6_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_system_ila_5_0/bd_0/bd_4eb6_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_3/MercuryZX1_auto_pc_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_0/MercuryZX1_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_1/MercuryZX1_auto_pc_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_pc_2/MercuryZX1_auto_pc_2_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_auto_cc_0/MercuryZX1_auto_cc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/MercuryZX1_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -63,8 +119,8 @@ set_property used_in_implementation false [get_files -all /media/2TB/workspace/r
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/src/MercuryZX1_PE1.xdc
-set_property used_in_implementation false [get_files /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/src/MercuryZX1_PE1.xdc]
+read_xdc /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc
+set_property used_in_implementation false [get_files /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/src/MercuryZX1_PE1.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

@@ -1,0 +1,599 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Oct 16 17:12:38 2019
+# Process ID: 86503
+# Current directory: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_labtools_fmeter_0_0_synth_1
+# Command line: vivado -log MercuryZX1_labtools_fmeter_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MercuryZX1_labtools_fmeter_0_0.tcl
+# Log file: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_labtools_fmeter_0_0_synth_1/MercuryZX1_labtools_fmeter_0_0.vds
+# Journal file: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_labtools_fmeter_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source MercuryZX1_labtools_fmeter_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top MercuryZX1_labtools_fmeter_0_0 -part xc7z030fbg676-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Device 21-403] Loading part xc7z030fbg676-2
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 86895 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1818.414 ; gain = 152.543 ; free physical = 12877 ; free virtual = 106397
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'MercuryZX1_labtools_fmeter_0_0' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/synth/MercuryZX1_labtools_fmeter_0_0.vhd:73]
+	Parameter C_CHANNELS bound to: 9 - type: integer 
+	Parameter C_NUM_BITS bound to: 32 - type: integer 
+	Parameter C_MODE bound to: 0 - type: integer 
+	Parameter C_REFCLK_HZ bound to: 100000000 - type: integer 
+INFO: [Synth 8-3491] module 'labtools_fmeter' declared at '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:38' bound to instance 'U0' of component 'labtools_fmeter' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/synth/MercuryZX1_labtools_fmeter_0_0.vhd:130]
+INFO: [Synth 8-638] synthesizing module 'labtools_fmeter' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:94]
+	Parameter C_REFCLK_HZ bound to: 100000000 - type: integer 
+	Parameter C_CHANNELS bound to: 9 - type: integer 
+	Parameter C_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_BITS bound to: 32 - type: integer 
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: TRUE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 32'b00000101111101011110000011111111 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_REFCLK_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:178]
+INFO: [Synth 8-638] synthesizing module 'unimacro_COUNTER_TC_MACRO' [/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:54]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: TRUE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 99999999 - type: integer 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 0 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 0 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter IS_ALUMODE_INVERTED bound to: 4'b0000 
+	Parameter IS_CARRYIN_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_INMODE_INVERTED bound to: 5'b00000 
+	Parameter IS_OPMODE_INVERTED bound to: 7'b0000000 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 0 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: 0 - type: bool 
+	Parameter USE_MULT bound to: NONE - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: ONE48 - type: string 
+INFO: [Synth 8-113] binding component instance 'DSP48E_2' to cell 'DSP48E1' [/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:239]
+INFO: [Synth 8-256] done synthesizing module 'unimacro_COUNTER_TC_MACRO' (1#1) [/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:54]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+INFO: [Synth 8-638] synthesizing module 'unimacro_COUNTER_TC_MACRO__parameterized0' [/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:54]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 0 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 0 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter IS_ALUMODE_INVERTED bound to: 4'b0000 
+	Parameter IS_CARRYIN_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_INMODE_INVERTED bound to: 5'b00000 
+	Parameter IS_OPMODE_INVERTED bound to: 7'b0000000 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 0 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: 0 - type: bool 
+	Parameter USE_MULT bound to: NONE - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: ONE48 - type: string 
+INFO: [Synth 8-113] binding component instance 'DSP48E_2' to cell 'DSP48E1' [/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:239]
+INFO: [Synth 8-256] done synthesizing module 'unimacro_COUNTER_TC_MACRO__parameterized0' (1#1) [/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:54]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter STYLE bound to: AUTO - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter WIDTH_DATA bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'COUNTER_TC_MACRO' declared at '/opt/Xilinx/Vivado/2019.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhd:34' bound to instance 'COUNTER_F_inst' of component 'COUNTER_TC_MACRO' [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:225]
+WARNING: [Synth 8-3848] Net F9 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:61]
+WARNING: [Synth 8-3848] Net F10 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:62]
+WARNING: [Synth 8-3848] Net F11 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:63]
+WARNING: [Synth 8-3848] Net F12 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:65]
+WARNING: [Synth 8-3848] Net F13 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:66]
+WARNING: [Synth 8-3848] Net F14 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:67]
+WARNING: [Synth 8-3848] Net F15 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:68]
+WARNING: [Synth 8-3848] Net F16 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:70]
+WARNING: [Synth 8-3848] Net F17 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:71]
+WARNING: [Synth 8-3848] Net F18 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:72]
+WARNING: [Synth 8-3848] Net F19 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:73]
+WARNING: [Synth 8-3848] Net F20 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:75]
+WARNING: [Synth 8-3848] Net F21 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:76]
+WARNING: [Synth 8-3848] Net F22 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:77]
+WARNING: [Synth 8-3848] Net F23 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:78]
+WARNING: [Synth 8-3848] Net F24 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:80]
+WARNING: [Synth 8-3848] Net F25 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:81]
+WARNING: [Synth 8-3848] Net F26 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:82]
+WARNING: [Synth 8-3848] Net F27 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:83]
+WARNING: [Synth 8-3848] Net F28 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:85]
+WARNING: [Synth 8-3848] Net F29 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:86]
+WARNING: [Synth 8-3848] Net F30 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:87]
+WARNING: [Synth 8-3848] Net F31 in module/entity labtools_fmeter does not have driver. [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'labtools_fmeter' (2#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ipshared/1b43/labtools_fmeter.vhd:94]
+INFO: [Synth 8-256] done synthesizing module 'MercuryZX1_labtools_fmeter_0_0' (3#1) [/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.srcs/sources_1/bd/MercuryZX1/ip/MercuryZX1_labtools_fmeter_0_0/synth/MercuryZX1_labtools_fmeter_0_0.vhd:73]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[31]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[30]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[29]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[28]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[27]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[26]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[25]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[24]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[23]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[22]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[21]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[20]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[19]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[18]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[17]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[16]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[15]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[14]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[13]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[12]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[11]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[10]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[9]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[8]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[7]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[6]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[5]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[4]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[3]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[2]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[1]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F9[0]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[31]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[30]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[29]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[28]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[27]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[26]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[25]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[24]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[23]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[22]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[21]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[20]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[19]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[18]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[17]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[16]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[15]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[14]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[13]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[12]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[11]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[10]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[9]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[8]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[7]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[6]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[5]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[4]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[3]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[2]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[1]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F10[0]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[31]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[30]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[29]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[28]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[27]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[26]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[25]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[24]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[23]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[22]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[21]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[20]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[19]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[18]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[17]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[16]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[15]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[14]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[13]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[12]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[11]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[10]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[9]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[8]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[7]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[6]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[5]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[4]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[3]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[2]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[1]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F11[0]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F12[31]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F12[30]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F12[29]
+WARNING: [Synth 8-3331] design labtools_fmeter has unconnected port F12[28]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1877.133 ; gain = 211.262 ; free physical = 12516 ; free virtual = 106038
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1880.102 ; gain = 214.230 ; free physical = 12708 ; free virtual = 106232
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1880.102 ; gain = 214.230 ; free physical = 12708 ; free virtual = 106232
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2024.852 ; gain = 0.000 ; free physical = 12227 ; free virtual = 105751
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2024.852 ; gain = 0.000 ; free physical = 12186 ; free virtual = 105715
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2024.852 ; gain = 358.980 ; free physical = 12249 ; free virtual = 105776
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z030fbg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2024.852 ; gain = 358.980 ; free physical = 12248 ; free virtual = 105776
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2024.852 ; gain = 358.980 ; free physical = 12250 ; free virtual = 105777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2024.852 ; gain = 358.980 ; free physical = 12212 ; free virtual = 105740
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module unimacro_COUNTER_TC_MACRO 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module unimacro_COUNTER_TC_MACRO__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module labtools_fmeter 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 400 (col length:80)
+BRAMs: 530 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2024.852 ; gain = 358.980 ; free physical = 12375 ; free virtual = 105914
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2024.852 ; gain = 358.980 ; free physical = 10906 ; free virtual = 104460
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2024.852 ; gain = 358.980 ; free physical = 10905 ; free virtual = 104458
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2024.852 ; gain = 358.980 ; free physical = 11047 ; free virtual = 104600
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2026.805 ; gain = 360.934 ; free physical = 11114 ; free virtual = 104668
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2026.805 ; gain = 360.934 ; free physical = 11111 ; free virtual = 104665
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2026.805 ; gain = 360.934 ; free physical = 11118 ; free virtual = 104671
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2026.805 ; gain = 360.934 ; free physical = 11116 ; free virtual = 104670
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2026.805 ; gain = 360.934 ; free physical = 11116 ; free virtual = 104670
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2026.805 ; gain = 360.934 ; free physical = 11114 ; free virtual = 104668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |DSP48E1 |    10|
+|2     |LUT1    |     1|
+|3     |LUT2    |     2|
+|4     |LUT3    |     1|
+|5     |LUT4    |    10|
+|6     |LUT5    |     5|
+|7     |LUT6    |     2|
+|8     |FDRE    |   289|
++------+--------+------+
+
+Report Instance Areas: 
++------+-----------------------------------+--------------------------------------------+------+
+|      |Instance                           |Module                                      |Cells |
++------+-----------------------------------+--------------------------------------------+------+
+|1     |top                                |                                            |   320|
+|2     |  U0                               |labtools_fmeter                             |   320|
+|3     |    COUNTER_REFCLK_inst            |unimacro_COUNTER_TC_MACRO                   |    21|
+|4     |    \FMETER_gen[0].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0   |     1|
+|5     |    \FMETER_gen[1].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0_0 |     1|
+|6     |    \FMETER_gen[2].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0_1 |     1|
+|7     |    \FMETER_gen[3].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0_2 |     1|
+|8     |    \FMETER_gen[4].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0_3 |     1|
+|9     |    \FMETER_gen[5].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0_4 |     1|
+|10    |    \FMETER_gen[6].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0_5 |     1|
+|11    |    \FMETER_gen[7].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0_6 |     1|
+|12    |    \FMETER_gen[8].COUNTER_F_inst  |unimacro_COUNTER_TC_MACRO__parameterized0_7 |     2|
++------+-----------------------------------+--------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2026.805 ; gain = 360.934 ; free physical = 11111 ; free virtual = 104665
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2026.805 ; gain = 216.184 ; free physical = 11341 ; free virtual = 104893
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2026.812 ; gain = 360.934 ; free physical = 11347 ; free virtual = 104898
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2065.758 ; gain = 0.000 ; free physical = 11970 ; free virtual = 105520
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 124 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2065.758 ; gain = 648.688 ; free physical = 12158 ; free virtual = 105702
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2065.758 ; gain = 0.000 ; free physical = 12197 ; free virtual = 105740
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_labtools_fmeter_0_0_synth_1/MercuryZX1_labtools_fmeter_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP MercuryZX1_labtools_fmeter_0_0, cache-ID = fe7382745580de8d
+INFO: [Coretcl 2-1174] Renamed 11 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2089.770 ; gain = 0.000 ; free physical = 14244 ; free virtual = 107791
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_labtools_fmeter_0_0_synth_1/MercuryZX1_labtools_fmeter_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file MercuryZX1_labtools_fmeter_0_0_utilization_synth.rpt -pb MercuryZX1_labtools_fmeter_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 16 17:13:11 2019...

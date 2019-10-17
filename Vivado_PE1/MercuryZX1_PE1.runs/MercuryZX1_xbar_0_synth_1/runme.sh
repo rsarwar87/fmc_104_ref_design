@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_xbar_0_synth_1'
+HD_PWD='/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/Vivado_PE1/MercuryZX1_PE1.runs/MercuryZX1_xbar_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCA4286FEE3D6A3D0",
+      "boundary_crc": "0xA9250DD83702BCFD",
       "device": "xc7z030fbg676-2",
       "name": "MercuryZX1",
       "synth_flow_mode": "Hierarchical",
@@ -24,14 +24,34 @@
         "m01_couplers": {
           "auto_pc": ""
         },
-        "m02_couplers": {},
+        "m02_couplers": {
+          "auto_pc": ""
+        },
         "m03_couplers": {
           "auto_cc": ""
         }
       },
       "rst_mig_7series_0_100M": "",
       "xadc_wiz_0": "",
-      "xlconcat_0": ""
+      "xlconcat_0": "",
+      "axi_quad_spi_1": "",
+      "freq_counter": {
+        "xlconcat_1": "",
+        "vio_0": "",
+        "labtools_fmeter_0": ""
+      },
+      "system_ila_0": "",
+      "system_ila_1": "",
+      "clk_wiz": "",
+      "vio_0": "",
+      "system_ila_2": "",
+      "system_ila_3": "",
+      "system_ila_4": "",
+      "system_ila_5": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "xlslice_2": "",
+      "xlslice_3": ""
     },
     "interface_ports": {
       "DDR": {
@@ -222,6 +242,108 @@
       },
       "SDIO0_WP": {
         "direction": "I"
+      },
+      "adc_clock": {
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "spi_sck_i": {
+        "direction": "I"
+      },
+      "spi_sck_o": {
+        "direction": "O"
+      },
+      "spi_sdi_i": {
+        "direction": "I"
+      },
+      "spi_sdo_i": {
+        "direction": "I"
+      },
+      "spi_sdo_o": {
+        "direction": "O"
+      },
+      "spi_ss_i": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "spi_ss_o": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "VCO_PWR_EN": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "adc_error": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "adc_valid": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "adc_data_in_a": {
+        "direction": "I",
+        "left": "13",
+        "right": "0"
+      },
+      "adc_data_in_b": {
+        "direction": "I",
+        "left": "13",
+        "right": "0"
+      },
+      "adc_data_in_c": {
+        "direction": "I",
+        "left": "13",
+        "right": "0"
+      },
+      "adc_data_in_d": {
+        "direction": "I",
+        "left": "13",
+        "right": "0"
+      },
+      "Clk200": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/clk_wiz_clk_out1",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "200000000",
+            "value_src": "ip_prop"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "adc_clear_error": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "adc_delay_inc": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "adc_delay_dec": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
       }
     },
     "components": {
@@ -1410,7 +1532,7 @@
             "components": {
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-                "xci_name": "MercuryZX1_auto_pc_2",
+                "xci_name": "MercuryZX1_auto_pc_3",
                 "parameters": {
                   "MI_PROTOCOL": {
                     "value": "AXI4"
@@ -1671,11 +1793,45 @@
                 "direction": "I"
               }
             },
+            "components": {
+              "auto_pc": {
+                "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
+                "xci_name": "MercuryZX1_auto_pc_2",
+                "parameters": {
+                  "MI_PROTOCOL": {
+                    "value": "AXI4LITE"
+                  },
+                  "SI_PROTOCOL": {
+                    "value": "AXI4"
+                  }
+                }
+              }
+            },
             "interface_nets": {
-              "m02_couplers_to_m02_couplers": {
+              "auto_pc_to_m02_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
+                ]
+              },
+              "m02_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
-                  "M_AXI"
+                  "auto_pc/S_AXI"
+                ]
+              }
+            },
+            "nets": {
+              "S_ACLK_1": {
+                "ports": [
+                  "S_ACLK",
+                  "auto_pc/aclk"
+                ]
+              },
+              "S_ARESETN_1": {
+                "ports": [
+                  "S_ARESETN",
+                  "auto_pc/aresetn"
                 ]
               }
             }
@@ -1732,16 +1888,16 @@
               }
             },
             "interface_nets": {
-              "auto_cc_to_m03_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_cc/M_AXI"
-                ]
-              },
               "m03_couplers_to_auto_cc": {
                 "interface_ports": [
                   "S_AXI",
                   "auto_cc/S_AXI"
+                ]
+              },
+              "auto_cc_to_m03_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_cc/M_AXI"
                 ]
               }
             },
@@ -1774,10 +1930,10 @@
           }
         },
         "interface_nets": {
-          "m03_couplers_to_processing_system7_1_axi_periph": {
+          "processing_system7_1_axi_periph_to_s00_couplers": {
             "interface_ports": [
-              "M03_AXI",
-              "m03_couplers/M_AXI"
+              "S00_AXI",
+              "s00_couplers/S_AXI"
             ]
           },
           "m02_couplers_to_processing_system7_1_axi_periph": {
@@ -1786,34 +1942,10 @@
               "m02_couplers/M_AXI"
             ]
           },
-          "processing_system7_1_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
           "xbar_to_m00_couplers": {
             "interface_ports": [
               "xbar/M00_AXI",
               "m00_couplers/S_AXI"
-            ]
-          },
-          "m01_couplers_to_processing_system7_1_axi_periph": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
-            ]
-          },
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
             ]
           },
           "m00_couplers_to_processing_system7_1_axi_periph": {
@@ -1822,10 +1954,34 @@
               "m00_couplers/M_AXI"
             ]
           },
+          "m01_couplers_to_processing_system7_1_axi_periph": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
           "xbar_to_m02_couplers": {
             "interface_ports": [
               "xbar/M02_AXI",
               "m02_couplers/S_AXI"
+            ]
+          },
+          "m03_couplers_to_processing_system7_1_axi_periph": {
+            "interface_ports": [
+              "M03_AXI",
+              "m03_couplers/M_AXI"
             ]
           },
           "xbar_to_m03_couplers": {
@@ -1945,9 +2101,422 @@
       "xlconcat_0": {
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
         "xci_name": "MercuryZX1_xlconcat_0_0"
+      },
+      "axi_quad_spi_1": {
+        "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
+        "xci_name": "MercuryZX1_axi_quad_spi_1_0",
+        "parameters": {
+          "C_NUM_SS_BITS": {
+            "value": "8"
+          },
+          "C_SCK_RATIO": {
+            "value": "8"
+          },
+          "C_USE_STARTUP": {
+            "value": "0"
+          }
+        }
+      },
+      "freq_counter": {
+        "ports": {
+          "adc_clock": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "In1": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "refclk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "FCLK_CLK1": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "In4": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "probe_in9": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "VCO_PWR_EN": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          }
+        },
+        "components": {
+          "xlconcat_1": {
+            "vlnv": "xilinx.com:ip:xlconcat:2.1",
+            "xci_name": "MercuryZX1_xlconcat_1_0",
+            "parameters": {
+              "IN0_WIDTH": {
+                "value": "5"
+              },
+              "NUM_PORTS": {
+                "value": "5"
+              }
+            }
+          },
+          "vio_0": {
+            "vlnv": "xilinx.com:ip:vio:3.0",
+            "xci_name": "MercuryZX1_vio_0_0",
+            "parameters": {
+              "C_NUM_PROBE_IN": {
+                "value": "10"
+              },
+              "C_PROBE_OUT0_INIT_VAL": {
+                "value": "0001"
+              }
+            }
+          },
+          "labtools_fmeter_0": {
+            "vlnv": "trenz.biz:user:labtools_fmeter:1.0",
+            "xci_name": "MercuryZX1_labtools_fmeter_0_0",
+            "parameters": {
+              "C_CHANNELS": {
+                "value": "9"
+              }
+            }
+          }
+        },
+        "nets": {
+          "xlconcat_1_dout": {
+            "ports": [
+              "xlconcat_1/dout",
+              "labtools_fmeter_0/fin"
+            ]
+          },
+          "labtools_fmeter_0_F0": {
+            "ports": [
+              "labtools_fmeter_0/F0",
+              "vio_0/probe_in0"
+            ]
+          },
+          "labtools_fmeter_0_F1": {
+            "ports": [
+              "labtools_fmeter_0/F1",
+              "vio_0/probe_in1"
+            ]
+          },
+          "labtools_fmeter_0_F2": {
+            "ports": [
+              "labtools_fmeter_0/F2",
+              "vio_0/probe_in2"
+            ]
+          },
+          "labtools_fmeter_0_F3": {
+            "ports": [
+              "labtools_fmeter_0/F3",
+              "vio_0/probe_in3"
+            ]
+          },
+          "labtools_fmeter_0_F4": {
+            "ports": [
+              "labtools_fmeter_0/F4",
+              "vio_0/probe_in4"
+            ]
+          },
+          "labtools_fmeter_0_F5": {
+            "ports": [
+              "labtools_fmeter_0/F5",
+              "vio_0/probe_in5"
+            ]
+          },
+          "labtools_fmeter_0_F6": {
+            "ports": [
+              "labtools_fmeter_0/F6",
+              "vio_0/probe_in6"
+            ]
+          },
+          "labtools_fmeter_0_F7": {
+            "ports": [
+              "labtools_fmeter_0/F7",
+              "vio_0/probe_in7"
+            ]
+          },
+          "adc_clock_1": {
+            "ports": [
+              "adc_clock",
+              "xlconcat_1/In0"
+            ]
+          },
+          "mig_7series_0_ui_clk": {
+            "ports": [
+              "In1",
+              "xlconcat_1/In1"
+            ]
+          },
+          "processing_system7_1_fclk_clk0": {
+            "ports": [
+              "refclk",
+              "labtools_fmeter_0/refclk",
+              "vio_0/clk",
+              "xlconcat_1/In2"
+            ]
+          },
+          "processing_system7_1_fclk_clk1": {
+            "ports": [
+              "FCLK_CLK1",
+              "xlconcat_1/In3"
+            ]
+          },
+          "In4_1": {
+            "ports": [
+              "In4",
+              "xlconcat_1/In4"
+            ]
+          },
+          "labtools_fmeter_0_F8": {
+            "ports": [
+              "labtools_fmeter_0/F8",
+              "vio_0/probe_in8"
+            ]
+          },
+          "probe_in9_1": {
+            "ports": [
+              "probe_in9",
+              "vio_0/probe_in9"
+            ]
+          },
+          "vio_0_probe_out0": {
+            "ports": [
+              "vio_0/probe_out0",
+              "VCO_PWR_EN"
+            ]
+          }
+        }
+      },
+      "system_ila_0": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "MercuryZX1_system_ila_0_1",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "7"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE2_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE3_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE4_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE5_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE6_TYPE": {
+            "value": "0"
+          }
+        }
+      },
+      "system_ila_1": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "MercuryZX1_system_ila_1_0",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "1"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          }
+        }
+      },
+      "clk_wiz": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "MercuryZX1_clk_wiz_0",
+        "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "114.829"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "200"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "5.000"
+          }
+        }
+      },
+      "vio_0": {
+        "vlnv": "xilinx.com:ip:vio:3.0",
+        "xci_name": "MercuryZX1_vio_0_1",
+        "parameters": {
+          "C_NUM_PROBE_IN": {
+            "value": "6"
+          },
+          "C_NUM_PROBE_OUT": {
+            "value": "3"
+          },
+          "C_PROBE_OUT0_WIDTH": {
+            "value": "4"
+          },
+          "C_PROBE_OUT1_WIDTH": {
+            "value": "4"
+          },
+          "C_PROBE_OUT2_WIDTH": {
+            "value": "4"
+          }
+        }
+      },
+      "system_ila_2": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "MercuryZX1_system_ila_2_0",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "1"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          }
+        }
+      },
+      "system_ila_3": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "MercuryZX1_system_ila_3_0",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "1"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          }
+        }
+      },
+      "system_ila_4": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "MercuryZX1_system_ila_4_0",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "1"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          }
+        }
+      },
+      "system_ila_5": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "MercuryZX1_system_ila_5_0",
+        "parameters": {
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "1"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          }
+        }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MercuryZX1_xlslice_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "0"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MercuryZX1_xlslice_0_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "5"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MercuryZX1_xlslice_1_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "2"
+          },
+          "DIN_TO": {
+            "value": "2"
+          },
+          "DIN_WIDTH": {
+            "value": "5"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_3": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "MercuryZX1_xlslice_1_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "3"
+          },
+          "DIN_TO": {
+            "value": "3"
+          },
+          "DIN_WIDTH": {
+            "value": "5"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
       }
     },
     "interface_nets": {
+      "SYS_CLK_1": {
+        "interface_ports": [
+          "SYS_CLK",
+          "SDRAM/SYS_CLK"
+        ]
+      },
       "processing_system7_1_fixed_io": {
         "interface_ports": [
           "FIXED_IO",
@@ -1960,12 +2529,6 @@
           "processing_system7_1/IIC_0"
         ]
       },
-      "SYS_CLK_1": {
-        "interface_ports": [
-          "SYS_CLK",
-          "SDRAM/SYS_CLK"
-        ]
-      },
       "axi_gpio_1_gpio": {
         "interface_ports": [
           "gpio",
@@ -1976,6 +2539,12 @@
         "interface_ports": [
           "DDR3",
           "SDRAM/DDR3"
+        ]
+      },
+      "processing_system7_1_ddr": {
+        "interface_ports": [
+          "DDR",
+          "processing_system7_1/DDR"
         ]
       },
       "processing_system7_1_axi_periph_M01_AXI": {
@@ -1996,16 +2565,16 @@
           "processing_system7_1_axi_periph/M00_AXI"
         ]
       },
-      "processing_system7_1_ddr": {
-        "interface_ports": [
-          "DDR",
-          "processing_system7_1/DDR"
-        ]
-      },
       "processing_system7_1_axi_periph_M03_AXI": {
         "interface_ports": [
           "SDRAM/S_AXI",
           "processing_system7_1_axi_periph/M03_AXI"
+        ]
+      },
+      "processing_system7_1_axi_periph_M02_AXI": {
+        "interface_ports": [
+          "processing_system7_1_axi_periph/M02_AXI",
+          "axi_quad_spi_1/AXI_LITE"
         ]
       }
     },
@@ -2044,7 +2613,8 @@
         "ports": [
           "SDRAM/ui_clk",
           "processing_system7_1_axi_periph/M03_ACLK",
-          "rst_mig_7series_0_100M/slowest_sync_clk"
+          "rst_mig_7series_0_100M/slowest_sync_clk",
+          "freq_counter/In1"
         ]
       },
       "mig_7series_0_ui_clk_sync_rst": {
@@ -2067,7 +2637,8 @@
           "processing_system7_1_axi_periph/M01_ARESETN",
           "processing_system7_1_axi_periph/M02_ARESETN",
           "processing_system7_1_axi_periph/S00_ARESETN",
-          "xadc_wiz_0/s_axi_aresetn"
+          "xadc_wiz_0/s_axi_aresetn",
+          "axi_quad_spi_1/s_axi_aresetn"
         ]
       },
       "processing_system7_1_fclk_clk0": {
@@ -2081,13 +2652,19 @@
           "processing_system7_1_axi_periph/M01_ACLK",
           "processing_system7_1_axi_periph/M02_ACLK",
           "processing_system7_1_axi_periph/S00_ACLK",
-          "xadc_wiz_0/s_axi_aclk"
+          "xadc_wiz_0/s_axi_aclk",
+          "axi_quad_spi_1/s_axi_aclk",
+          "axi_quad_spi_1/ext_spi_clk",
+          "freq_counter/refclk",
+          "system_ila_0/clk",
+          "clk_wiz/clk_in1"
         ]
       },
       "processing_system7_1_fclk_clk1": {
         "ports": [
           "processing_system7_1/FCLK_CLK1",
-          "FCLK_CLK1"
+          "FCLK_CLK1",
+          "freq_counter/FCLK_CLK1"
         ]
       },
       "processing_system7_1_fclk_reset0_n": {
@@ -2108,7 +2685,8 @@
       "xadc_wiz_0_temp_out": {
         "ports": [
           "xadc_wiz_0/temp_out",
-          "SDRAM/device_temp_i"
+          "SDRAM/device_temp_i",
+          "freq_counter/probe_in9"
         ]
       },
       "xlconcat_0_dout": {
@@ -2116,6 +2694,262 @@
           "xlconcat_0/dout",
           "processing_system7_1/IRQ_F2P"
         ]
+      },
+      "spi_sck_i_1": {
+        "ports": [
+          "spi_sck_i",
+          "axi_quad_spi_1/sck_i",
+          "system_ila_0/probe0"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "spi_sdi_i_1": {
+        "ports": [
+          "spi_sdi_i",
+          "axi_quad_spi_1/io1_i",
+          "system_ila_0/probe1"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "spi_sdo_i_1": {
+        "ports": [
+          "spi_sdo_i",
+          "axi_quad_spi_1/io0_i",
+          "system_ila_0/probe2"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "spi_sdo_iss_i_1": {
+        "ports": [
+          "spi_ss_i",
+          "axi_quad_spi_1/ss_i",
+          "system_ila_0/probe3"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "axi_quad_spi_1_io0_o": {
+        "ports": [
+          "axi_quad_spi_1/io0_o",
+          "spi_sdo_o",
+          "system_ila_0/probe4"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "axi_quad_spi_1_sck_o": {
+        "ports": [
+          "axi_quad_spi_1/sck_o",
+          "spi_sck_o",
+          "system_ila_0/probe5"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "axi_quad_spi_1_ss_o": {
+        "ports": [
+          "axi_quad_spi_1/ss_o",
+          "spi_ss_o",
+          "system_ila_0/probe6"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "adc_clock_1": {
+        "ports": [
+          "adc_clock",
+          "freq_counter/adc_clock",
+          "xlslice_0/Din",
+          "xlslice_3/Din",
+          "xlslice_2/Din",
+          "xlslice_1/Din"
+        ]
+      },
+      "clk_wiz_clk_out1": {
+        "ports": [
+          "clk_wiz/clk_out1",
+          "freq_counter/In4",
+          "Clk200",
+          "vio_0/clk",
+          "system_ila_5/clk"
+        ]
+      },
+      "proc_sys_reset_peripheral_reset": {
+        "ports": [
+          "proc_sys_reset/peripheral_reset",
+          "clk_wiz/reset"
+        ]
+      },
+      "freq_counter_VCO_PWR_EN": {
+        "ports": [
+          "freq_counter/VCO_PWR_EN",
+          "VCO_PWR_EN"
+        ]
+      },
+      "vio_0_probe_out0": {
+        "ports": [
+          "vio_0/probe_out0",
+          "adc_delay_inc"
+        ]
+      },
+      "vio_0_probe_out1": {
+        "ports": [
+          "vio_0/probe_out1",
+          "adc_delay_dec"
+        ]
+      },
+      "vio_0_probe_out2": {
+        "ports": [
+          "vio_0/probe_out2",
+          "adc_clear_error"
+        ]
+      },
+      "adc_valid_1": {
+        "ports": [
+          "adc_valid",
+          "vio_0/probe_in4"
+        ]
+      },
+      "adc_error_1": {
+        "ports": [
+          "adc_error",
+          "vio_0/probe_in5"
+        ]
+      },
+      "adc_data_in_a_1": {
+        "ports": [
+          "adc_data_in_a",
+          "vio_0/probe_in0",
+          "system_ila_2/probe0"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "adc_data_in_b_1": {
+        "ports": [
+          "adc_data_in_b",
+          "vio_0/probe_in1",
+          "system_ila_3/probe0"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "adc_data_in_c_1": {
+        "ports": [
+          "adc_data_in_c",
+          "vio_0/probe_in2",
+          "system_ila_4/probe0"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "adc_data_in_d_1": {
+        "ports": [
+          "adc_data_in_d",
+          "vio_0/probe_in3",
+          "system_ila_5/probe0",
+          "system_ila_1/probe0"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "system_ila_1/clk"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "system_ila_2/clk"
+        ]
+      },
+      "xlslice_2_Dout": {
+        "ports": [
+          "xlslice_2/Dout",
+          "system_ila_3/clk"
+        ]
+      },
+      "xlslice_3_Dout": {
+        "ports": [
+          "xlslice_3/Dout",
+          "system_ila_4/clk"
+        ]
+      }
+    },
+    "comments": {
+      "/": {
+        "comment_1": "Enter Comments here"
       }
     },
     "addressing": {
@@ -2128,6 +2962,11 @@
               "SEG_axi_gpio_1_Reg": {
                 "address_block": "/axi_gpio_0/S_AXI/Reg",
                 "offset": "0x41200000",
+                "range": "64K"
+              },
+              "SEG_axi_quad_spi_1_Reg": {
+                "address_block": "/axi_quad_spi_1/AXI_LITE/Reg",
+                "offset": "0x41E00000",
                 "range": "64K"
               },
               "SEG_mig_7series_0_memaddr": {
