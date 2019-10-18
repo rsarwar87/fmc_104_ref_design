@@ -1,0 +1,29 @@
+;******************************************************************
+;** ADS62Pxx Initialization                                        **
+;******************************************************************
+;
+; This .COE file specifies initialization values for a block
+; memory of depth=19, and width=16.
+; Values are specified in hexadecimal format.
+;
+memory_initialization_radix=16;
+memory_initialization_vector=
+0000,
+2000,
+3F20,
+4008,
+4180,
+4400,
+5044,
+5100,
+5200,
+5300,
+5500,
+5700,
+6200,
+6300,
+6600,
+6800,
+6A00,
+7500,
+7600;

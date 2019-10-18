@@ -1,0 +1,3 @@
+[submodule "ip_repo/xdma_bypass_controller"]
+	path = ip_repo/xdma_bypass_controller
+	url = https://github.com/rsarwar87/xdma_dsc_byp_cltr

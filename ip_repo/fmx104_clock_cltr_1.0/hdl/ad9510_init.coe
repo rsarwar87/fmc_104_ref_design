@@ -1,0 +1,44 @@
+;******************************************************************
+;** AD9510 Initialization                                        **
+;******************************************************************
+;
+; This .COE file specifies initialization values for a block
+; memory of depth=64, and width=16.
+; Values are specified in hexadecimal format.
+;
+memory_initialization_radix=16;
+memory_initialization_vector=
+3C0C,
+3D0C,
+3E0C,
+3F0C,
+4003,
+4102,
+4202,
+4303,
+4821,
+4900,
+4A21,
+4B00,
+4C21,
+4D00,
+4E21,
+4F00,
+5021,
+5100,
+5221,
+5300,
+5421,
+5500,
+5621,
+5700,
+0405,
+0500,
+060F,
+086F,
+0970,
+0A10,
+0B00,
+0C0A,
+4502,
+5A01;

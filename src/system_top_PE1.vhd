@@ -154,6 +154,15 @@ entity system_top is
         ad9510_clk, ad9510_csn : out STD_LOGIC;
         ad9510_mosi : out STD_LOGIC;
         VCO_PWR_EN : out std_logic;
+        
+        
+        MGT_RCLK0_PCIE_REFCLK_clk_n : in STD_LOGIC_VECTOR ( 0 to 0 );
+        MGT_RCLK0_PCIE_REFCLK_clk_p : in STD_LOGIC_VECTOR ( 0 to 0 );
+        PCIE_MGT_rxn : in STD_LOGIC_VECTOR ( 3 downto 0 );
+        PCIE_MGT_rxp : in STD_LOGIC_VECTOR ( 3 downto 0 );
+        PCIE_MGT_txn : out STD_LOGIC_VECTOR ( 3 downto 0 );
+        PCIE_MGT_txp : out STD_LOGIC_VECTOR ( 3 downto 0 );
+        PCIE_PERST : in STD_LOGIC;
 
 		Led_N							: out	std_logic_vector(2 downto 0)
 	);
@@ -241,8 +250,18 @@ architecture rtl of system_top is
             spi_ss_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
             spi_ss_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
             VCO_PWR_EN : out std_logic;
+            
+            
+            MGT_RCLK0_PCIE_REFCLK_clk_n : in STD_LOGIC_VECTOR ( 0 to 0 );
+            MGT_RCLK0_PCIE_REFCLK_clk_p : in STD_LOGIC_VECTOR ( 0 to 0 );
+            PCIE_MGT_rxn : in STD_LOGIC_VECTOR ( 3 downto 0 );
+            PCIE_MGT_rxp : in STD_LOGIC_VECTOR ( 3 downto 0 );
+            PCIE_MGT_txn : out STD_LOGIC_VECTOR ( 3 downto 0 );
+            PCIE_MGT_txp : out STD_LOGIC_VECTOR ( 3 downto 0 );
+            PCIE_PERST : in STD_LOGIC;
 			
 			FCLK_CLK1 			: out std_logic;
+			ClkAdc : in STD_LOGIC;
 			RESET_N 			: out std_logic
 		);
 	end component MercuryZX1;
@@ -376,6 +395,7 @@ end generate CLK_GEN;
 
 	i_system : MercuryZX1
 		port map (
+		ClkAdc => adc_clock(0),
 			DDR3_addr			=> DDR3_addr,
 			DDR3_ba				=> DDR3_ba,
 			DDR3_cas_n 			=> DDR3_cas_n,
@@ -453,6 +473,14 @@ end generate CLK_GEN;
           spi_sdo_o => spi_mosi,
           spi_ss_i(7 downto 0) => spi_csn(7 downto 0),
           spi_ss_o(7 downto 0) => spi_csn(7 downto 0),
+          
+            MGT_RCLK0_PCIE_REFCLK_clk_n => MGT_RCLK0_PCIE_REFCLK_clk_n,
+            MGT_RCLK0_PCIE_REFCLK_clk_p => MGT_RCLK0_PCIE_REFCLK_clk_p,
+            PCIE_MGT_rxn => PCIE_MGT_rxn,
+            PCIE_MGT_rxp => PCIE_MGT_rxp,
+            PCIE_MGT_txn => PCIE_MGT_txn,
+            PCIE_MGT_txp => PCIE_MGT_txp,
+            PCIE_PERST   => PCIE_PERST,
 			
 			VCO_PWR_EN => VCO_PWR_EN,
 			gpio_tri_o			=> Gpio

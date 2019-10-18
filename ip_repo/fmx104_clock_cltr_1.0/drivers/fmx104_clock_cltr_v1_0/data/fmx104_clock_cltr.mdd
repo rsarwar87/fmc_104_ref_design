@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER fmx104_clock_cltr
+	OPTION supported_peripherals = (fmx104_clock_cltr);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = fmx104_clock_cltr;
+END DRIVER

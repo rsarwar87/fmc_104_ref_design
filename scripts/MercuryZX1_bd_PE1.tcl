@@ -364,13 +364,13 @@ proc create_hier_cell_freq_counter { parentCell nameHier } {
   # Create instance: labtools_fmeter_0, and set properties
   set labtools_fmeter_0 [ create_bd_cell -type ip -vlnv trenz.biz:user:labtools_fmeter:1.0 labtools_fmeter_0 ]
   set_property -dict [ list \
-   CONFIG.C_CHANNELS {9} \
+   CONFIG.C_CHANNELS {11} \
  ] $labtools_fmeter_0
 
   # Create instance: vio_0, and set properties
   set vio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 vio_0 ]
   set_property -dict [ list \
-   CONFIG.C_NUM_PROBE_IN {10} \
+   CONFIG.C_NUM_PROBE_IN {12} \
    CONFIG.C_PROBE_OUT0_INIT_VAL {0001} \
  ] $vio_0
 
@@ -378,7 +378,7 @@ proc create_hier_cell_freq_counter { parentCell nameHier } {
   set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
   set_property -dict [ list \
    CONFIG.IN0_WIDTH {5} \
-   CONFIG.NUM_PORTS {5} \
+   CONFIG.NUM_PORTS {7} \
  ] $xlconcat_1
 
   # Create port connections
@@ -393,6 +393,10 @@ proc create_hier_cell_freq_counter { parentCell nameHier } {
   connect_bd_net -net labtools_fmeter_0_F6 [get_bd_pins labtools_fmeter_0/F6] [get_bd_pins vio_0/probe_in6]
   connect_bd_net -net labtools_fmeter_0_F7 [get_bd_pins labtools_fmeter_0/F7] [get_bd_pins vio_0/probe_in7]
   connect_bd_net -net labtools_fmeter_0_F8 [get_bd_pins labtools_fmeter_0/F8] [get_bd_pins vio_0/probe_in8]
+  
+  connect_bd_net [get_bd_pins labtools_fmeter_0/F9] [get_bd_pins vio_0/probe_in10]
+  connect_bd_net [get_bd_pins vio_0/probe_in11] [get_bd_pins labtools_fmeter_0/F10]
+
   connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins In1] [get_bd_pins xlconcat_1/In1]
   connect_bd_net -net probe_in9_1 [get_bd_pins probe_in9] [get_bd_pins vio_0/probe_in9]
   connect_bd_net -net processing_system7_1_fclk_clk0 [get_bd_pins refclk] [get_bd_pins labtools_fmeter_0/refclk] [get_bd_pins vio_0/clk] [get_bd_pins xlconcat_1/In2]
@@ -546,7 +550,10 @@ proc create_hier_cell_adc_ila { parentCell nameHier } {
   set IIC_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 IIC_0 ]
   set SYS_CLK [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 SYS_CLK ]
   set gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio ]
-
+  set PCIE_PERST [ create_bd_port -dir I -type rst PCIE_PERST ]
+  set MGT_RCLK0_PCIE_REFCLK [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 MGT_RCLK0_PCIE_REFCLK ]
+  set PCIE_MGT [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:pcie_7x_mgt_rtl:1.0 PCIE_MGT ]
+  
   set VCO_PWR_EN [ create_bd_port -dir O -from 0 -to 0 VCO_PWR_EN ]
   set spi_sck_i [ create_bd_port -dir I spi_sck_i ]
   set spi_sck_o [ create_bd_port -dir O spi_sck_o ]
@@ -557,8 +564,9 @@ proc create_hier_cell_adc_ila { parentCell nameHier } {
   set spi_ss_o [ create_bd_port -dir O -from 7 -to 0 spi_ss_o ]
   set Clk200 [ create_bd_port -dir O -type clk Clk200 ]
   set adc_clear_error [ create_bd_port -dir O -from 3 -to 0 adc_clear_error ]
-  set adc_clock [ create_bd_port -dir I -from 4 -to 0 adc_clock ]
-  set adc_data_in_a [ create_bd_port -dir I -from 13 -to 0 adc_data_in_a ]
+  set adc_clock [ create_bd_port -dir I -from 4 -to 0 -type clk adc_clock ]
+                  
+  set adc_data_in_a [ create_bd_port -dir I -from 13 -to 0 adc_data_in_a ]   
   set adc_data_in_b [ create_bd_port -dir I -from 13 -to 0 adc_data_in_b ]
   set adc_data_in_c [ create_bd_port -dir I -from 13 -to 0 adc_data_in_c ]
   set adc_data_in_d [ create_bd_port -dir I -from 13 -to 0 adc_data_in_d ]
@@ -566,7 +574,8 @@ proc create_hier_cell_adc_ila { parentCell nameHier } {
   set adc_delay_inc [ create_bd_port -dir O -from 3 -to 0 adc_delay_inc ]
   set adc_error [ create_bd_port -dir I -from 3 -to 0 adc_error ]
   set adc_valid [ create_bd_port -dir I -from 3 -to 0 adc_valid ]
-  
+  set ClkAdc [ create_bd_port -dir I -type clk ClkAdc ]
+  set_property CONFIG.FREQ_HZ 250000000 [get_bd_ports ClkAdc]
   # Create ports
   set FCLK_CLK1 [ create_bd_port -dir O -type clk FCLK_CLK1 ]
   set IRQ0 [ create_bd_port -dir I -from 0 -to 0 IRQ0 ]
@@ -1038,15 +1047,46 @@ CONFIG.TEMPERATURE_ALARM_OT_TRIGGER {85} \
 # Create instance: vio_0, and set properties
   set vio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 vio_0 ]
   set_property -dict [ list \
-   CONFIG.C_NUM_PROBE_IN {6} \
+   CONFIG.C_NUM_PROBE_IN {7} \
    CONFIG.C_NUM_PROBE_OUT {3} \
    CONFIG.C_PROBE_OUT0_WIDTH {4} \
    CONFIG.C_PROBE_OUT1_WIDTH {4} \
    CONFIG.C_PROBE_OUT2_WIDTH {4} \
  ] $vio_0
-
+ set util_ds_buf [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf ]
+  set_property -dict [ list \
+   CONFIG.C_BUF_TYPE {IBUFDSGTE} \
+ ] $util_ds_buf
+ 
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+ ] $xlconstant_0
+ 
+   set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.1 xdma_0 ]
+  set_property -dict [ list \
+   CONFIG.pl_link_cap_max_link_width {X4} \
+   CONFIG.pl_link_cap_max_link_speed {5.0_GT/s} \
+   CONFIG.axi_data_width {128_bit} CONFIG.axisten_freq {125} \
+   CONFIG.pf0_device_id {7024} CONFIG.axilite_master_en {true} \
+   CONFIG.axilite_master_size {4} CONFIG.pf0_msi_enabled {false} \
+   CONFIG.xdma_rnum_chnl {1} \
+   CONFIG.xdma_wnum_chnl {2} \
+   CONFIG.xdma_axilite_slave {true} \
+   CONFIG.plltype {QPLL1} \
+   CONFIG.xdma_axi_intf_mm {AXI_Stream} \
+   CONFIG.pcie_extended_tag {true} \
+   CONFIG.pf0_link_status_slot_clock_config {false} \
+   CONFIG.dsc_bypass_wr {0010} \
+   CONFIG.pf0_msix_cap_table_bir {BAR_1} \
+   CONFIG.pf0_msix_cap_pba_bir {BAR_1} \
+   CONFIG.PF0_DEVICE_ID_mqdma {9024} \
+   CONFIG.PF2_DEVICE_ID_mqdma {9024} \
+   CONFIG.PF3_DEVICE_ID_mqdma {9024}\
+ ] $xdma_0
 
   # Create interface connections
+connect_bd_intf_net [get_bd_intf_ports MGT_RCLK0_PCIE_REFCLK] [get_bd_intf_pins util_ds_buf/CLK_IN_D]
   connect_bd_intf_net -intf_net SYS_CLK_1 [get_bd_intf_ports SYS_CLK] [get_bd_intf_pins SDRAM/SYS_CLK]
   connect_bd_intf_net -intf_net axi_gpio_1_gpio [get_bd_intf_ports gpio] [get_bd_intf_pins axi_gpio_0/GPIO]
   connect_bd_intf_net -intf_net mig_7series_0_DDR3 [get_bd_intf_ports DDR3] [get_bd_intf_pins SDRAM/DDR3]
@@ -1128,10 +1168,60 @@ CONFIG.TEMPERATURE_ALARM_OT_TRIGGER {85} \
   create_bd_addr_seg -range 0x00010000 -offset 0x41E00000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs axi_quad_spi_1/AXI_LITE/Reg] SEG_axi_quad_spi_1_Reg
   create_bd_addr_seg -range 0x10000000 -offset 0x50000000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs SDRAM/memmap/memaddr] SEG_mig_7series_0_memaddr
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs xadc_wiz_0/s_axi_lite/Reg] SEG_xadc_wiz_0_Reg
-  # Restore current instance
-  current_bd_instance $oldCurInst
+  
+  apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_1/FCLK_CLK0 (100 MHz)} Clk_slave {/xdma_0/axi_aclk (125 MHz)} Clk_xbar {/processing_system7_1/FCLK_CLK0 (100 MHz)} Master {/processing_system7_1/M_AXI_GP0} Slave {/xdma_0/S_AXI_LITE} intc_ip {/processing_system7_1_axi_periph} master_apm {0}}  [get_bd_intf_pins xdma_0/S_AXI_LITE]
+  connect_bd_net [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
+  connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins xdma_0/usr_irq_req]
+  connect_bd_net [get_bd_ports PCIE_PERST] [get_bd_pins xdma_0/sys_rst_n]
+  connect_bd_intf_net [get_bd_intf_ports PCIE_MGT] [get_bd_intf_pins xdma_0/pcie_mgt]
+  connect_bd_intf_net [get_bd_intf_pins xdma_0/M_AXIS_H2C_0] [get_bd_intf_pins xdma_0/S_AXIS_C2H_0]
+  connect_bd_net [get_bd_pins xdma_0/user_lnk_up] [get_bd_pins vio_0/probe_in6]
+  
+  create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1
+create_bd_cell -type ip -vlnv xilinx.com:ip:axis_dwidth_converter:1.1 axis_dwidth_converter_0
+create_bd_cell -type ip -vlnv xilinx.com:ip:axis_clock_converter:1.1 axis_clock_converter_0
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1
+connect_bd_net [get_bd_pins axis_dwidth_converter_0/s_axis_tvalid] [get_bd_pins axis_dwidth_converter_0/s_axis_tready]
+connect_bd_net [get_bd_pins axis_dwidth_converter_0/s_axis_tdata] [get_bd_pins xlconcat_1/dout]
+set_property -dict [list CONFIG.IN0_WIDTH.VALUE_SRC USER CONFIG.IN1_WIDTH.VALUE_SRC USER CONFIG.IN2_WIDTH.VALUE_SRC USER CONFIG.IN3_WIDTH.VALUE_SRC USER CONFIG.IN4_WIDTH.VALUE_SRC USER CONFIG.IN5_WIDTH.VALUE_SRC USER CONFIG.IN6_WIDTH.VALUE_SRC USER CONFIG.IN7_WIDTH.VALUE_SRC USER] [get_bd_cells xlconcat_1]
+set_property -dict [list CONFIG.NUM_PORTS {8} CONFIG.IN0_WIDTH {14} CONFIG.IN1_WIDTH {2} CONFIG.IN2_WIDTH {14} CONFIG.IN3_WIDTH {2} CONFIG.IN4_WIDTH {14} CONFIG.IN5_WIDTH {2} CONFIG.IN6_WIDTH {14} CONFIG.IN7_WIDTH {2}] [get_bd_cells xlconcat_1]
+set_property -dict [list CONFIG.CONST_WIDTH {2} CONFIG.CONST_VAL {0}] [get_bd_cells xlconstant_1]
+set_property -dict [list CONFIG.S_TDATA_NUM_BYTES.VALUE_SRC USER] [get_bd_cells axis_dwidth_converter_0]
+set_property -dict [list CONFIG.S_TDATA_NUM_BYTES {8} CONFIG.M_TDATA_NUM_BYTES {16}] [get_bd_cells axis_dwidth_converter_0]
+connect_bd_net [get_bd_pins xlconstant_1/dout] [get_bd_pins xlconcat_1/In7]
+connect_bd_net [get_bd_pins xlconcat_1/In5] [get_bd_pins xlconstant_1/dout]
+connect_bd_net [get_bd_pins xlconcat_1/In3] [get_bd_pins xlconstant_1/dout]
+connect_bd_net [get_bd_pins xlconcat_1/In1] [get_bd_pins xlconstant_1/dout]
+connect_bd_intf_net [get_bd_intf_pins axis_dwidth_converter_0/M_AXIS] [get_bd_intf_pins axis_clock_converter_0/S_AXIS]
+connect_bd_net [get_bd_ports adc_data_in_a] [get_bd_pins xlconcat_1/In0]
+connect_bd_net [get_bd_ports adc_data_in_b] [get_bd_pins xlconcat_1/In2]
+connect_bd_net [get_bd_ports adc_data_in_c] [get_bd_pins xlconcat_1/In4]
+connect_bd_net [get_bd_ports adc_data_in_d] [get_bd_pins xlconcat_1/In6]
+connect_bd_net [get_bd_pins axis_dwidth_converter_0/aclk] [get_bd_pins adc_ila/xlslice_2/Dout]
+connect_bd_net [get_bd_pins axis_dwidth_converter_0/aresetn] [get_bd_pins axis_clock_converter_0/s_axis_aresetn]
+connect_bd_intf_net [get_bd_intf_pins xdma_0/S_AXIS_C2H_1] [get_bd_intf_pins axis_clock_converter_0/M_AXIS]
+set_property -dict [list CONFIG.HAS_TLAST.VALUE_SRC USER CONFIG.HAS_TKEEP.VALUE_SRC USER] [get_bd_cells axis_dwidth_converter_0]
+set_property -dict [list CONFIG.HAS_TLAST {1} CONFIG.HAS_TKEEP {1} CONFIG.HAS_MI_TKEEP {1}] [get_bd_cells axis_dwidth_converter_0]
+connect_bd_net [get_bd_pins axis_dwidth_converter_0/s_axis_tlast] [get_bd_pins xlconstant_0/dout]
+copy_bd_objs /  [get_bd_cells {xlconstant_0}]
+set_property -dict [list CONFIG.CONST_WIDTH {8} CONFIG.CONST_VAL {255}] [get_bd_cells xlconstant_2]
+connect_bd_net [get_bd_pins xlconstant_2/dout] [get_bd_pins axis_dwidth_converter_0/s_axis_tkeep]
+group_bd_cells pcie [get_bd_cells axis_clock_converter_0] [get_bd_cells xlconstant_0] [get_bd_cells xlconcat_1] [get_bd_cells xlconstant_1] [get_bd_cells xdma_0] [get_bd_cells xlconstant_2] [get_bd_cells axis_dwidth_converter_0] [get_bd_cells util_ds_buf]
 
-  save_bd_design
+create_bd_cell -type ip -vlnv user.org:user:bypass_controller:1.0 pcie/bypass_controller_0
+connect_bd_net [get_bd_pins pcie/axis_clock_converter_0/m_axis_aresetn] [get_bd_pins pcie/xdma_0/axi_aresetn]
+connect_bd_net [get_bd_pins pcie/axis_clock_converter_0/m_axis_aclk] [get_bd_pins pcie/xdma_0/axi_aclk]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/pcie/xdma_0/axi_aclk (125 MHz)} Clk_slave {Auto} Clk_xbar {Auto} Master {/pcie/xdma_0/M_AXI_LITE} Slave {/pcie/bypass_controller_0/S00_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins pcie/bypass_controller_0/S00_AXI]
+connect_bd_net [get_bd_pins pcie/xdma_0/c2h_dsc_byp_ctl_1] [get_bd_pins pcie/bypass_controller_0/dsc_byp_ctl]
+connect_bd_net [get_bd_pins pcie/bypass_controller_0/dsc_byp_ready] [get_bd_pins pcie/xdma_0/c2h_dsc_byp_ready_1]
+connect_bd_net [get_bd_pins pcie/xdma_0/c2h_dsc_byp_dst_addr_1] [get_bd_pins pcie/bypass_controller_0/dsc_byp_dst_addr]
+connect_bd_net [get_bd_pins pcie/bypass_controller_0/dsc_byp_src_addr] [get_bd_pins pcie/xdma_0/c2h_dsc_byp_src_addr_1]
+connect_bd_net [get_bd_pins pcie/xdma_0/c2h_dsc_byp_load_1] [get_bd_pins pcie/bypass_controller_0/dsc_byp_load]
+connect_bd_net [get_bd_pins pcie/bypass_controller_0/dsc_byp_length] [get_bd_pins pcie/xdma_0/c2h_dsc_byp_len_1]
+connect_bd_net [get_bd_pins pcie/util_ds_buf/IBUF_OUT] [get_bd_pins freq_counter/xlconcat_1/In5]
+connect_bd_net [get_bd_pins pcie/axi_aclk] [get_bd_pins freq_counter/xlconcat_1/In6]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config {Clk "/ClkAdc (250 MHz)" }  [get_bd_pins pcie/axis_clock_converter_0/s_axis_aclk]
+connect_bd_net [get_bd_pins rst_ClkAdc_250M/ext_reset_in] [get_bd_pins processing_system7_1/FCLK_RESET0_N]  save_bd_design
 }
 # End of create_root_design()
 
