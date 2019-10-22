@@ -30,7 +30,7 @@
 	#define SLEEP_VALUE 100000
 	#define SYSTEM_INIT
 #elif SYSTEM == XILINX_ARM_SOC
-	#define SLEEP_VALUE 100000000
+	#define SLEEP_VALUE 10000
 	#define SYSTEM_INIT
 #elif SYSTEM == ALTERA_NIOS
 	#define SLEEP_VALUE 10000000
@@ -152,15 +152,15 @@ int main()
 		spi_write(0x56, 0x21, csn);Sleep(SLEEP_VALUE);
 		spi_write(0x57, 0x00, csn);Sleep(SLEEP_VALUE);
 		// global params
-		spi_write(0x04, 0x01, csn);Sleep(SLEEP_VALUE); // A counter [5:0]
+		spi_write(0x04, 0x05, csn);Sleep(SLEEP_VALUE); // A counter [5:0]
 		spi_write(0x05, 0x00, csn);Sleep(SLEEP_VALUE); // B counter[4:0 - > 12:8]
-		spi_write(0x06, 0x05, csn);Sleep(SLEEP_VALUE); // B counter [7:0]
+		spi_write(0x06, 0x0F, csn);Sleep(SLEEP_VALUE); // B counter [7:0]
 		//spi_write(0x07, 0xFF, csn);Sleep(SLEEP_VALUE); // loss of ref settings
-		spi_write(0x08, 0x47, csn);Sleep(SLEEP_VALUE); // CP mode[1:0]; MUX[5:2]; PFD[6]
+		spi_write(0x08, 0x4F, csn);Sleep(SLEEP_VALUE); // CP mode[1:0]; MUX[5:2]; PFD[6]
 		spi_write(0x09, 0x70, csn);Sleep(SLEEP_VALUE); //[counter resets{Rn N All}[2:0]] CP curren[6:4]
 		spi_write(0x0A, (0x2 << 2), csn);Sleep(SLEEP_VALUE); //prescaller[4:2] Powerdown [1:0]
 		spi_write(0x0B, 0x00, csn);Sleep(SLEEP_VALUE); // R divider[13:8 -> 5:0]
-		spi_write(0x0C, 0x01, csn);Sleep(SLEEP_VALUE); // R divider[7:0]
+		spi_write(0x0C, 0x10, csn);Sleep(SLEEP_VALUE); // R divider[7:0]
 		spi_write(0x45, 0x02, csn);Sleep(SLEEP_VALUE); // clock power down
 		spi_write(0x5A, 0x01, csn);Sleep(SLEEP_VALUE); // update registers
 

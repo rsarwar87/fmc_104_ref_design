@@ -1,116 +1,19 @@
-18:31:14 **** Auto Build of configuration Debug for project i2c_example ****
+10:14:37 **** Auto Build of configuration Debug for project i2c_example ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
 Building file: ../src/AtmelAtsha204a.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AtmelAtsha204a.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/AtmelAtsha204a.d" -MT"src/AtmelAtsha204a.o" -o "src/AtmelAtsha204a.o" "../src/AtmelAtsha204a.c"
-In file included from ../src/AtmelAtsha204a.c:18:
-../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
- static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/AtmelAtsha204a.c
- 
-Building file: ../src/CurrentMonitor.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/CurrentMonitor.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/CurrentMonitor.d" -MT"src/CurrentMonitor.o" -o "src/CurrentMonitor.o" "../src/CurrentMonitor.c"
-In file included from ../src/CurrentMonitor.c:14:
-../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
- static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/CurrentMonitor.c
- 
-Building file: ../src/I2cExample.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/I2cExample.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/I2cExample.d" -MT"src/I2cExample.o" -o "src/I2cExample.o" "../src/I2cExample.c"
-Finished building: ../src/I2cExample.c
- 
-Building file: ../src/I2cInterface.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/I2cInterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/I2cInterface.d" -MT"src/I2cInterface.o" -o "src/I2cInterface.o" "../src/I2cInterface.c"
-In file included from ../src/I2cInterface.c:14:
-../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
- static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/I2cInterface.c
- 
-Building file: ../src/InterruptController.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/InterruptController.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/InterruptController.d" -MT"src/InterruptController.o" -o "src/InterruptController.o" "../src/InterruptController.c"
-Finished building: ../src/InterruptController.c
- 
-Building file: ../src/ModuleConfigConstants.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ModuleConfigConstants.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ModuleConfigConstants.d" -MT"src/ModuleConfigConstants.o" -o "src/ModuleConfigConstants.o" "../src/ModuleConfigConstants.c"
-Finished building: ../src/ModuleConfigConstants.c
- 
-Building file: ../src/ModuleConfigValueKeys.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ModuleConfigValueKeys.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ModuleConfigValueKeys.d" -MT"src/ModuleConfigValueKeys.o" -o "src/ModuleConfigValueKeys.o" "../src/ModuleConfigValueKeys.c"
-Finished building: ../src/ModuleConfigValueKeys.c
- 
-Building file: ../src/ModuleEeprom.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ModuleEeprom.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ModuleEeprom.d" -MT"src/ModuleEeprom.o" -o "src/ModuleEeprom.o" "../src/ModuleEeprom.c"
-In file included from ../src/ModuleEeprom.c:15:
-../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
- static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/ModuleEeprom.c
- 
-Building file: ../src/ReadSystemMonitor.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ReadSystemMonitor.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ReadSystemMonitor.d" -MT"src/ReadSystemMonitor.o" -o "src/ReadSystemMonitor.o" "../src/ReadSystemMonitor.c"
-In file included from ../src/ReadSystemMonitor.c:14:
-../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
- static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/ReadSystemMonitor.c
- 
-Building file: ../src/RealtimeClock.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/RealtimeClock.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/RealtimeClock.d" -MT"src/RealtimeClock.o" -o "src/RealtimeClock.o" "../src/RealtimeClock.c"
-Finished building: ../src/RealtimeClock.c
- 
-Building file: ../src/SystemController.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/SystemController.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/SystemController.d" -MT"src/SystemController.o" -o "src/SystemController.o" "../src/SystemController.c"
-../src/SystemController.c: In function 'SystemController_SetVmonSel':
-../src/SystemController.c:75:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-In file included from ../src/SystemController.c:13:
-At top level:
-../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
- static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/SystemController.c
- 
-Building file: ../src/SystemMonitor.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/SystemMonitor.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/SystemMonitor.d" -MT"src/SystemMonitor.o" -o "src/SystemMonitor.o" "../src/SystemMonitor.c"
-In file included from ../src/SystemMonitor.c:13:
-../src/UtilityFunctions.h:39:12: warning: 'ConvertBinaryCodedDecimalToDecimal' defined but not used [-Wunused-function]
- static int ConvertBinaryCodedDecimalToDecimal(uint8_t bcd)
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/SystemMonitor.c
- 
-Building file: ../src/TimerInterface.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/TimerInterface.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/TimerInterface.d" -MT"src/TimerInterface.o" -o "src/TimerInterface.o" "../src/TimerInterface.c"
-Finished building: ../src/TimerInterface.c
- 
-Building target: i2c_example.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/workspace/standalone_bsp_0/ps7_cortexa9_0/lib -o "i2c_example.elf"  ./src/AtmelAtsha204a.o ./src/CurrentMonitor.o ./src/I2cExample.o ./src/I2cInterface.o ./src/InterruptController.o ./src/ModuleConfigConstants.o ./src/ModuleConfigValueKeys.o ./src/ModuleEeprom.o ./src/ReadSystemMonitor.o ./src/RealtimeClock.o ./src/SystemController.o ./src/SystemMonitor.o ./src/TimerInterface.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group -Wl,--start-group,-lxilisf,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
-Finished building target: i2c_example.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size i2c_example.elf  |tee "i2c_example.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  60336	   3376	  23400	  87112	  15448	i2c_example.elf
-Finished building: i2c_example.elf.size
- 
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AtmelAtsha204a.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/AtmelAtsha204a.d" -MT"src/AtmelAtsha204a.o" -o "src/AtmelAtsha204a.o" "../src/AtmelAtsha204a.c"
+In file included from ../src/StandardIncludes.h:4,
+                 from ../src/AtmelAtsha204a.h:18,
+                 from ../src/AtmelAtsha204a.c:15:
+../src/SystemDefinitions.h:79:10: fatal error: xil_printf.h: No such file or directory
+ #include "xil_printf.h"
+          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/AtmelAtsha204a.o] Error 1
+src/subdir.mk:57: recipe for target 'src/AtmelAtsha204a.o' failed
 
-18:31:15 Build Finished (took 923ms)
+10:14:38 Build Finished (took 173ms)
 

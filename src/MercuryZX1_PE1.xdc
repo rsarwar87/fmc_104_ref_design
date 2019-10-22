@@ -294,7 +294,9 @@ set_false_path -from [get_clocks adc_clk_p*] -to [get_clocks clk_fpga_0]
 set_false_path -from [get_clocks clk_out1_MercuryZX1_clk_wiz_0] -to [get_clocks adc_clk_p*]
 set_false_path -from [get_clocks adc_clk_p*] -to [get_clocks clk_out1_MercuryZX1_clk_wiz_0]
 set_false_path -from [get_clocks userclk2*] -to [get_clocks clk_out1_MercuryZX1_clk_wiz_0]
-
+set_false_path -from [get_clocks userclk2*] -to [get_clocks clk_fpga_0]
+set_false_path -from [get_clocks clk_out1_MercuryZX1_clk_wiz_0] -to [get_clocks userclk2]
+set_false_path -from [get_clocks clk_fpga_0] -to [get_clocks userclk2*]
 
 set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -min -add_delay 4.400 [get_ports {cha_n[*]}]
 set_input_delay -clock [get_clocks adc_clk_p0] -clock_fall -max -add_delay 1.700 [get_ports {cha_n[*]}]

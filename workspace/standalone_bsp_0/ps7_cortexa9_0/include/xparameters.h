@@ -615,15 +615,39 @@
 
 /******************************************************************/
 
+/* Definitions for driver XDMAPCIE */
+#define XPAR_XDMAPCIE_NUM_INSTANCES 1
+
+/* Definitions for peripheral PCIE_XDMA_0 */
+#define XPAR_PCIE_XDMA_0_DEVICE_ID 0
+#define XPAR_PCIE_XDMA_0_BASEADDR 0x7AA00000
+#define XPAR_PCIE_XDMA_0_INCLUDE_BAROFFSET_REG 1
+#define XPAR_PCIE_XDMA_0_AXIBAR_NUM 1
+#define XPAR_PCIE_XDMA_0_AXIBAR_HIGHADDR_0 0x0000000000000000
+#define XPAR_PCIE_XDMA_0_AXIBAR2PCIEBAR_0 0x0000000000000000
+#define XPAR_PCIE_XDMA_0_AXIBAR_HIGHADDR_1 0x0000000000000000
+#define XPAR_PCIE_XDMA_0_AXIBAR2PCIEBAR_1 0x0000000000000000
+#define XPAR_PCIE_XDMA_0_DEVICE_PORT_TYPE 0
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral PCIE_XDMA_0 */
+#define XPAR_XDMAPCIE_0_DEVICE_ID XPAR_PCIE_XDMA_0_DEVICE_ID
+#define XPAR_XDMAPCIE_0_baseaddr 0x7AA00000
+#define XPAR_XDMAPCIE_0_INCLUDE_BAROFFSET_REG 1
+#define XPAR_XDMAPCIE_0_AXIBAR_NUM 1
+#define XPAR_XDMAPCIE_0_AXIBAR_HIGHADDR_0 0x0000000000000000
+#define XPAR_XDMAPCIE_0_AXIBAR2PCIEBAR_0 0x0000000000000000
+#define XPAR_XDMAPCIE_0_AXIBAR_HIGHADDR_1 0x0000000000000000
+#define XPAR_XDMAPCIE_0_AXIBAR2PCIEBAR_1 0x0000000000000000
+#define XPAR_XDMAPCIE_0_device_port_type 0
+
+
+/******************************************************************/
+
 /* Xilinx EDK In-system and Serial Flash Library (XilIsf) User Settings */
 #define XPAR_XISF_FLASH_FAMILY	1
 #define XPAR_XISF_INTERFACE_AXISPI	1
 
-/* Xilinx FAT File System Library (XilFFs) User Settings */
-#define FILE_SYSTEM_INTERFACE_SD
-#define FILE_SYSTEM_USE_MKFS
-#define FILE_SYSTEM_NUM_LOGIC_VOL 2
-#define FILE_SYSTEM_USE_STRFUNC 0
-#define FILE_SYSTEM_SET_FS_RPATH 0
-#define FILE_SYSTEM_WORD_ACCESS
 #endif  /* end of protection macro */
