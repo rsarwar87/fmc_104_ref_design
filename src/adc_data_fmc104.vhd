@@ -91,10 +91,21 @@ signal ch_adc_ddr_dly : std_logic_vector(RESOLUTION-1 downto 0); -- Double Data 
 
 signal ce, tmpi, tmpd, pec, pec_out : std_logic_vector (1 downto 0);
 
+signal INC_DELAY, INC_BUF, DEC_DELAY, DEC_BUF : std_logic := '0';
 --attribute IODELAY_GROUP : STRING;
 --attribute IODELAY_GROUP of <label_name>: label is "<iodelay_group_name>";
 
 begin
+
+onepulse: process(CLOCK) begin
+    if (rising_edge(CLOCK)) then
+        INC_DELAY <= INC;
+        DEC_DELAY <= DEC;        
+        INC_BUF <= (INC AND (NOT INC_DELAY));
+        DEC_BUF <= (DEC AND (NOT DEC_DELAY));
+    end if;
+end process;
+
 delayclrl: if IDENTIFICATION=0 generate
    IDELAYCTRL_inst : IDELAYCTRL
    port map (
@@ -104,7 +115,7 @@ delayclrl: if IDENTIFICATION=0 generate
    );
 end generate delayclrl;
 
-ce(0) <= INC or DEC;
+ce(0) <= INC_BUF or DEC_BUF;
 
 pec(0) <= ADC_0_ERROR_CLR;
 
@@ -140,7 +151,7 @@ pec(0) <= ADC_0_ERROR_CLR;
       regrst      => RESET,
       ld          => RESET,
       ce          => ce(0),
-      inc         => INC,
+      inc         => INC_BUF,
       cinvctrl    => '0',
       cntvaluein  => conv_std_logic_vector(CH0_IDELAY, 5),            
       idatain     => ch0_ddr(i),
