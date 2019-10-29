@@ -298,8 +298,8 @@
 
 
 /* Definitions for peripheral SDRAM */
-#define XPAR_SDRAM_BASEADDR 0x50000000
-#define XPAR_SDRAM_HIGHADDR 0x5FFFFFFF
+#define XPAR_SDRAM_BASEADDR 0xA0000000
+#define XPAR_SDRAM_HIGHADDR 0xAFFFFFFF
 
 
 /******************************************************************/
@@ -310,8 +310,8 @@
 #define XPAR_MIG7SERIES_0_DDR_COL_WIDTH 0U
 #define XPAR_MIG7SERIES_0_DDR_BANK_WIDTH 3U
 #define XPAR_MIG7SERIES_0_DDR_DQ_WIDTH 16U
-#define XPAR_MIG7SERIES_0_BASEADDR 0x50000000U
-#define XPAR_MIG7SERIES_0_HIGHADDR 0x5FFFFFFFU
+#define XPAR_MIG7SERIES_0_BASEADDR 0xA0000000U
+#define XPAR_MIG7SERIES_0_HIGHADDR 0xAFFFFFFFU
 
 
 /******************************************************************/

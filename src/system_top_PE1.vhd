@@ -142,6 +142,8 @@ entity system_top is
 		CLK200_P 						: in std_logic;
 		CLK200_N 						: in std_logic;
 		
+		Vp_Vn_v_n : in STD_LOGIC;
+        Vp_Vn_v_p : in STD_LOGIC;
 		-------------------------------------------------------------------------------------------
 		-- led		
 		-------------------------------------------------------------------------------------------
@@ -210,7 +212,7 @@ architecture rtl of system_top is
 			IIC_0_scl_i 		: in std_logic;
 			IIC_0_scl_o 		: out std_logic;
 			IIC_0_scl_t 		: out std_logic;
-			gpio_tri_o 			: out std_logic_vector ( 7 downto 0 );
+			gpio 			: out std_logic_vector ( 7 downto 0 );
 			
 			DDR3_dq 			: inout std_logic_vector ( 15 downto 0 );
 			DDR3_dqs_p 			: inout std_logic_vector ( 1 downto 0 );
@@ -230,6 +232,9 @@ architecture rtl of system_top is
 			SYS_CLK_clk_n		: in std_logic;
 			SYS_CLK_clk_p		: in std_logic;
 			
+            
+            Vp_Vn_v_n : in STD_LOGIC;
+            Vp_Vn_v_p : in STD_LOGIC;
             
 			Clk200 : out STD_LOGIC;
             adc_clear_error : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -436,6 +441,9 @@ end generate CLK_GEN;
 			
 			SDIO0_CDN           => SDIO0_CDN_s,
 			SDIO0_WP            => SDIO0_WP_s, 
+			
+			Vp_Vn_v_n           => Vp_Vn_v_n,
+			Vp_Vn_v_p           => Vp_Vn_v_p,
 
 			IRQ0				=> IRQ0,
             IRQ1                => IRQ1,
@@ -483,7 +491,7 @@ end generate CLK_GEN;
             PCIE_PERST   => PCIE_PERST,
 			
 			VCO_PWR_EN => VCO_PWR_EN,
-			gpio_tri_o			=> Gpio
+			gpio			=> Gpio
 		);
 		
 

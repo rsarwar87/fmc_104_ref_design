@@ -510,6 +510,14 @@ set_property PACKAGE_PIN AA1 [get_ports {PCIE_MGT_txn[0]}]
 set_property PACKAGE_PIN W1  [get_ports {PCIE_MGT_txn[1]}]
 set_property PACKAGE_PIN U1  [get_ports {PCIE_MGT_txn[2]}]
 set_property PACKAGE_PIN R1  [get_ports {PCIE_MGT_txn[3]}]
+# ----------------------------------------------------------------------------------
+# XADC
+# ----------------------------------------------------------------------------------
+
+set_property PACKAGE_PIN N14 [get_ports Vp_Vn_v_p]
+set_property PACKAGE_PIN P13 [get_ports Vp_Vn_v_n]
+
 # -------------------------------------------------------------------------------------------------
 # eof
 # -------------------------------------------------------------------------------------------------
+

@@ -4,3 +4,55 @@
 13:26:37 INFO  : Successfully done setting XSCT server connection channel  
 13:26:37 INFO  : Successfully done setting SDK workspace  
 13:26:37 INFO  : Processing command line option -hwspec /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top.hdf.
+15:43:22 INFO  : Launching XSCT server: xsct -n -interactive /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/temp_xsdb_launch_script.tcl
+15:43:24 INFO  : XSCT server has started successfully.
+15:43:24 INFO  : Successfully done setting XSCT server connection channel  
+15:43:24 INFO  : Successfully done setting SDK workspace  
+15:43:28 INFO  : Registering command handlers for SDK TCF services
+15:43:28 INFO  : Processing command line option -hwspec /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top.hdf.
+15:43:35 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1567418961000,  Project:1566506759000
+15:43:35 INFO  : Project system_top_hw_platform_0's source hardware specification located at /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+15:43:41 INFO  : Copied contents of /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top.hdf into /system_top_hw_platform_0/system.hdf.
+15:43:45 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:43:46 INFO  : 
+15:43:47 INFO  : Updating hardware inferred compiler options for FSLB.
+15:43:47 INFO  : Clearing existing target manager status.
+15:43:47 INFO  : Closing and re-opening the MSS file of ther project FSLB_bsp
+15:43:47 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+15:43:48 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+09:41:02 INFO  : Launching XSCT server: xsct -n -interactive /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/temp_xsdb_launch_script.tcl
+09:41:04 INFO  : XSCT server has started successfully.
+09:41:04 INFO  : Successfully done setting XSCT server connection channel  
+09:41:04 INFO  : Successfully done setting SDK workspace  
+09:41:08 INFO  : Registering command handlers for SDK TCF services
+09:41:08 INFO  : Processing command line option -hwspec /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top.hdf.
+09:41:08 INFO  : Checking for hwspec changes in the project system_top_hw_platform_1.
+09:41:14 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1571866943000,  Project:1571841557000
+09:41:14 INFO  : The hardware specification for project 'system_top_hw_platform_1' is different from /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top.hdf.
+09:41:14 INFO  : Copied contents of /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top.hdf into /system_top_hw_platform_1/system.hdf.
+09:41:26 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+09:41:26 INFO  : Clearing existing target manager status.
+09:41:26 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+09:41:26 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+09:45:24 INFO  : Invoking Bootgen: bootgen -image FSLB.bif -arch zynq -o /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/BOOT.bin
+09:45:24 INFO  : Creating new bif file /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/FSLB.bif
+09:45:26 INFO  : Bootgen command execution is done.
+11:36:43 INFO  : Launching XSCT server: xsct -n -interactive /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/temp_xsdb_launch_script.tcl
+11:36:45 INFO  : XSCT server has started successfully.
+11:36:46 INFO  : Successfully done setting XSCT server connection channel  
+11:36:46 INFO  : Successfully done setting SDK workspace  
+11:36:50 INFO  : Registering command handlers for SDK TCF services
+11:36:50 INFO  : Processing command line option -hwspec /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top.hdf.
+11:36:50 INFO  : Checking for hwspec changes in the project system_top_hw_platform_1.
+11:36:56 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1572224481000,  Project:1571866943000
+11:36:56 INFO  : The hardware specification for project 'system_top_hw_platform_1' is different from /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top.hdf.
+11:36:56 INFO  : Copied contents of /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top.hdf into /system_top_hw_platform_1/system.hdf.
+11:37:06 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+11:37:07 INFO  : Clearing existing target manager status.
+11:37:07 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+11:37:07 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+19:37:02 INFO  : Launching XSCT server: xsct -n -interactive /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/temp_xsdb_launch_script.tcl
+19:37:04 INFO  : XSCT server has started successfully.
+23:34:15 ERROR : (XSDB Server)Terminated
+

@@ -16,7 +16,7 @@ src/pcap.o src/pcap.o: ../src/pcap.c ../src/pcap.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xparameters.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xpseudo_asm.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xil_printf.h ../src/fsbl_debug.h \
- /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0/ps7_init.h \
+ /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top_hw_platform_0/ps7_init.h \
  ../src/image_mover.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xil_exception.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/sleep.h \
@@ -66,7 +66,7 @@ src/pcap.o src/pcap.o: ../src/pcap.c ../src/pcap.h \
 
 ../src/fsbl_debug.h:
 
-/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0/ps7_init.h:
+/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top_hw_platform_0/ps7_init.h:
 
 ../src/image_mover.h:
 

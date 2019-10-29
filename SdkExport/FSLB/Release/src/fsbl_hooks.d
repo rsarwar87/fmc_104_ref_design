@@ -16,7 +16,7 @@ src/fsbl_hooks.o src/fsbl_hooks.o: ../src/fsbl_hooks.c ../src/fsbl.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xil_io.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xstatus.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xil_assert.h ../src/fsbl_debug.h \
- /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0/ps7_init.h \
+ /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top_hw_platform_0/ps7_init.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xstatus.h ../src/fsbl_hooks.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xemacps.h \
  ../../FSLB_bsp/ps7_cortexa9_0/include/xemacps_hw.h \
@@ -72,7 +72,7 @@ src/fsbl_hooks.o src/fsbl_hooks.o: ../src/fsbl_hooks.c ../src/fsbl.h \
 
 ../src/fsbl_debug.h:
 
-/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/ghrd/SdkExport/system_top_hw_platform_0/ps7_init.h:
+/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/SdkExport/system_top_hw_platform_0/ps7_init.h:
 
 ../../FSLB_bsp/ps7_cortexa9_0/include/xstatus.h:
 
