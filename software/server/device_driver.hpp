@@ -1,6 +1,3 @@
-/// DMA driver
-///
-/// (c) Koheron
 
 #ifndef __DRIVERS_ADC_DAC_DMA_HPP__
 #define __DRIVERS_ADC_DAC_DMA_HPP__
@@ -9,8 +6,14 @@
 #include <dma-sg_controller.hpp>
 #include <adc_qspi_controller.hpp>
 #include <fifo_controller.hpp>
+#include <math.h>
+#include <cmath>
 // AXI DMA Registers
 // https://www.xilinx.com/support/documentation/ip_documentation/axi_dma/v7_1/pg021_axi_dma.pdf
+class xQSPI;
+class SSFifoController;
+class DMAEngineSG;
+
 using std::unique_ptr;
 class TopLevelDriver
 {
@@ -18,72 +21,83 @@ class TopLevelDriver
     TopLevelDriver(Context& ctx_)
     : ctx(ctx_)
     , ctl(ctx.mm.get<mem::control>())
+    , sts(ctx.mm.get<mem::status>())
+    , m_adc_qspi(ctx)
+    , m_psafifo(ctx)
+    , m_dma(ctx)
+    
+   /* , m_adc_qspi(ctx.get<xQSPI>());
+    , m_psafifo(ctx.get<SSFifoController>());
+    , m_dma(ctx.get<DMAEngineSG>())*/
     {
         // Unlock SCLR
-      qspi = std::make_unique<xQSPI>(ctx);
+      
+      /*qspi = std::make_unique<xQSPI>(ctx);
       ptr_dma  = std::make_unique<DMAEngineSG>(ctx);
       m_psa = std::make_unique<SSFifoController>(ctx);
+      */
     }
     
     ~TopLevelDriver()
     {
-      qspi.reset();
+      /*qspi.reset();
       ptr_dma.reset();
       m_psa.reset();
+      */
     }
 
     void PsaFifoReset()
     {
-      m_psa->reset_rx_fifo();
+      m_psafifo.reset_rx_fifo();
     }
     uint32_t PsaFifoCount()
     {
-      return m_psa->get_rxfifo_length();
+      return m_psafifo.get_rxfifo_length();
     }
-    auto& PsaFifoCount(uint32_t n_samples)
+    auto& PsaGetFifo(uint32_t n_samples)
     {
       using namespace std::chrono_literals;
       psa_buffer_vect.resize(n_samples);
-      std::lock_guard<std::mutex> lock(m_psa->mutex);
-      while (n_samples*4 > m_psa->get_rxfifo_length())
+      std::lock_guard<std::mutex> lock(m_psafifo.mutex);
+      while (n_samples*4 > m_psafifo.get_rxfifo_length())
         std::this_thread::sleep_for(10ms);
       for (uint32_t i = 0; i < n_samples*4; i++)
-        psa_buffer_vect.at(i) = m_psa->read_rx_fifo();
+        psa_buffer_vect.at(i) = m_psafifo.read_rx_fifo();
       return psa_buffer_vect;
     }
 
     void DmaSetData(const std::vector<uint32_t>& data)
     {
-      ptr_dma->set_data(data);
+      m_dma.set_data(data);
     }
     auto& DmaGetData()
     {
-      return ptr_dma->get_data();
+      return m_dma.get_data();
     }
     void DmaSetCyclic_mm2s(bool enable)
     {
-      ptr_dma->enable_cyclic_<Dma_regs::mm2s_dmacr, Dma_regs::mm2s_taildesc>(enable);
+      m_dma.enable_cyclic_<Dma_regs::mm2s_dmacr, Dma_regs::mm2s_taildesc>(enable);
     }
     void DmaSetDrescriptor_mm2s()
     {
-      ptr_dma->set_descriptors_<mem::ram_s2mm_addr>();
+      m_dma.set_descriptors_<mem::ram_s2mm_addr>();
     }
     void DmaStart_mm2s(bool debug)
     {
-      ptr_dma->start_dma_<mem::ram_mm2s_addr, Dma_regs::mm2s_curdesc, Dma_regs::mm2s_dmacr, Dma_regs::mm2s_taildesc, mem::ocm_mm2s_addr>(debug);
+      m_dma.start_dma_<mem::ram_mm2s_addr, Dma_regs::mm2s_curdesc, Dma_regs::mm2s_dmacr, Dma_regs::mm2s_taildesc, mem::ocm_mm2s_addr>(debug);
     }
     void DmaStop_mm2s()
     {
-      ptr_dma->stop_dma_<Dma_regs::mm2s_dmacr, Dma_regs::mm2s_taildesc, mem::ocm_mm2s_addr>();
+      m_dma.stop_dma_<Dma_regs::mm2s_dmacr, Dma_regs::mm2s_taildesc, mem::ocm_mm2s_addr>();
     }
 
     void qSpiResetFifo()
     {
-      qspi->sreset_spi_fifo();
+      m_adc_qspi.sreset_spi_fifo();
     }
     void qSpiReset()
     {
-      qspi->sreset_spi();
+      m_adc_qspi.sreset_spi();
     } 
     void adcSpiInitialize()
     {
@@ -159,7 +173,7 @@ class TopLevelDriver
       std::this_thread::sleep_for(1ms);
       qSpiWrite(0x0A, (0x2 << 2)); //prescaller[4:2] Powerdown [1:0]
       std::this_thread::sleep_for(1ms);
-      qSpiWrite(0x0B, 0x00); // R divider[13:8 -> 5:0]
+      qSpiWrite(0x0B, 0x00); // R divider[13:8 . 5:0]
       std::this_thread::sleep_for(1ms);
       qSpiWrite(0x0C, 0x10); // R divider[7:0]
       std::this_thread::sleep_for(1ms);
@@ -177,21 +191,22 @@ class TopLevelDriver
     }
     void qSpiWrite(uint8_t addr, uint8_t data)
     {
-      qspi->write_spi(addr, &data, false);
+      m_adc_qspi.write_spi(addr, &data, false);
     }
     uint32_t qSpiRead(uint8_t addr)
     {
       uint8_t spi_ret;
-      qspi->read_spi(addr, &spi_ret, false);
+      m_adc_qspi.read_spi(addr, &spi_ret, false);
       return spi_ret;
     }
 
   private:
     Context& ctx;
     Memory<mem::control>& ctl;
-    unique_ptr<xQSPI> qspi;  
-    unique_ptr<SSFifoController> m_psa;  
-    unique_ptr<DMAEngineSG> ptr_dma;  
+    Memory<mem::status>& sts;
+    xQSPI m_adc_qspi;  
+    SSFifoController m_psafifo;  
+    DMAEngineSG m_dma;  
     std::vector<int32_t> psa_buffer_vect;
 
 } ;

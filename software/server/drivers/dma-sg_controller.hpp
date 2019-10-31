@@ -1,6 +1,6 @@
 
 #ifndef __SERVER_DRIVERS_DMA_SG_HPP__
-#define __DRIVERS_ADC_DAC_SG_HPP__
+#define __SERVER_DRIVERS_DMA_SG_HPP__
 
 #include <context.hpp>
 #include <chrono>
