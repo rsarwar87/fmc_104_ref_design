@@ -6,3 +6,5 @@ build*
 workspace*
 webtalk*
 vivado*
+Debug
+Release
