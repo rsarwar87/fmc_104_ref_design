@@ -99,7 +99,7 @@ class TopLevelDriver
     {
       m_adc_qspi.sreset_spi();
     } 
-    void adcSpiInitialize()
+    uint32_t adcSpiInitialize()
     {
       using namespace std::chrono_literals;
       qSpiWrite(0x00, 0x30); // reset clock tree
@@ -181,6 +181,8 @@ class TopLevelDriver
       std::this_thread::sleep_for(1ms);
       qSpiWrite(0x5A, 0x01); // update registers
       std::this_thread::sleep_for(1ms);
+
+      return 1;
     }
     void adcClockTreeDebug()
     {
@@ -200,6 +202,17 @@ class TopLevelDriver
       return spi_ret;
     }
 
+    uint64_t get_dna()
+    {
+      uint64_t ret = sts.read<reg::dna_high>();
+      ret = ret << 32;
+      return (ret  + sts.read<reg::dna_low>()) ;
+    }
+
+    uint32_t get_fortytwo()
+    {
+      return sts.read<reg::forty_two>();
+    }
   private:
     Context& ctx;
     Memory<mem::control>& ctl;

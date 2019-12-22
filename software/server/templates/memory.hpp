@@ -9,6 +9,8 @@
 #include <tuple>
 #include <cstdint>
 
+#include <zynq_fclk.hpp>
+
 extern "C" {
   #include <sys/mman.h> // PROT_READ, PROT_WRITE
 }
@@ -43,10 +45,11 @@ static_assert({{ offset }} < mem::control_range, "Invalid control register offse
 {% endfor %}
 // -- Status offsets
 {% for offset in config['status_registers'] -%}
-constexpr uint32_t {{ offset }} = {{ 4 * loop.index0 }};
+constexpr uint32_t {{ offset }} = {{ 4 * (2 + loop.index0) }};
 static_assert({{ offset }} < mem::status_range, "Invalid status register offset {{ offset }}");
 {% endfor %}
 
+constexpr uint32_t dna = 0;
 } // namespace reg
 
 namespace prm {
@@ -55,6 +58,19 @@ constexpr uint32_t {{ key }} = {{ config['parameters'][key] }};
 {% endfor %}
 
 } // namespace prm
+
+namespace zynq_clocks {
+
+inline void set_clocks(ZynqFclk& fclk) {
+
+{% for clk in ['fclk0','fclk1','fclk2','fclk3'] -%}
+{% if clk in config['parameters'] -%}
+    fclk.set("{{ clk }}", {{ config['parameters'][clk] }});
+{% endif -%}
+{% endfor %}
+
+}
+}
 
 // -- JSONified config
 constexpr auto CFG_JSON = "{{ config['json'] }}";

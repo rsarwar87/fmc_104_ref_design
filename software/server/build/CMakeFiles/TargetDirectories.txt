@@ -1,0 +1,4 @@
+/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles/edit_cache.dir
+/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles/rebuild_cache.dir
+/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles/runTests.dir
+/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles/serverd.dir

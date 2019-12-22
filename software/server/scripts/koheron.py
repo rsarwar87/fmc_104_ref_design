@@ -50,7 +50,7 @@ def run_instrument(host, name=None, restart=False):
         r = requests.get('http://{}/api/instruments/run/{}'.format(host, name))
 
 def connect(host, *args, **kwargs):
-    run_instrument(host, *args, **kwargs)
+#    run_instrument(host, *args, **kwargs)
     client = KoheronClient(host)
     return client
 

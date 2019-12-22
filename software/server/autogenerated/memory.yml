@@ -1,0 +1,74 @@
+control_registers:
+- led
+- adc_delay_inc
+- adc_err_clr
+- adc_delay_dec
+memory:
+- name: control
+  offset: '0x40140000'
+  range: 4K
+- name: status
+  offset: '0x40110000'
+  range: 4K
+- name: SDRAM
+  offset: '0x50000000'
+  range: 64K
+- name: xadc
+  offset: '0x40120000'
+  range: 64K
+- name: ram_mm2s
+  offset: '0x1F000000'
+  range: 16M
+- name: ram_s2mm
+  offset: '0x1E000000'
+  range: 16M
+- name: axi_hp0
+  offset: '0xF8008000'
+  range: 4K
+- name: axi_hp2
+  offset: '0xF800A000'
+  range: 4K
+- name: sclr
+  offset: '0xF8000000'
+  range: 64K
+- name: ocm_mm2s
+  offset: '0xFFFF0000'
+  range: 32K
+- name: ocm_s2mm
+  offset: '0xFFFF8000'
+  range: 32K
+- name: adc_spi
+  offset: '0x40100000'
+  range: 64K
+- name: pcie_bypass_0
+  offset: '0x00010000'
+  range: 32K
+- name: pcie_bypass_1
+  offset: '0x00020000'
+  range: 32K
+- name: pcie_bypass_2
+  offset: '0x00030000'
+  range: 32K
+- name: pcie_bypass_3
+  offset: '0x00040000'
+  range: 32K
+- name: pcie_xdma_0
+  offset: '0x00050000'
+  range: 32K
+- name: pcie_gpio
+  offset: '0x00060000'
+  range: 32K
+- name: axi_fifo_mm_s
+  offset: '0x40130000'
+  range: 32K
+- name: dma
+  offset: '0x40400000'
+  range: 64K
+parameters:
+  adc_clk: 250000000
+  channel: 4
+  fclk0: 100000000
+status_registers:
+- forty_two
+- dna_high
+- dna_low
