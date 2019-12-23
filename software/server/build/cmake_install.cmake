@@ -1,4 +1,4 @@
-# Install script for directory: /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server
+# Install script for directory: /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

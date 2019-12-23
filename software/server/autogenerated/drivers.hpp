@@ -3,4 +3,7 @@
 /// (c) Koheron
 
 #include "././drivers/common.hpp"
+#include "././drivers/fifo_controller.hpp"
+#include "././drivers/dma-sg_controller.hpp"
+#include "././drivers/adc_qspi_controller.hpp"
 #include "././device_driver.hpp"

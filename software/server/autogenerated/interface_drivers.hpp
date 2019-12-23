@@ -3,4 +3,7 @@
 /// (c) Koheron
 
 # include <interface_common.hpp>
+# include <interface_fifo_controller.hpp>
+# include <interface_dma-sg_controller.hpp>
+# include <interface_adc_qspi_controller.hpp>
 # include <interface_device_driver.hpp>

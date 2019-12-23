@@ -1,1 +1,1 @@
-./drivers/common.hpp ./device_driver.hpp
+./drivers/common.hpp ./drivers/fifo_controller.hpp ./drivers/dma-sg_controller.hpp ./drivers/adc_qspi_controller.hpp ./device_driver.hpp

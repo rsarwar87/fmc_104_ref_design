@@ -19,13 +19,22 @@ class Server;
 
 class Common;
 
+class SSFifoController;
+
+class DmaSG;
+
+class xQSPI;
+
 class TopLevelDriver;
-constexpr driver_id device_num = 4;
+constexpr driver_id device_num = 7;
 
 constexpr auto drivers_names = koheron::make_array(
     koheron::str_const("NoDriver"),
     koheron::str_const("Server"),
     koheron::str_const("Common"),
+    koheron::str_const("SSFifoController"),
+    koheron::str_const("DmaSG"),
+    koheron::str_const("xQSPI"),
     koheron::str_const("TopLevelDriver")
 );
 
@@ -34,7 +43,7 @@ static_assert(std::tuple_size<decltype(drivers_names)>::value == device_num, "")
 // Drivers are stored as unique_ptr ensuring single
 // instantiation of each driver.
 
-using drivers_tuple_t = std::tuple<std::unique_ptr<Common>,std::unique_ptr<TopLevelDriver>>;
+using drivers_tuple_t = std::tuple<std::unique_ptr<Common>,std::unique_ptr<SSFifoController>,std::unique_ptr<DmaSG>,std::unique_ptr<xQSPI>,std::unique_ptr<TopLevelDriver>>;
 
 static_assert(std::tuple_size<drivers_tuple_t>::value == device_num - 2, "");
 

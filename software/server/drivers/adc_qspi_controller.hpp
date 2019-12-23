@@ -27,28 +27,36 @@ constexpr uint32_t n_adr = 3; // Number of words in one descriptor
 class xQSPI
 {
   public:
-    xQSPI(Context& ctx_, uint8_t c_select = 0, uint8_t c_pha = 0, uint8_t c_pol = 0)
+    xQSPI(Context& ctx_)
     : ctx(ctx_)
     , spi(ctx.mm.get<mem::adc_spi>())
+    {
+      m_cpol = 0;
+      m_cpha = 0;
+      m_cselect = 0;
+    }
+  
+    void set_params(uint8_t c_select = 0, uint8_t c_pha = 0, uint8_t c_pol = 0)
     {
       m_cpol = c_pol;
       m_cpha = c_pha;
       m_cselect = c_select;
     }
-
-    inline void read_spi(uint8_t addr, uint8_t* data, bool debug = false) {
-        prepare_frame(addr, data, 1, debug);
+    uint8_t read_spi(uint16_t addr, bool debug = false) {
+        prepare_frame(addr, 0, 1, debug);
+        return m_buffer[2];
     }
 
-    inline void write_spi(uint8_t addr, uint8_t* data, bool debug = false){
+     uint8_t write_spi(uint16_t addr, uint8_t data, bool debug = false){
         prepare_frame(addr, data, 0, debug);
+        return m_buffer[2];
     }
 
-    inline void sreset_spi_fifo(){
+    void sreset_spi_fifo(){
        spi.write<qspi_regs::spi_ctrl>(0x086 | (0x3 << 5));
     }
 
-    inline void sreset_spi(){
+    void sreset_spi(){
         spi.write<qspi_regs::soft_reset>(0xa);
     }
   private:
@@ -58,16 +66,15 @@ class xQSPI
     uint8_t m_cselect;
     uint8_t m_cpha;
     uint8_t m_cpol;
-    uint8_t n_bytes{4};
+    uint8_t n_bytes{n_adr};
 
-    inline void prepare_frame(uint16_t addr, uint8_t *data, bool read = true, bool debug = false) {
+    void prepare_frame(uint16_t addr, uint8_t data, bool read = true, bool debug = false) {
         m_buffer.at(0) = (read << 7) | (addr >> 8);
         m_buffer.at(1) = (addr & 0xFF);
-        m_buffer.at(2) = 0;
+        m_buffer.at(2) = data;
         if (debug) log_buffer(read ? "Reading data"  : "Writing data");
         send_cmd();
         if (debug) log_buffer(read ? "Reading data"  : "Writing data");
-        *data = m_buffer.at(2);
     }
 
    void send_cmd() {
@@ -90,7 +97,7 @@ class xQSPI
     }
 
  
-    inline void log_buffer(std::string str) {
+    void log_buffer(std::string str) {
 
         ctx.log<INFO>("DATA LOG: %s\n", str);
         uint8_t cnt = 0;
@@ -101,7 +108,7 @@ class xQSPI
         ctx.log<INFO>("\n");
     }
 
-    inline void log_spi() {
+    void log_spi() {
         ctx.log<INFO>("AXI_SPI REGISTERS NOT IMPLEMETNTED YET\n");
         ctx.log<INFO>("\n");
     }

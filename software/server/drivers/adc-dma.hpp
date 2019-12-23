@@ -1,18 +1,15 @@
-/// DMA S2MM driver
+/// DMA driver
 ///
 /// (c) Koheron
 
-// https://www.xilinx.com/support/documentation/ip_documentation/axi_dma/v7_1/pg021_axi_dma.pdf
-
-#ifndef __SERVER_DRIVERS_DMA_S2MM_HPP__
-#define __SERVER_DRIVERS_DMA_S2MM_HPP__
-
-#include <context.hpp>
+#ifndef __DRIVERS_ADC_DAC_DMA_HPP__
+#define __DRIVERS_ADC_DAC_DMA_HPP__
 
 #include <PracticalSocket.hpp>
-#include <chrono>
-constexpr uint32_t n_pts = 64 * 1024;  // Number of words in one descriptor
-constexpr uint32_t n_desc = 64;        // Number of descriptors
+#include <context.hpp>
+
+// AXI DMA Registers
+// https://www.xilinx.com/support/documentation/ip_documentation/axi_dma/v7_1/pg021_axi_dma.pdf
 namespace Dma_regs {
 constexpr uint32_t mm2s_dmacr = 0x0;  // MM2S DMA Control register
 constexpr uint32_t mm2s_dmasr = 0x4;  // MM2S DMA Status register
@@ -48,11 +45,13 @@ constexpr uint32_t fpga_rst_ctrl = 0x240;   // FPGA Software Reset Control
 constexpr uint32_t ocm_cfg = 0x910;         // FPGA Software Reset Control
 }  // namespace Sclr_regs
 
-class DmaSG
-{
-  public:
-    DmaSG(Context& ctx_)
-      : ctx(ctx_),
+constexpr uint32_t n_pts = 64 * 1024;  // Number of words in one descriptor
+constexpr uint32_t n_desc = 64;        // Number of descriptors
+
+class DmaSG {
+ public:
+  DmaSG(Context& ctx_)
+     : ctx(ctx_),
         ctl(ctx.mm.get<mem::control>()),
         dma(ctx.mm.get<mem::dma>()),
         ram_s2mm(ctx.mm.get<mem::ram_s2mm>()),
@@ -83,7 +82,7 @@ class DmaSG
     log_hp2();
     servAddress = "10.211.3.16";
     servPort = Socket::resolveService("8200", "udp");
-    }
+  }
 
   void set_server_info(std::string sAddress, std::string sPort) {
     servAddress = sAddress;
@@ -107,7 +106,6 @@ class DmaSG
     ocm_mm2s.write_reg(0x40 * idx + Sg_regs::control, buffer_length);
     ocm_mm2s.write_reg(0x40 * idx + Sg_regs::status, 0);
   }
-
 
   void start_dma_s2mm() {
     if (!dma_acquisition_started) {
@@ -253,9 +251,7 @@ class DmaSG
 
   void print_dma_log() { log_dma(); };
 
-
-
-  private:
+ private:
   Context& ctx;
   Memory<mem::control>& ctl;
   Memory<mem::dma>& dma;
@@ -278,19 +274,13 @@ class DmaSG
   short unsigned int servPort;
   std::string servAddress;
   UDPSocket sock;
-    static constexpr uint32_t s2mm_dmacr  = 0x30;  // S2MM DMA Control register
-    static constexpr uint32_t s2mm_dmasr  = 0x34;  // S2MM DMA Status register
-    static constexpr uint32_t s2mm_da     = 0x48;  // S2MM Destination Address
-    static constexpr uint32_t s2mm_length = 0x58;  // S2MM Buffer Length (Bytes)
-
-
 
   void dma_acquisition_thread() {
     ctx.log<INFO>("DMA::DMA acqquisition thread started. \n");
     dma_acquisition_started = true;
     while (dma_acquisition_started) {
       dma_internal_call = true;
-      //start_dma_s2mm();
+      start_dma_s2mm();
       dma_internal_call = false;
       stream_data();
     }
@@ -408,4 +398,4 @@ class DmaSG
   }
 };
 
-#endif // __SERVER_DRIVERS_DMA_S2MM_HPP__
+#endif  // __DRIVERS_ADC_DAC_DMA_HPP__

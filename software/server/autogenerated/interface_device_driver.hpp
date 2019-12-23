@@ -28,23 +28,13 @@ class Driver<driver_id_of<TopLevelDriver>> : public DriverAbstract
     {}
 
     enum Operation {
-        PSAFIFORESET = 0,
-        PSAFIFOCOUNT = 1,
-        PSAGETFIFO = 2,
-        DMASETDATA = 3,
-        DMAGETDATA = 4,
-        DMASETCYCLIC_MM2S = 5,
-        DMASETDRESCRIPTOR_MM2S = 6,
-        DMASTART_MM2S = 7,
-        DMASTOP_MM2S = 8,
-        QSPIRESETFIFO = 9,
-        QSPIRESET = 10,
-        ADCSPIINITIALIZE = 11,
-        ADCCLOCKTREEDEBUG = 12,
-        QSPIWRITE = 13,
-        QSPIREAD = 14,
-        GET_DNA = 15,
-        GET_FORTYTWO = 16,
+        ADCSPIINITIALIZE = 0,
+        GET_DNA = 1,
+        GET_FORTYTWO = 2,
+        SET_ADC_DELAY_INC = 3,
+        SET_ADC_DELAY_DEC = 4,
+        SET_ADC_CLEAR_ERROR = 5,
+        SET_GPIO = 6,
         top_level_driver_op_num
     };
 
@@ -52,46 +42,23 @@ class Driver<driver_id_of<TopLevelDriver>> : public DriverAbstract
 
     TopLevelDriver& __TopLevelDriver;
 
-struct Argument_PsaFifoReset {} args_PsaFifoReset;
-
-struct Argument_PsaFifoCount {} args_PsaFifoCount;
-
-struct Argument_PsaGetFifo {uint32_t n_samples;
-} args_PsaGetFifo;
-
-struct Argument_DmaSetData {std::vector<uint32_t> data;
-} args_DmaSetData;
-
-struct Argument_DmaGetData {} args_DmaGetData;
-
-struct Argument_DmaSetCyclic_mm2s {bool enable;
-} args_DmaSetCyclic_mm2s;
-
-struct Argument_DmaSetDrescriptor_mm2s {} args_DmaSetDrescriptor_mm2s;
-
-struct Argument_DmaStart_mm2s {bool debug;
-} args_DmaStart_mm2s;
-
-struct Argument_DmaStop_mm2s {} args_DmaStop_mm2s;
-
-struct Argument_qSpiResetFifo {} args_qSpiResetFifo;
-
-struct Argument_qSpiReset {} args_qSpiReset;
-
 struct Argument_adcSpiInitialize {} args_adcSpiInitialize;
-
-struct Argument_adcClockTreeDebug {} args_adcClockTreeDebug;
-
-struct Argument_qSpiWrite {uint8_t addr;
-uint8_t data;
-} args_qSpiWrite;
-
-struct Argument_qSpiRead {uint8_t addr;
-} args_qSpiRead;
 
 struct Argument_get_dna {} args_get_dna;
 
 struct Argument_get_fortytwo {} args_get_fortytwo;
+
+struct Argument_set_adc_delay_inc {uint32_t val;
+} args_set_adc_delay_inc;
+
+struct Argument_set_adc_delay_dec {uint32_t val;
+} args_set_adc_delay_dec;
+
+struct Argument_set_adc_clear_error {uint32_t val;
+} args_set_adc_clear_error;
+
+struct Argument_set_gpio {uint32_t val;
+} args_set_gpio;
 
 }; // class Interface_Top_level_driver
 

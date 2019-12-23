@@ -16,10 +16,10 @@ memory:
     offset: '0x40120000'
     range: 64K
   - name: ram_mm2s
-    offset: '0x1F000000'
+    offset: '0x38000000'
     range: 16M
   - name: ram_s2mm
-    offset: '0x1E000000'
+    offset: '0x30000000'
     range: 16M
   - name: axi_hp0
     offset: '0xF8008000'
@@ -65,23 +65,25 @@ memory:
     range: 64K
 
 control_registers:
-  - led
-  - adc_delay_inc
-  - adc_err_clr
+  - adc_clear_error
   - adc_delay_dec
+  - adc_delay_inc
+  - led
 
 status_registers:
   - forty_two
-  - dna_high
-  - dna_low
 
 parameters:
   fclk0: 100000000 # FPGA clock speed in Hz
+  fclk1: 50000000 # FPGA clock speed in Hz
   adc_clk: 250000000
   channel: 4 
 
 drivers:
   - ./drivers/common.hpp
+  - ./drivers/fifo_controller.hpp
+  - ./drivers/dma-sg_controller.hpp
+  - ./drivers/adc_qspi_controller.hpp
   - ./device_driver.hpp
 
 web:

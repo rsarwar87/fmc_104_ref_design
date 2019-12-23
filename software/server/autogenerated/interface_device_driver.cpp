@@ -12,188 +12,6 @@
 namespace koheron {
 
 /////////////////////////////////////
-// PsaFifoReset
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::PSAFIFORESET>(Command& cmd)
-{
-    (void)cmd;
-    
-        __TopLevelDriver.PsaFifoReset();
-    return 0;
-
-}
-
-/////////////////////////////////////
-// PsaFifoCount
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::PSAFIFOCOUNT>(Command& cmd)
-{
-    (void)cmd;
-    
-        return cmd.session->send<3, 1>(__TopLevelDriver.PsaFifoCount());
-
-}
-
-/////////////////////////////////////
-// PsaGetFifo
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::PSAGETFIFO>(Command& cmd)
-{
-    (void)cmd;
-        constexpr size_t req_buff_size = required_buffer_size<uint32_t>();
-    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
-
-
-    auto args_tuple0 = cmd.session->deserialize<uint32_t>(cmd);
-    if (std::get<0>(args_tuple0) < 0) {
-        return -1;
-    }
-    args_PsaGetFifo.n_samples = std::get<1>(args_tuple0);
-
-        return cmd.session->send<3, 2>(__TopLevelDriver.PsaGetFifo(args_PsaGetFifo.n_samples));
-
-}
-
-/////////////////////////////////////
-// DmaSetData
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::DMASETDATA>(Command& cmd)
-{
-    (void)cmd;
-        if (cmd.session->recv(args_DmaSetData.data, cmd) < 0) {
-        return -1;
-    }
-
-
-        __TopLevelDriver.DmaSetData(args_DmaSetData.data);
-    return 0;
-
-}
-
-/////////////////////////////////////
-// DmaGetData
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::DMAGETDATA>(Command& cmd)
-{
-    (void)cmd;
-    
-        return cmd.session->send<3, 4>(__TopLevelDriver.DmaGetData());
-
-}
-
-/////////////////////////////////////
-// DmaSetCyclic_mm2s
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::DMASETCYCLIC_MM2S>(Command& cmd)
-{
-    (void)cmd;
-        constexpr size_t req_buff_size = required_buffer_size<bool>();
-    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
-
-
-    auto args_tuple0 = cmd.session->deserialize<bool>(cmd);
-    if (std::get<0>(args_tuple0) < 0) {
-        return -1;
-    }
-    args_DmaSetCyclic_mm2s.enable = std::get<1>(args_tuple0);
-
-        __TopLevelDriver.DmaSetCyclic_mm2s(args_DmaSetCyclic_mm2s.enable);
-    return 0;
-
-}
-
-/////////////////////////////////////
-// DmaSetDrescriptor_mm2s
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::DMASETDRESCRIPTOR_MM2S>(Command& cmd)
-{
-    (void)cmd;
-    
-        __TopLevelDriver.DmaSetDrescriptor_mm2s();
-    return 0;
-
-}
-
-/////////////////////////////////////
-// DmaStart_mm2s
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::DMASTART_MM2S>(Command& cmd)
-{
-    (void)cmd;
-        constexpr size_t req_buff_size = required_buffer_size<bool>();
-    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
-
-
-    auto args_tuple0 = cmd.session->deserialize<bool>(cmd);
-    if (std::get<0>(args_tuple0) < 0) {
-        return -1;
-    }
-    args_DmaStart_mm2s.debug = std::get<1>(args_tuple0);
-
-        __TopLevelDriver.DmaStart_mm2s(args_DmaStart_mm2s.debug);
-    return 0;
-
-}
-
-/////////////////////////////////////
-// DmaStop_mm2s
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::DMASTOP_MM2S>(Command& cmd)
-{
-    (void)cmd;
-    
-        __TopLevelDriver.DmaStop_mm2s();
-    return 0;
-
-}
-
-/////////////////////////////////////
-// qSpiResetFifo
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::QSPIRESETFIFO>(Command& cmd)
-{
-    (void)cmd;
-    
-        __TopLevelDriver.qSpiResetFifo();
-    return 0;
-
-}
-
-/////////////////////////////////////
-// qSpiReset
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::QSPIRESET>(Command& cmd)
-{
-    (void)cmd;
-    
-        __TopLevelDriver.qSpiReset();
-    return 0;
-
-}
-
-/////////////////////////////////////
 // adcSpiInitialize
 
 template<>
@@ -202,67 +20,7 @@ int Driver<driver_id_of<TopLevelDriver>>::
 {
     (void)cmd;
     
-        return cmd.session->send<3, 11>(__TopLevelDriver.adcSpiInitialize());
-
-}
-
-/////////////////////////////////////
-// adcClockTreeDebug
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::ADCCLOCKTREEDEBUG>(Command& cmd)
-{
-    (void)cmd;
-    
-        __TopLevelDriver.adcClockTreeDebug();
-    return 0;
-
-}
-
-/////////////////////////////////////
-// qSpiWrite
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::QSPIWRITE>(Command& cmd)
-{
-    (void)cmd;
-        constexpr size_t req_buff_size = required_buffer_size<uint8_t, uint8_t>();
-    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
-
-
-    auto args_tuple0 = cmd.session->deserialize<uint8_t, uint8_t>(cmd);
-    if (std::get<0>(args_tuple0) < 0) {
-        return -1;
-    }
-    args_qSpiWrite.addr = std::get<1>(args_tuple0);
-    args_qSpiWrite.data = std::get<2>(args_tuple0);
-
-        __TopLevelDriver.qSpiWrite(args_qSpiWrite.addr, args_qSpiWrite.data);
-    return 0;
-
-}
-
-/////////////////////////////////////
-// qSpiRead
-
-template<>
-int Driver<driver_id_of<TopLevelDriver>>::
-        execute_operation<Driver<driver_id_of<TopLevelDriver>>::QSPIREAD>(Command& cmd)
-{
-    (void)cmd;
-        constexpr size_t req_buff_size = required_buffer_size<uint8_t>();
-    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
-
-
-    auto args_tuple0 = cmd.session->deserialize<uint8_t>(cmd);
-    if (std::get<0>(args_tuple0) < 0) {
-        return -1;
-    }
-    args_qSpiRead.addr = std::get<1>(args_tuple0);
-
-        return cmd.session->send<3, 14>(__TopLevelDriver.qSpiRead(args_qSpiRead.addr));
+        return cmd.session->send<6, 0>(__TopLevelDriver.adcSpiInitialize());
 
 }
 
@@ -275,7 +33,7 @@ int Driver<driver_id_of<TopLevelDriver>>::
 {
     (void)cmd;
     
-        return cmd.session->send<3, 15>(__TopLevelDriver.get_dna());
+        return cmd.session->send<6, 1>(__TopLevelDriver.get_dna());
 
 }
 
@@ -288,7 +46,99 @@ int Driver<driver_id_of<TopLevelDriver>>::
 {
     (void)cmd;
     
-        return cmd.session->send<3, 16>(__TopLevelDriver.get_fortytwo());
+        return cmd.session->send<6, 2>(__TopLevelDriver.get_fortytwo());
+
+}
+
+/////////////////////////////////////
+// set_adc_delay_inc
+
+template<>
+int Driver<driver_id_of<TopLevelDriver>>::
+        execute_operation<Driver<driver_id_of<TopLevelDriver>>::SET_ADC_DELAY_INC>(Command& cmd)
+{
+    (void)cmd;
+        constexpr size_t req_buff_size = required_buffer_size<uint32_t>();
+    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
+
+
+    auto args_tuple0 = cmd.session->deserialize<uint32_t>(cmd);
+    if (std::get<0>(args_tuple0) < 0) {
+        return -1;
+    }
+    args_set_adc_delay_inc.val = std::get<1>(args_tuple0);
+
+        __TopLevelDriver.set_adc_delay_inc(args_set_adc_delay_inc.val);
+    return 0;
+
+}
+
+/////////////////////////////////////
+// set_adc_delay_dec
+
+template<>
+int Driver<driver_id_of<TopLevelDriver>>::
+        execute_operation<Driver<driver_id_of<TopLevelDriver>>::SET_ADC_DELAY_DEC>(Command& cmd)
+{
+    (void)cmd;
+        constexpr size_t req_buff_size = required_buffer_size<uint32_t>();
+    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
+
+
+    auto args_tuple0 = cmd.session->deserialize<uint32_t>(cmd);
+    if (std::get<0>(args_tuple0) < 0) {
+        return -1;
+    }
+    args_set_adc_delay_dec.val = std::get<1>(args_tuple0);
+
+        __TopLevelDriver.set_adc_delay_dec(args_set_adc_delay_dec.val);
+    return 0;
+
+}
+
+/////////////////////////////////////
+// set_adc_clear_error
+
+template<>
+int Driver<driver_id_of<TopLevelDriver>>::
+        execute_operation<Driver<driver_id_of<TopLevelDriver>>::SET_ADC_CLEAR_ERROR>(Command& cmd)
+{
+    (void)cmd;
+        constexpr size_t req_buff_size = required_buffer_size<uint32_t>();
+    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
+
+
+    auto args_tuple0 = cmd.session->deserialize<uint32_t>(cmd);
+    if (std::get<0>(args_tuple0) < 0) {
+        return -1;
+    }
+    args_set_adc_clear_error.val = std::get<1>(args_tuple0);
+
+        __TopLevelDriver.set_adc_clear_error(args_set_adc_clear_error.val);
+    return 0;
+
+}
+
+/////////////////////////////////////
+// set_gpio
+
+template<>
+int Driver<driver_id_of<TopLevelDriver>>::
+        execute_operation<Driver<driver_id_of<TopLevelDriver>>::SET_GPIO>(Command& cmd)
+{
+    (void)cmd;
+        constexpr size_t req_buff_size = required_buffer_size<uint32_t>();
+    static_assert(req_buff_size <= cmd.payload.size(), "Buffer size too small");
+
+
+    auto args_tuple0 = cmd.session->deserialize<uint32_t>(cmd);
+    if (std::get<0>(args_tuple0) < 0) {
+        return -1;
+    }
+    args_set_gpio.val = std::get<1>(args_tuple0);
+
+        __TopLevelDriver.set_gpio(args_set_gpio.val);
+    return 0;
 
 }
 
@@ -299,56 +149,26 @@ int Driver<driver_id_of<TopLevelDriver>>::execute(Command& cmd)
     std::lock_guard<std::mutex> lock(mutex);
 
     switch(cmd.operation) {
-case PSAFIFORESET: {
-        return execute_operation<PSAFIFORESET>(cmd);
-      }
-case PSAFIFOCOUNT: {
-        return execute_operation<PSAFIFOCOUNT>(cmd);
-      }
-case PSAGETFIFO: {
-        return execute_operation<PSAGETFIFO>(cmd);
-      }
-case DMASETDATA: {
-        return execute_operation<DMASETDATA>(cmd);
-      }
-case DMAGETDATA: {
-        return execute_operation<DMAGETDATA>(cmd);
-      }
-case DMASETCYCLIC_MM2S: {
-        return execute_operation<DMASETCYCLIC_MM2S>(cmd);
-      }
-case DMASETDRESCRIPTOR_MM2S: {
-        return execute_operation<DMASETDRESCRIPTOR_MM2S>(cmd);
-      }
-case DMASTART_MM2S: {
-        return execute_operation<DMASTART_MM2S>(cmd);
-      }
-case DMASTOP_MM2S: {
-        return execute_operation<DMASTOP_MM2S>(cmd);
-      }
-case QSPIRESETFIFO: {
-        return execute_operation<QSPIRESETFIFO>(cmd);
-      }
-case QSPIRESET: {
-        return execute_operation<QSPIRESET>(cmd);
-      }
 case ADCSPIINITIALIZE: {
         return execute_operation<ADCSPIINITIALIZE>(cmd);
-      }
-case ADCCLOCKTREEDEBUG: {
-        return execute_operation<ADCCLOCKTREEDEBUG>(cmd);
-      }
-case QSPIWRITE: {
-        return execute_operation<QSPIWRITE>(cmd);
-      }
-case QSPIREAD: {
-        return execute_operation<QSPIREAD>(cmd);
       }
 case GET_DNA: {
         return execute_operation<GET_DNA>(cmd);
       }
 case GET_FORTYTWO: {
         return execute_operation<GET_FORTYTWO>(cmd);
+      }
+case SET_ADC_DELAY_INC: {
+        return execute_operation<SET_ADC_DELAY_INC>(cmd);
+      }
+case SET_ADC_DELAY_DEC: {
+        return execute_operation<SET_ADC_DELAY_DEC>(cmd);
+      }
+case SET_ADC_CLEAR_ERROR: {
+        return execute_operation<SET_ADC_CLEAR_ERROR>(cmd);
+      }
+case SET_GPIO: {
+        return execute_operation<SET_GPIO>(cmd);
       }
 
       case top_level_driver_op_num:

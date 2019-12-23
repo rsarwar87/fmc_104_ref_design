@@ -6,6 +6,9 @@
 #define __OPERATIONS_HPP__
 
 #include <././drivers/common.hpp>
+#include <././drivers/fifo_controller.hpp>
+#include <././drivers/dma-sg_controller.hpp>
+#include <././drivers/adc_qspi_controller.hpp>
 #include <././device_driver.hpp>
 
 
@@ -17,24 +20,49 @@ namespace Common {
     constexpr uint32_t get_instrument_config = (2 << 16) + 3;
     constexpr uint32_t ip_on_leds = (2 << 16) + 4;
     }
+namespace SSFifoController {
+    constexpr uint32_t set_server_info = (3 << 16) + 0;
+    constexpr uint32_t fifo_reset_tx = (3 << 16) + 1;
+    constexpr uint32_t fifo_reset_rx = (3 << 16) + 2;
+    constexpr uint32_t fifo_write_tx = (3 << 16) + 3;
+    constexpr uint32_t fifo_read_rx = (3 << 16) + 4;
+    constexpr uint32_t fifo_vacancy_tx = (3 << 16) + 5;
+    constexpr uint32_t fifo_vacancy_rx = (3 << 16) + 6;
+    constexpr uint32_t get_vector_rx = (3 << 16) + 7;
+    constexpr uint32_t start_fifo_acquisition = (3 << 16) + 8;
+    constexpr uint32_t stop_fifo_acquisition = (3 << 16) + 9;
+    constexpr uint32_t check_fifoacq_thread = (3 << 16) + 10;
+    }
+namespace DmaSG {
+    constexpr uint32_t set_server_info = (4 << 16) + 0;
+    constexpr uint32_t set_descriptor_s2mm = (4 << 16) + 1;
+    constexpr uint32_t set_descriptor_mm2s = (4 << 16) + 2;
+    constexpr uint32_t start_dma_s2mm = (4 << 16) + 3;
+    constexpr uint32_t stop_dma_s2mm = (4 << 16) + 4;
+    constexpr uint32_t start_dma_mm2s = (4 << 16) + 5;
+    constexpr uint32_t stop_dma_mm2s = (4 << 16) + 6;
+    constexpr uint32_t set_mm2s_data = (4 << 16) + 7;
+    constexpr uint32_t get_s2mm_data = (4 << 16) + 8;
+    constexpr uint32_t start_dma_acquisition = (4 << 16) + 9;
+    constexpr uint32_t stop_dma_acquisition = (4 << 16) + 10;
+    constexpr uint32_t check_dmaacq_thread = (4 << 16) + 11;
+    constexpr uint32_t print_dma_log = (4 << 16) + 12;
+    }
+namespace xQSPI {
+    constexpr uint32_t set_params = (5 << 16) + 0;
+    constexpr uint32_t read_spi = (5 << 16) + 1;
+    constexpr uint32_t write_spi = (5 << 16) + 2;
+    constexpr uint32_t sreset_spi_fifo = (5 << 16) + 3;
+    constexpr uint32_t sreset_spi = (5 << 16) + 4;
+    }
 namespace TopLevelDriver {
-    constexpr uint32_t PsaFifoReset = (3 << 16) + 0;
-    constexpr uint32_t PsaFifoCount = (3 << 16) + 1;
-    constexpr uint32_t PsaGetFifo = (3 << 16) + 2;
-    constexpr uint32_t DmaSetData = (3 << 16) + 3;
-    constexpr uint32_t DmaGetData = (3 << 16) + 4;
-    constexpr uint32_t DmaSetCyclic_mm2s = (3 << 16) + 5;
-    constexpr uint32_t DmaSetDrescriptor_mm2s = (3 << 16) + 6;
-    constexpr uint32_t DmaStart_mm2s = (3 << 16) + 7;
-    constexpr uint32_t DmaStop_mm2s = (3 << 16) + 8;
-    constexpr uint32_t qSpiResetFifo = (3 << 16) + 9;
-    constexpr uint32_t qSpiReset = (3 << 16) + 10;
-    constexpr uint32_t adcSpiInitialize = (3 << 16) + 11;
-    constexpr uint32_t adcClockTreeDebug = (3 << 16) + 12;
-    constexpr uint32_t qSpiWrite = (3 << 16) + 13;
-    constexpr uint32_t qSpiRead = (3 << 16) + 14;
-    constexpr uint32_t get_dna = (3 << 16) + 15;
-    constexpr uint32_t get_fortytwo = (3 << 16) + 16;
+    constexpr uint32_t adcSpiInitialize = (6 << 16) + 0;
+    constexpr uint32_t get_dna = (6 << 16) + 1;
+    constexpr uint32_t get_fortytwo = (6 << 16) + 2;
+    constexpr uint32_t set_adc_delay_inc = (6 << 16) + 3;
+    constexpr uint32_t set_adc_delay_dec = (6 << 16) + 4;
+    constexpr uint32_t set_adc_clear_error = (6 << 16) + 5;
+    constexpr uint32_t set_gpio = (6 << 16) + 6;
     }
 
 }
@@ -96,112 +124,292 @@ template<>
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::PsaFifoReset> {
-        using type = std::tuple<>;
+    struct arg_types<op::SSFifoController::set_server_info> {
+        using type = std::tuple<std::string,std::string>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::PsaFifoReset> {
+    struct ret_type<op::SSFifoController::set_server_info> {
         using type = std::decay_t<void>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::PsaFifoCount> {
+    struct arg_types<op::SSFifoController::fifo_reset_tx> {
         using type = std::tuple<>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::PsaFifoCount> {
+    struct ret_type<op::SSFifoController::fifo_reset_tx> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::SSFifoController::fifo_reset_rx> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::SSFifoController::fifo_reset_rx> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::SSFifoController::fifo_write_tx> {
+        using type = std::tuple<int32_t>;
+    };
+
+    template<>
+    struct ret_type<op::SSFifoController::fifo_write_tx> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::SSFifoController::fifo_read_rx> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::SSFifoController::fifo_read_rx> {
         using type = std::decay_t<uint32_t>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::PsaGetFifo> {
-        using type = std::tuple<uint32_t>;
+    struct arg_types<op::SSFifoController::fifo_vacancy_tx> {
+        using type = std::tuple<>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::PsaGetFifo> {
-        using type = std::decay_t<decltype(std::declval<TopLevelDriver>().PsaGetFifo(std::declval<uint32_t>()))>;
+    struct ret_type<op::SSFifoController::fifo_vacancy_tx> {
+        using type = std::decay_t<uint32_t>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::DmaSetData> {
+    struct arg_types<op::SSFifoController::fifo_vacancy_rx> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::SSFifoController::fifo_vacancy_rx> {
+        using type = std::decay_t<uint32_t>;
+    };
+
+    template<>
+    struct arg_types<op::SSFifoController::get_vector_rx> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::SSFifoController::get_vector_rx> {
+        using type = std::decay_t<decltype(std::declval<SSFifoController>().get_vector_rx())>;
+    };
+
+    template<>
+    struct arg_types<op::SSFifoController::start_fifo_acquisition> {
+        using type = std::tuple<bool>;
+    };
+
+    template<>
+    struct ret_type<op::SSFifoController::start_fifo_acquisition> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::SSFifoController::stop_fifo_acquisition> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::SSFifoController::stop_fifo_acquisition> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::SSFifoController::check_fifoacq_thread> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::SSFifoController::check_fifoacq_thread> {
+        using type = std::decay_t<uint32_t>;
+    };
+
+    template<>
+    struct arg_types<op::DmaSG::set_server_info> {
+        using type = std::tuple<std::string,std::string>;
+    };
+
+    template<>
+    struct ret_type<op::DmaSG::set_server_info> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::DmaSG::set_descriptor_s2mm> {
+        using type = std::tuple<uint32_t,uint32_t,uint32_t>;
+    };
+
+    template<>
+    struct ret_type<op::DmaSG::set_descriptor_s2mm> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::DmaSG::set_descriptor_mm2s> {
+        using type = std::tuple<uint32_t,uint32_t,uint32_t>;
+    };
+
+    template<>
+    struct ret_type<op::DmaSG::set_descriptor_mm2s> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::DmaSG::start_dma_s2mm> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::DmaSG::start_dma_s2mm> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::DmaSG::stop_dma_s2mm> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::DmaSG::stop_dma_s2mm> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::DmaSG::start_dma_mm2s> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::DmaSG::start_dma_mm2s> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::DmaSG::stop_dma_mm2s> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::DmaSG::stop_dma_mm2s> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::DmaSG::set_mm2s_data> {
         using type = std::tuple<std::vector<uint32_t>>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::DmaSetData> {
+    struct ret_type<op::DmaSG::set_mm2s_data> {
         using type = std::decay_t<void>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::DmaGetData> {
+    struct arg_types<op::DmaSG::get_s2mm_data> {
         using type = std::tuple<>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::DmaGetData> {
-        using type = std::decay_t<decltype(std::declval<TopLevelDriver>().DmaGetData())>;
+    struct ret_type<op::DmaSG::get_s2mm_data> {
+        using type = std::decay_t<decltype(std::declval<DmaSG>().get_s2mm_data())>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::DmaSetCyclic_mm2s> {
+    struct arg_types<op::DmaSG::start_dma_acquisition> {
         using type = std::tuple<bool>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::DmaSetCyclic_mm2s> {
+    struct ret_type<op::DmaSG::start_dma_acquisition> {
         using type = std::decay_t<void>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::DmaSetDrescriptor_mm2s> {
+    struct arg_types<op::DmaSG::stop_dma_acquisition> {
         using type = std::tuple<>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::DmaSetDrescriptor_mm2s> {
+    struct ret_type<op::DmaSG::stop_dma_acquisition> {
         using type = std::decay_t<void>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::DmaStart_mm2s> {
-        using type = std::tuple<bool>;
-    };
-
-    template<>
-    struct ret_type<op::TopLevelDriver::DmaStart_mm2s> {
-        using type = std::decay_t<void>;
-    };
-
-    template<>
-    struct arg_types<op::TopLevelDriver::DmaStop_mm2s> {
+    struct arg_types<op::DmaSG::check_dmaacq_thread> {
         using type = std::tuple<>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::DmaStop_mm2s> {
-        using type = std::decay_t<void>;
+    struct ret_type<op::DmaSG::check_dmaacq_thread> {
+        using type = std::decay_t<uint32_t>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::qSpiResetFifo> {
+    struct arg_types<op::DmaSG::print_dma_log> {
         using type = std::tuple<>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::qSpiResetFifo> {
+    struct ret_type<op::DmaSG::print_dma_log> {
         using type = std::decay_t<void>;
     };
 
     template<>
-    struct arg_types<op::TopLevelDriver::qSpiReset> {
+    struct arg_types<op::xQSPI::set_params> {
+        using type = std::tuple<uint8_t,uint8_t,uint8_t>;
+    };
+
+    template<>
+    struct ret_type<op::xQSPI::set_params> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::xQSPI::read_spi> {
+        using type = std::tuple<uint16_t,bool>;
+    };
+
+    template<>
+    struct ret_type<op::xQSPI::read_spi> {
+        using type = std::decay_t<uint8_t>;
+    };
+
+    template<>
+    struct arg_types<op::xQSPI::write_spi> {
+        using type = std::tuple<uint16_t,uint8_t,bool>;
+    };
+
+    template<>
+    struct ret_type<op::xQSPI::write_spi> {
+        using type = std::decay_t<uint8_t>;
+    };
+
+    template<>
+    struct arg_types<op::xQSPI::sreset_spi_fifo> {
         using type = std::tuple<>;
     };
 
     template<>
-    struct ret_type<op::TopLevelDriver::qSpiReset> {
+    struct ret_type<op::xQSPI::sreset_spi_fifo> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::xQSPI::sreset_spi> {
+        using type = std::tuple<>;
+    };
+
+    template<>
+    struct ret_type<op::xQSPI::sreset_spi> {
         using type = std::decay_t<void>;
     };
 
@@ -212,36 +420,6 @@ template<>
 
     template<>
     struct ret_type<op::TopLevelDriver::adcSpiInitialize> {
-        using type = std::decay_t<uint32_t>;
-    };
-
-    template<>
-    struct arg_types<op::TopLevelDriver::adcClockTreeDebug> {
-        using type = std::tuple<>;
-    };
-
-    template<>
-    struct ret_type<op::TopLevelDriver::adcClockTreeDebug> {
-        using type = std::decay_t<void>;
-    };
-
-    template<>
-    struct arg_types<op::TopLevelDriver::qSpiWrite> {
-        using type = std::tuple<uint8_t,uint8_t>;
-    };
-
-    template<>
-    struct ret_type<op::TopLevelDriver::qSpiWrite> {
-        using type = std::decay_t<void>;
-    };
-
-    template<>
-    struct arg_types<op::TopLevelDriver::qSpiRead> {
-        using type = std::tuple<uint8_t>;
-    };
-
-    template<>
-    struct ret_type<op::TopLevelDriver::qSpiRead> {
         using type = std::decay_t<uint32_t>;
     };
 
@@ -263,6 +441,46 @@ template<>
     template<>
     struct ret_type<op::TopLevelDriver::get_fortytwo> {
         using type = std::decay_t<uint32_t>;
+    };
+
+    template<>
+    struct arg_types<op::TopLevelDriver::set_adc_delay_inc> {
+        using type = std::tuple<uint32_t>;
+    };
+
+    template<>
+    struct ret_type<op::TopLevelDriver::set_adc_delay_inc> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::TopLevelDriver::set_adc_delay_dec> {
+        using type = std::tuple<uint32_t>;
+    };
+
+    template<>
+    struct ret_type<op::TopLevelDriver::set_adc_delay_dec> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::TopLevelDriver::set_adc_clear_error> {
+        using type = std::tuple<uint32_t>;
+    };
+
+    template<>
+    struct ret_type<op::TopLevelDriver::set_adc_clear_error> {
+        using type = std::decay_t<void>;
+    };
+
+    template<>
+    struct arg_types<op::TopLevelDriver::set_gpio> {
+        using type = std::tuple<uint32_t>;
+    };
+
+    template<>
+    struct ret_type<op::TopLevelDriver::set_gpio> {
+        using type = std::decay_t<void>;
     };
 
     

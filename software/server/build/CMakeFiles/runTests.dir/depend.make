@@ -8,6 +8,7 @@ CMakeFiles/runTests.dir/gtests.cpp.o: ../context/i2c_dev.hpp
 CMakeFiles/runTests.dir/gtests.cpp.o: ../context/memory_manager.hpp
 CMakeFiles/runTests.dir/gtests.cpp.o: ../context/memory_map.hpp
 CMakeFiles/runTests.dir/gtests.cpp.o: ../context/spi_dev.hpp
+CMakeFiles/runTests.dir/gtests.cpp.o: ../context/zynq_fclk.hpp
 CMakeFiles/runTests.dir/gtests.cpp.o: ../core/config.hpp
 CMakeFiles/runTests.dir/gtests.cpp.o: ../core/context_base.hpp
 CMakeFiles/runTests.dir/gtests.cpp.o: ../core/meta_utils.hpp

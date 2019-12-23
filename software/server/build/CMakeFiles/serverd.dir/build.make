@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server
+CMAKE_SOURCE_DIR = /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build
+CMAKE_BINARY_DIR = /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/serverd.dir/depend.make
@@ -57,18 +57,42 @@ include CMakeFiles/serverd.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/serverd.dir/flags.make
 
+CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o: CMakeFiles/serverd.dir/flags.make
+CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o: ../core/PracticalSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/PracticalSocket.cpp
+
+CMakeFiles/serverd.dir/core/PracticalSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/PracticalSocket.cpp.i"
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/PracticalSocket.cpp > CMakeFiles/serverd.dir/core/PracticalSocket.cpp.i
+
+CMakeFiles/serverd.dir/core/PracticalSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/PracticalSocket.cpp.s"
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/PracticalSocket.cpp -o CMakeFiles/serverd.dir/core/PracticalSocket.cpp.s
+
+CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o.requires:
+
+.PHONY : CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o.requires
+
+CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o.provides: CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o.provides
+
+CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o.provides.build: CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o
+
+
 CMakeFiles/serverd.dir/core/base64.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/base64.cpp.o: ../core/base64.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/serverd.dir/core/base64.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/base64.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/base64.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/serverd.dir/core/base64.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/base64.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/base64.cpp
 
 CMakeFiles/serverd.dir/core/base64.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/base64.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/base64.cpp > CMakeFiles/serverd.dir/core/base64.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/base64.cpp > CMakeFiles/serverd.dir/core/base64.cpp.i
 
 CMakeFiles/serverd.dir/core/base64.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/base64.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/base64.cpp -o CMakeFiles/serverd.dir/core/base64.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/base64.cpp -o CMakeFiles/serverd.dir/core/base64.cpp.s
 
 CMakeFiles/serverd.dir/core/base64.cpp.o.requires:
 
@@ -83,16 +107,16 @@ CMakeFiles/serverd.dir/core/base64.cpp.o.provides.build: CMakeFiles/serverd.dir/
 
 CMakeFiles/serverd.dir/core/drivers_manager.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/drivers_manager.cpp.o: ../core/drivers_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/serverd.dir/core/drivers_manager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/drivers_manager.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/drivers_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/serverd.dir/core/drivers_manager.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/drivers_manager.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/drivers_manager.cpp
 
 CMakeFiles/serverd.dir/core/drivers_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/drivers_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/drivers_manager.cpp > CMakeFiles/serverd.dir/core/drivers_manager.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/drivers_manager.cpp > CMakeFiles/serverd.dir/core/drivers_manager.cpp.i
 
 CMakeFiles/serverd.dir/core/drivers_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/drivers_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/drivers_manager.cpp -o CMakeFiles/serverd.dir/core/drivers_manager.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/drivers_manager.cpp -o CMakeFiles/serverd.dir/core/drivers_manager.cpp.s
 
 CMakeFiles/serverd.dir/core/drivers_manager.cpp.o.requires:
 
@@ -107,16 +131,16 @@ CMakeFiles/serverd.dir/core/drivers_manager.cpp.o.provides.build: CMakeFiles/ser
 
 CMakeFiles/serverd.dir/core/listening_channel.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/listening_channel.cpp.o: ../core/listening_channel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/serverd.dir/core/listening_channel.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/listening_channel.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/listening_channel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/serverd.dir/core/listening_channel.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/listening_channel.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/listening_channel.cpp
 
 CMakeFiles/serverd.dir/core/listening_channel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/listening_channel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/listening_channel.cpp > CMakeFiles/serverd.dir/core/listening_channel.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/listening_channel.cpp > CMakeFiles/serverd.dir/core/listening_channel.cpp.i
 
 CMakeFiles/serverd.dir/core/listening_channel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/listening_channel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/listening_channel.cpp -o CMakeFiles/serverd.dir/core/listening_channel.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/listening_channel.cpp -o CMakeFiles/serverd.dir/core/listening_channel.cpp.s
 
 CMakeFiles/serverd.dir/core/listening_channel.cpp.o.requires:
 
@@ -131,16 +155,16 @@ CMakeFiles/serverd.dir/core/listening_channel.cpp.o.provides.build: CMakeFiles/s
 
 CMakeFiles/serverd.dir/core/main.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/main.cpp.o: ../core/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/serverd.dir/core/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/main.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/serverd.dir/core/main.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/main.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/main.cpp
 
 CMakeFiles/serverd.dir/core/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/main.cpp > CMakeFiles/serverd.dir/core/main.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/main.cpp > CMakeFiles/serverd.dir/core/main.cpp.i
 
 CMakeFiles/serverd.dir/core/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/main.cpp -o CMakeFiles/serverd.dir/core/main.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/main.cpp -o CMakeFiles/serverd.dir/core/main.cpp.s
 
 CMakeFiles/serverd.dir/core/main.cpp.o.requires:
 
@@ -155,16 +179,16 @@ CMakeFiles/serverd.dir/core/main.cpp.o.provides.build: CMakeFiles/serverd.dir/co
 
 CMakeFiles/serverd.dir/core/server.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/server.cpp.o: ../core/server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/serverd.dir/core/server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/server.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/serverd.dir/core/server.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/server.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server.cpp
 
 CMakeFiles/serverd.dir/core/server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server.cpp > CMakeFiles/serverd.dir/core/server.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server.cpp > CMakeFiles/serverd.dir/core/server.cpp.i
 
 CMakeFiles/serverd.dir/core/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server.cpp -o CMakeFiles/serverd.dir/core/server.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server.cpp -o CMakeFiles/serverd.dir/core/server.cpp.s
 
 CMakeFiles/serverd.dir/core/server.cpp.o.requires:
 
@@ -179,16 +203,16 @@ CMakeFiles/serverd.dir/core/server.cpp.o.provides.build: CMakeFiles/serverd.dir/
 
 CMakeFiles/serverd.dir/core/server_commands.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/server_commands.cpp.o: ../core/server_commands.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/serverd.dir/core/server_commands.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/server_commands.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server_commands.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/serverd.dir/core/server_commands.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/server_commands.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server_commands.cpp
 
 CMakeFiles/serverd.dir/core/server_commands.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/server_commands.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server_commands.cpp > CMakeFiles/serverd.dir/core/server_commands.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server_commands.cpp > CMakeFiles/serverd.dir/core/server_commands.cpp.i
 
 CMakeFiles/serverd.dir/core/server_commands.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/server_commands.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server_commands.cpp -o CMakeFiles/serverd.dir/core/server_commands.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/server_commands.cpp -o CMakeFiles/serverd.dir/core/server_commands.cpp.s
 
 CMakeFiles/serverd.dir/core/server_commands.cpp.o.requires:
 
@@ -203,16 +227,16 @@ CMakeFiles/serverd.dir/core/server_commands.cpp.o.provides.build: CMakeFiles/ser
 
 CMakeFiles/serverd.dir/core/session.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/session.cpp.o: ../core/session.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/serverd.dir/core/session.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/session.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/serverd.dir/core/session.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/session.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session.cpp
 
 CMakeFiles/serverd.dir/core/session.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/session.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session.cpp > CMakeFiles/serverd.dir/core/session.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session.cpp > CMakeFiles/serverd.dir/core/session.cpp.i
 
 CMakeFiles/serverd.dir/core/session.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/session.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session.cpp -o CMakeFiles/serverd.dir/core/session.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session.cpp -o CMakeFiles/serverd.dir/core/session.cpp.s
 
 CMakeFiles/serverd.dir/core/session.cpp.o.requires:
 
@@ -227,16 +251,16 @@ CMakeFiles/serverd.dir/core/session.cpp.o.provides.build: CMakeFiles/serverd.dir
 
 CMakeFiles/serverd.dir/core/session_manager.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/session_manager.cpp.o: ../core/session_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/serverd.dir/core/session_manager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/session_manager.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/serverd.dir/core/session_manager.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/session_manager.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session_manager.cpp
 
 CMakeFiles/serverd.dir/core/session_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/session_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session_manager.cpp > CMakeFiles/serverd.dir/core/session_manager.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session_manager.cpp > CMakeFiles/serverd.dir/core/session_manager.cpp.i
 
 CMakeFiles/serverd.dir/core/session_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/session_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session_manager.cpp -o CMakeFiles/serverd.dir/core/session_manager.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/session_manager.cpp -o CMakeFiles/serverd.dir/core/session_manager.cpp.s
 
 CMakeFiles/serverd.dir/core/session_manager.cpp.o.requires:
 
@@ -251,16 +275,16 @@ CMakeFiles/serverd.dir/core/session_manager.cpp.o.provides.build: CMakeFiles/ser
 
 CMakeFiles/serverd.dir/core/sha1.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/sha1.cpp.o: ../core/sha1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/serverd.dir/core/sha1.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/sha1.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/sha1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/serverd.dir/core/sha1.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/sha1.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/sha1.cpp
 
 CMakeFiles/serverd.dir/core/sha1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/sha1.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/sha1.cpp > CMakeFiles/serverd.dir/core/sha1.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/sha1.cpp > CMakeFiles/serverd.dir/core/sha1.cpp.i
 
 CMakeFiles/serverd.dir/core/sha1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/sha1.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/sha1.cpp -o CMakeFiles/serverd.dir/core/sha1.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/sha1.cpp -o CMakeFiles/serverd.dir/core/sha1.cpp.s
 
 CMakeFiles/serverd.dir/core/sha1.cpp.o.requires:
 
@@ -275,16 +299,16 @@ CMakeFiles/serverd.dir/core/sha1.cpp.o.provides.build: CMakeFiles/serverd.dir/co
 
 CMakeFiles/serverd.dir/core/signal_handler.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/signal_handler.cpp.o: ../core/signal_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/serverd.dir/core/signal_handler.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/signal_handler.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/signal_handler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/serverd.dir/core/signal_handler.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/signal_handler.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/signal_handler.cpp
 
 CMakeFiles/serverd.dir/core/signal_handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/signal_handler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/signal_handler.cpp > CMakeFiles/serverd.dir/core/signal_handler.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/signal_handler.cpp > CMakeFiles/serverd.dir/core/signal_handler.cpp.i
 
 CMakeFiles/serverd.dir/core/signal_handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/signal_handler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/signal_handler.cpp -o CMakeFiles/serverd.dir/core/signal_handler.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/signal_handler.cpp -o CMakeFiles/serverd.dir/core/signal_handler.cpp.s
 
 CMakeFiles/serverd.dir/core/signal_handler.cpp.o.requires:
 
@@ -299,16 +323,16 @@ CMakeFiles/serverd.dir/core/signal_handler.cpp.o.provides.build: CMakeFiles/serv
 
 CMakeFiles/serverd.dir/core/websocket.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/core/websocket.cpp.o: ../core/websocket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/serverd.dir/core/websocket.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/websocket.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/websocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/serverd.dir/core/websocket.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/core/websocket.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/websocket.cpp
 
 CMakeFiles/serverd.dir/core/websocket.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/core/websocket.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/websocket.cpp > CMakeFiles/serverd.dir/core/websocket.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/websocket.cpp > CMakeFiles/serverd.dir/core/websocket.cpp.i
 
 CMakeFiles/serverd.dir/core/websocket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/core/websocket.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/websocket.cpp -o CMakeFiles/serverd.dir/core/websocket.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/core/websocket.cpp -o CMakeFiles/serverd.dir/core/websocket.cpp.s
 
 CMakeFiles/serverd.dir/core/websocket.cpp.o.requires:
 
@@ -323,16 +347,16 @@ CMakeFiles/serverd.dir/core/websocket.cpp.o.provides.build: CMakeFiles/serverd.d
 
 CMakeFiles/serverd.dir/context/i2c_dev.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/context/i2c_dev.cpp.o: ../context/i2c_dev.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/serverd.dir/context/i2c_dev.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/context/i2c_dev.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/i2c_dev.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/serverd.dir/context/i2c_dev.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/context/i2c_dev.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/i2c_dev.cpp
 
 CMakeFiles/serverd.dir/context/i2c_dev.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/context/i2c_dev.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/i2c_dev.cpp > CMakeFiles/serverd.dir/context/i2c_dev.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/i2c_dev.cpp > CMakeFiles/serverd.dir/context/i2c_dev.cpp.i
 
 CMakeFiles/serverd.dir/context/i2c_dev.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/context/i2c_dev.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/i2c_dev.cpp -o CMakeFiles/serverd.dir/context/i2c_dev.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/i2c_dev.cpp -o CMakeFiles/serverd.dir/context/i2c_dev.cpp.s
 
 CMakeFiles/serverd.dir/context/i2c_dev.cpp.o.requires:
 
@@ -347,16 +371,16 @@ CMakeFiles/serverd.dir/context/i2c_dev.cpp.o.provides.build: CMakeFiles/serverd.
 
 CMakeFiles/serverd.dir/context/spi_dev.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/context/spi_dev.cpp.o: ../context/spi_dev.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/serverd.dir/context/spi_dev.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/context/spi_dev.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/spi_dev.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/serverd.dir/context/spi_dev.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/context/spi_dev.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/spi_dev.cpp
 
 CMakeFiles/serverd.dir/context/spi_dev.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/context/spi_dev.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/spi_dev.cpp > CMakeFiles/serverd.dir/context/spi_dev.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/spi_dev.cpp > CMakeFiles/serverd.dir/context/spi_dev.cpp.i
 
 CMakeFiles/serverd.dir/context/spi_dev.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/context/spi_dev.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/spi_dev.cpp -o CMakeFiles/serverd.dir/context/spi_dev.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/context/spi_dev.cpp -o CMakeFiles/serverd.dir/context/spi_dev.cpp.s
 
 CMakeFiles/serverd.dir/context/spi_dev.cpp.o.requires:
 
@@ -371,16 +395,16 @@ CMakeFiles/serverd.dir/context/spi_dev.cpp.o.provides.build: CMakeFiles/serverd.
 
 CMakeFiles/serverd.dir/autogenerated/context.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/autogenerated/context.cpp.o: ../autogenerated/context.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/serverd.dir/autogenerated/context.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/context.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/context.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/serverd.dir/autogenerated/context.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/context.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/context.cpp
 
 CMakeFiles/serverd.dir/autogenerated/context.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/autogenerated/context.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/context.cpp > CMakeFiles/serverd.dir/autogenerated/context.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/context.cpp > CMakeFiles/serverd.dir/autogenerated/context.cpp.i
 
 CMakeFiles/serverd.dir/autogenerated/context.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/autogenerated/context.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/context.cpp -o CMakeFiles/serverd.dir/autogenerated/context.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/context.cpp -o CMakeFiles/serverd.dir/autogenerated/context.cpp.s
 
 CMakeFiles/serverd.dir/autogenerated/context.cpp.o.requires:
 
@@ -393,18 +417,42 @@ CMakeFiles/serverd.dir/autogenerated/context.cpp.o.provides: CMakeFiles/serverd.
 CMakeFiles/serverd.dir/autogenerated/context.cpp.o.provides.build: CMakeFiles/serverd.dir/autogenerated/context.cpp.o
 
 
+CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o: CMakeFiles/serverd.dir/flags.make
+CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o: ../autogenerated/interface_adc_qspi_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_adc_qspi_controller.cpp
+
+CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.i"
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_adc_qspi_controller.cpp > CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.i
+
+CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.s"
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_adc_qspi_controller.cpp -o CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.s
+
+CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o.requires:
+
+.PHONY : CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o.requires
+
+CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o.provides: CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o.requires
+	$(MAKE) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o.provides.build
+.PHONY : CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o.provides
+
+CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o.provides.build: CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o
+
+
 CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o: ../autogenerated/interface_common.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_common.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_common.cpp
 
 CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_common.cpp > CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_common.cpp > CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.i
 
 CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_common.cpp -o CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_common.cpp -o CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.s
 
 CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o.requires:
 
@@ -419,16 +467,16 @@ CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o.provides.build: CMak
 
 CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o: ../autogenerated/interface_device_driver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o -c /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_device_driver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_device_driver.cpp
 
 CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_device_driver.cpp > CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.i
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_device_driver.cpp > CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.i
 
 CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_device_driver.cpp -o CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.s
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_device_driver.cpp -o CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.s
 
 CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o.requires:
 
@@ -441,8 +489,57 @@ CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o.provides: CMa
 CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o.provides.build: CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o
 
 
+CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o: CMakeFiles/serverd.dir/flags.make
+CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o: ../autogenerated/interface_dma-s2mm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_dma-s2mm.cpp
+
+CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.i"
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_dma-s2mm.cpp > CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.i
+
+CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.s"
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_dma-s2mm.cpp -o CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.s
+
+CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o.requires:
+
+.PHONY : CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o.requires
+
+CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o.provides: CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o.requires
+	$(MAKE) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o.provides.build
+.PHONY : CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o.provides
+
+CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o.provides.build: CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o
+
+
+CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o: CMakeFiles/serverd.dir/flags.make
+CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o: ../autogenerated/interface_fifo_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o -c /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_fifo_controller.cpp
+
+CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.i"
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_fifo_controller.cpp > CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.i
+
+CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.s"
+	/usr/bin/g++-5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/autogenerated/interface_fifo_controller.cpp -o CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.s
+
+CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o.requires:
+
+.PHONY : CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o.requires
+
+CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o.provides: CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o.requires
+	$(MAKE) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o.provides.build
+.PHONY : CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o.provides
+
+CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o.provides.build: CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o
+
+
 # Object files for target serverd
 serverd_OBJECTS = \
+"CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o" \
 "CMakeFiles/serverd.dir/core/base64.cpp.o" \
 "CMakeFiles/serverd.dir/core/drivers_manager.cpp.o" \
 "CMakeFiles/serverd.dir/core/listening_channel.cpp.o" \
@@ -457,12 +554,16 @@ serverd_OBJECTS = \
 "CMakeFiles/serverd.dir/context/i2c_dev.cpp.o" \
 "CMakeFiles/serverd.dir/context/spi_dev.cpp.o" \
 "CMakeFiles/serverd.dir/autogenerated/context.cpp.o" \
+"CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o" \
 "CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o" \
-"CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o"
+"CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o" \
+"CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o" \
+"CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o"
 
 # External object files for target serverd
 serverd_EXTERNAL_OBJECTS =
 
+serverd: CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o
 serverd: CMakeFiles/serverd.dir/core/base64.cpp.o
 serverd: CMakeFiles/serverd.dir/core/drivers_manager.cpp.o
 serverd: CMakeFiles/serverd.dir/core/listening_channel.cpp.o
@@ -477,11 +578,14 @@ serverd: CMakeFiles/serverd.dir/core/websocket.cpp.o
 serverd: CMakeFiles/serverd.dir/context/i2c_dev.cpp.o
 serverd: CMakeFiles/serverd.dir/context/spi_dev.cpp.o
 serverd: CMakeFiles/serverd.dir/autogenerated/context.cpp.o
+serverd: CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o
 serverd: CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o
 serverd: CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o
+serverd: CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o
+serverd: CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o
 serverd: CMakeFiles/serverd.dir/build.make
 serverd: CMakeFiles/serverd.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable serverd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable serverd"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/serverd.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -489,6 +593,7 @@ CMakeFiles/serverd.dir/build: serverd
 
 .PHONY : CMakeFiles/serverd.dir/build
 
+CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/core/PracticalSocket.cpp.o.requires
 CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/core/base64.cpp.o.requires
 CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/core/drivers_manager.cpp.o.requires
 CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/core/listening_channel.cpp.o.requires
@@ -503,8 +608,11 @@ CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/core/websocket.cpp.o.req
 CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/context/i2c_dev.cpp.o.requires
 CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/context/spi_dev.cpp.o.requires
 CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/autogenerated/context.cpp.o.requires
+CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/autogenerated/interface_adc_qspi_controller.cpp.o.requires
 CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/autogenerated/interface_common.cpp.o.requires
 CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/autogenerated/interface_device_driver.cpp.o.requires
+CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/autogenerated/interface_dma-s2mm.cpp.o.requires
+CMakeFiles/serverd.dir/requires: CMakeFiles/serverd.dir/autogenerated/interface_fifo_controller.cpp.o.requires
 
 .PHONY : CMakeFiles/serverd.dir/requires
 
@@ -513,6 +621,6 @@ CMakeFiles/serverd.dir/clean:
 .PHONY : CMakeFiles/serverd.dir/clean
 
 CMakeFiles/serverd.dir/depend:
-	cd /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build /home/rsarwar/workspace/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles/serverd.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build /media/2TB/workspace/rsarwar/work/enclastra/pe1_zx1/mercury_pe1_fmc104/software/server/build/CMakeFiles/serverd.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/serverd.dir/depend
 

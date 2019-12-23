@@ -11,6 +11,8 @@
 
 #include <chrono>
 
+constexpr uint32_t n_pts = 64 * 1024;  // Number of words in one descriptor
+constexpr uint32_t n_desc = 64;        // Number of descriptors
 class DmaS2MM
 {
   public:

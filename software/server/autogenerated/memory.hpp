@@ -33,11 +33,11 @@ constexpr uintptr_t xadc_addr = 0x40120000;
 constexpr uint32_t xadc_range = 64*1024;
 constexpr uint32_t xadc_nblocks = 1;
 constexpr size_t ram_mm2s = 4;
-constexpr uintptr_t ram_mm2s_addr = 0x1F000000;
+constexpr uintptr_t ram_mm2s_addr = 0x38000000;
 constexpr uint32_t ram_mm2s_range = 16*1024*1024;
 constexpr uint32_t ram_mm2s_nblocks = 1;
 constexpr size_t ram_s2mm = 5;
-constexpr uintptr_t ram_s2mm_addr = 0x1E000000;
+constexpr uintptr_t ram_s2mm_addr = 0x30000000;
 constexpr uint32_t ram_s2mm_range = 16*1024*1024;
 constexpr uint32_t ram_s2mm_nblocks = 1;
 constexpr size_t axi_hp0 = 6;
@@ -127,22 +127,18 @@ constexpr std::array<std::tuple<uintptr_t, uint32_t, uint32_t, uint32_t>, count>
 
 namespace reg {
 // -- Control offsets
-constexpr uint32_t led = 0;
-static_assert(led < mem::control_range, "Invalid control register offset led");
-constexpr uint32_t adc_delay_inc = 4;
-static_assert(adc_delay_inc < mem::control_range, "Invalid control register offset adc_delay_inc");
-constexpr uint32_t adc_err_clr = 8;
-static_assert(adc_err_clr < mem::control_range, "Invalid control register offset adc_err_clr");
-constexpr uint32_t adc_delay_dec = 12;
+constexpr uint32_t adc_clear_error = 0;
+static_assert(adc_clear_error < mem::control_range, "Invalid control register offset adc_clear_error");
+constexpr uint32_t adc_delay_dec = 4;
 static_assert(adc_delay_dec < mem::control_range, "Invalid control register offset adc_delay_dec");
+constexpr uint32_t adc_delay_inc = 8;
+static_assert(adc_delay_inc < mem::control_range, "Invalid control register offset adc_delay_inc");
+constexpr uint32_t led = 12;
+static_assert(led < mem::control_range, "Invalid control register offset led");
 
 // -- Status offsets
 constexpr uint32_t forty_two = 8;
 static_assert(forty_two < mem::status_range, "Invalid status register offset forty_two");
-constexpr uint32_t dna_high = 12;
-static_assert(dna_high < mem::status_range, "Invalid status register offset dna_high");
-constexpr uint32_t dna_low = 16;
-static_assert(dna_low < mem::status_range, "Invalid status register offset dna_low");
 
 
 constexpr uint32_t dna = 0;
@@ -150,6 +146,7 @@ constexpr uint32_t dna = 0;
 
 namespace prm {
 constexpr uint32_t adc_clk = 250000000;
+constexpr uint32_t fclk1 = 50000000;
 constexpr uint32_t channel = 4;
 constexpr uint32_t fclk0 = 100000000;
 
@@ -161,12 +158,13 @@ namespace zynq_clocks {
 inline void set_clocks(ZynqFclk& fclk) {
 
 fclk.set("fclk0", 100000000);
+fclk.set("fclk1", 50000000);
 
 
 }
 }
 
 // -- JSONified config
-constexpr auto CFG_JSON = "{\"web\":[\"./web/index.html\",\"web/koheron.ts\",\"web/led-blinker.ts\",\"./web/app.ts\",\"web/main.css\"],\"name\":\"PE1_XZ1_7030_DMA_test\",\"parameters\":{\"adc_clk\":250000000,\"channel\":4,\"fclk0\":100000000},\"status_registers\":[\"forty_two\",\"dna_high\",\"dna_low\"],\"drivers\":[\"./drivers/common.hpp\",\"./device_driver.hpp\"],\"version\":\"0.1.1\",\"control_registers\":[\"led\",\"adc_delay_inc\",\"adc_err_clr\",\"adc_delay_dec\"],\"memory\":[{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"4K\",\"n_blocks\":1,\"name\":\"control\",\"offset\":\"0x40140000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"4K\",\"n_blocks\":1,\"name\":\"status\",\"offset\":\"0x40110000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"SDRAM\",\"offset\":\"0x50000000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"xadc\",\"offset\":\"0x40120000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"16M\",\"n_blocks\":1,\"name\":\"ram_mm2s\",\"offset\":\"0x1F000000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"16M\",\"n_blocks\":1,\"name\":\"ram_s2mm\",\"offset\":\"0x1E000000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"4K\",\"n_blocks\":1,\"name\":\"axi_hp0\",\"offset\":\"0xF8008000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"4K\",\"n_blocks\":1,\"name\":\"axi_hp2\",\"offset\":\"0xF800A000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"sclr\",\"offset\":\"0xF8000000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"ocm_mm2s\",\"offset\":\"0xFFFF0000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"ocm_s2mm\",\"offset\":\"0xFFFF8000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"adc_spi\",\"offset\":\"0x40100000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_bypass_0\",\"offset\":\"0x00010000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_bypass_1\",\"offset\":\"0x00020000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_bypass_2\",\"offset\":\"0x00030000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_bypass_3\",\"offset\":\"0x00040000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_xdma_0\",\"offset\":\"0x00050000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_gpio\",\"offset\":\"0x00060000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"axi_fifo_mm_s\",\"offset\":\"0x40130000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"dma\",\"offset\":\"0x40400000\"}]}";
+constexpr auto CFG_JSON = "{\"web\":[\"./web/index.html\",\"web/koheron.ts\",\"web/led-blinker.ts\",\"./web/app.ts\",\"web/main.css\"],\"name\":\"PE1_XZ1_7030_DMA_test\",\"parameters\":{\"adc_clk\":250000000,\"fclk1\":50000000,\"channel\":4,\"fclk0\":100000000},\"status_registers\":[\"forty_two\"],\"drivers\":[\"./drivers/common.hpp\",\"./drivers/fifo_controller.hpp\",\"./drivers/dma-sg_controller.hpp\",\"./drivers/adc_qspi_controller.hpp\",\"./device_driver.hpp\"],\"version\":\"0.1.1\",\"control_registers\":[\"adc_clear_error\",\"adc_delay_dec\",\"adc_delay_inc\",\"led\"],\"memory\":[{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"4K\",\"n_blocks\":1,\"name\":\"control\",\"offset\":\"0x40140000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"4K\",\"n_blocks\":1,\"name\":\"status\",\"offset\":\"0x40110000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"SDRAM\",\"offset\":\"0x50000000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"xadc\",\"offset\":\"0x40120000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"16M\",\"n_blocks\":1,\"name\":\"ram_mm2s\",\"offset\":\"0x38000000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"16M\",\"n_blocks\":1,\"name\":\"ram_s2mm\",\"offset\":\"0x30000000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"4K\",\"n_blocks\":1,\"name\":\"axi_hp0\",\"offset\":\"0xF8008000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"4K\",\"n_blocks\":1,\"name\":\"axi_hp2\",\"offset\":\"0xF800A000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"sclr\",\"offset\":\"0xF8000000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"ocm_mm2s\",\"offset\":\"0xFFFF0000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"ocm_s2mm\",\"offset\":\"0xFFFF8000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"adc_spi\",\"offset\":\"0x40100000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_bypass_0\",\"offset\":\"0x00010000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_bypass_1\",\"offset\":\"0x00020000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_bypass_2\",\"offset\":\"0x00030000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_bypass_3\",\"offset\":\"0x00040000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_xdma_0\",\"offset\":\"0x00050000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"pcie_gpio\",\"offset\":\"0x00060000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"32K\",\"n_blocks\":1,\"name\":\"axi_fifo_mm_s\",\"offset\":\"0x40130000\"},{\"prot_flag\":\"PROT_READ|PROT_WRITE\",\"range\":\"64K\",\"n_blocks\":1,\"name\":\"dma\",\"offset\":\"0x40400000\"}]}";
 
 #endif // __DRIVERS_MEMORY_HPP__

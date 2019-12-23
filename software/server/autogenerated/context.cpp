@@ -12,4 +12,10 @@ Driver& ContextBase::get() const {
 }
 template Common& ContextBase::get<Common>() const;
 
+template SSFifoController& ContextBase::get<SSFifoController>() const;
+
+template DmaSG& ContextBase::get<DmaSG>() const;
+
+template xQSPI& ContextBase::get<xQSPI>() const;
+
 template TopLevelDriver& ContextBase::get<TopLevelDriver>() const;
